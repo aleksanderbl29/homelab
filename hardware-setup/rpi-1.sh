@@ -24,4 +24,7 @@ docker -v
 docker compose
 sudo apt install docker-compose -y
 
-
+#################################
+## Start uptime kuma in docker ##
+#################################
+docker-compose up -d -f /home/${USER}/homelab/uptime-kuma/docker-compose.yml -e /home/${USER}/homelab/uptime-kuma/.env
