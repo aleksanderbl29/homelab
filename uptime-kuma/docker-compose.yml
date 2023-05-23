@@ -15,8 +15,8 @@ services:
       - uptimekuma-data:/app/data
     environment:
       - UPTIME_KUMA_CLOUDFLARED_TOKEN=${CF_TOKEN}
-    env_file: ## For passing through cloudflare token
-      - .env
+    # env_file: ## For passing through cloudflare token
+    #   - .env
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
