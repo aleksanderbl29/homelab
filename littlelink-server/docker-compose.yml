@@ -5,19 +5,19 @@ services:
     image: ghcr.io/techno-tim/littlelink-server:latest
     container_name: littlelink-server
     environment:
-      - META_TITLE=Aleksander Bang-Larsen
+      - META_TITLE=Aleksander's little links
       - META_DESCRIPTION=Aleksanders små links
       - META_AUTHOR=Aleksander Bang-Larsen
       - THEME=Dark
-      - FAVICON_URL=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_200x200.jpg
-      - AVATAR_URL=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_200x200.jpg
-      - AVATAR_2X_URL=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_400x400.jpg
-      - AVATAR_ALT=Techno Tim Profile Pic
-      - NAME=Aleksander
+      - FAVICON_URL=https://www.dropbox.com/s/d9ta6t1xocq5ms8/SH_HF_Aleksander_Bang_Larsen.jpg?dl=0
+      - AVATAR_URL=https://www.dropbox.com/s/d9ta6t1xocq5ms8/SH_HF_Aleksander_Bang_Larsen.jpg?dl=0
+      - AVATAR_2X_URL=https://www.dropbox.com/s/d9ta6t1xocq5ms8/SH_HF_Aleksander_Bang_Larsen.jpg?dl=0
+      - AVATAR_ALT=Aleksander's profile pic
+      - NAME=Aleksanders links
       - BIO=Hey! Here is all of my links!
       - GITHUB=https://github.com/aleksanderbl29
       - TWITTER=https://twitter.com/bang_aleksander
-      - INSTAGRAM=https://l.technotim.live/instagram
+      - INSTAGRAM=https://www.instagram.com/aleksanderbl/
       # - YOUTUBE=https://l.technotim.live/subscribe
       # - TWITCH=https://l.technotim.live/twitch/
       # - DISCORD=https://l.technotim.live/discord
