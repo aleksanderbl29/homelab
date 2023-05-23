@@ -8,9 +8,9 @@ services:
   uptimekuma:
     image: louislam/uptime-kuma:latest
     container_name: uptimekuma
-    ## Expose these ports if cloudflare is not used
-    # ports:
-    #   - "3001:3001"
+    ## Expose these ports for local access
+    ports:
+      - "3001:3001"
     volumes:
       - uptimekuma-data:/app/data
     environment:
