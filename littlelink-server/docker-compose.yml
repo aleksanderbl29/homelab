@@ -1,0 +1,51 @@
+---
+version: '3'
+services:
+  little-link:
+    image: ghcr.io/techno-tim/littlelink-server:latest
+    container_name: littlelink-server
+    environment:
+      - META_TITLE=Aleksander Bang-Larsen
+      - META_DESCRIPTION=Aleksanders små links
+      - META_AUTHOR=Aleksander Bang-Larsen
+      - THEME=Dark
+      - FAVICON_URL=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_200x200.jpg
+      - AVATAR_URL=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_200x200.jpg
+      - AVATAR_2X_URL=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_400x400.jpg
+      - AVATAR_ALT=Techno Tim Profile Pic
+      - NAME=Aleksander
+      - BIO=Hey! Here is all of my links!
+      - GITHUB=https://github.com/aleksanderbl29
+      - TWITTER=https://twitter.com/bang_aleksander
+      - INSTAGRAM=https://l.technotim.live/instagram
+      # - YOUTUBE=https://l.technotim.live/subscribe
+      # - TWITCH=https://l.technotim.live/twitch/
+      # - DISCORD=https://l.technotim.live/discord
+      # - TIKTOK=https://l.technotim.live/tiktok
+      # - KIT=https://l.technotim.live/gear
+      # - FACEBOOK=https://facebook.com
+      # - FACEBOOK_MESSENGER=https://facebook.com
+      - LINKED_IN=https://www.linkedin.com/in/aleksander-bang-larsen-405b03a4/
+      # - PRODUCT_HUNT=https://www.producthunt.com/
+      # - SNAPCHAT=https://www.snapchat.com/
+      # - SPOTIFY=https://www.spotify.com/
+      # - REDDIT=https://www.reddit.com/
+      # - MEDIUM=https://medium.com
+      # - PINTEREST=https://www.pinterest.com/
+      - EMAIL=aleksanderbl@live.dk
+      # - EMAIL_ALT=you@example.com
+      # - SOUND_CLOUD=https://souncloud.com
+      # - FIGMA=https://figma.com
+      # - TELEGRAM=https://telegram.org/
+      # - TUMBLR=https://www.tumblr.com/
+      # - STEAM=https://steamcommunity.com/
+      # - VIMEO=https://vimeo.com/
+      # - WORDPRESS=https://wordpress.com/
+      # - GOODREADS=https://www.goodreads.com/
+      # - SKOOB=https://www.skoob.com.br/
+      - FOOTER=Thanks for stopping by!
+    ports:
+      - 8080:3000
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
