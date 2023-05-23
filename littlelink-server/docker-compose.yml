@@ -13,7 +13,7 @@ services:
       - AVATAR_URL=https://pbs.twimg.com/profile_images/1661137669156487168/VcAtkav1_400x400.jpg
       - AVATAR_2X_URL=https://pbs.twimg.com/profile_images/1661137669156487168/VcAtkav1_400x400.jpg
       - AVATAR_ALT=Aleksander's profile pic
-      - NAME=Aleksanders links
+      - NAME=Aleksander's links
       - BIO=Hey! Here is all of my links!
       - GITHUB=https://github.com/aleksanderbl29
       - TWITTER=https://twitter.com/bang_aleksander
@@ -43,7 +43,18 @@ services:
       # - WORDPRESS=https://wordpress.com/
       # - GOODREADS=https://www.goodreads.com/
       # - SKOOB=https://www.skoob.com.br/
-      - FOOTER=Thanks for stopping by!
+      # use ENV variable names for order, listed buttons will be boosted to the top
+      - BUTTON_ORDER=YOUTUBE,TWITCH,TWITTER,GITHUB,INSTAGRAM,LINKED_IN,DISCORD,FACEBOOK,TIKTOK,PATREON,GEAR,DOCUMENTATION
+      # you can render an unlimited amount of custom buttons by adding
+      # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
+      - CUSTOM_BUTTON_TEXT=Documentation
+      - CUSTOM_BUTTON_URL=https://docs.aleksanderbl.dk
+      - CUSTOM_BUTTON_COLOR=#000000
+      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff
+      - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab
+      - CUSTOM_BUTTON_NAME=DOCUMENTATION
+      - CUSTOM_BUTTON_ICON=fas file-alt
+      - FOOTER=Aleksander Bang-Larsen © 2023
     ports:
       - 8080:3000
     restart: unless-stopped
