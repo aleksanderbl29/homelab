@@ -12,6 +12,8 @@ services:
       - "3001:3001"
     volumes:
       - uptimekuma-data:/app/data
+    environment:
+      - UPTIME_KUMA_CLOUDFLARED_TOKEN=${CF_TOKEN}
     env_file: ## For passing through cloudflare token
       - .env
     restart: unless-stopped
