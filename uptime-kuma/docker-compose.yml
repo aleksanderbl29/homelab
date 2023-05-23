@@ -13,6 +13,7 @@ services:
     #   - "3001:3001"
     volumes:
       - uptimekuma-data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - UPTIME_KUMA_CLOUDFLARED_TOKEN=${CF_TOKEN}
     restart: unless-stopped
