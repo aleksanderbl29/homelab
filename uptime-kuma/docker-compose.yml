@@ -18,5 +18,3 @@ services:
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
-    dns:
-      - 192.168.99.5:53
