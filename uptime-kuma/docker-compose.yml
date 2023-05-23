@@ -8,15 +8,15 @@ services:
   uptimekuma:
     image: louislam/uptime-kuma:latest
     container_name: uptimekuma
-    ## Temporarily removed ports to test cloudflared
+    ## Expose these ports if cloudflare is not used
     # ports:
     #   - "3001:3001"
     volumes:
       - uptimekuma-data:/app/data
     environment:
       - UPTIME_KUMA_CLOUDFLARED_TOKEN=${CF_TOKEN}
-    # env_file: ## For passing through cloudflare token
-    #   - .env
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    dns:
+      - 192.168.99.5:53
