@@ -12,7 +12,7 @@ services:
       - "3001:3001"
     volumes:
       - uptimekuma-data:/app/data
-    env_file:
+    env_file: ## For passing through cloudflare token
       - .env
     restart: unless-stopped
     security_opt:
