@@ -9,9 +9,9 @@ services:
       - META_DESCRIPTION=Aleksanders små links
       - META_AUTHOR=Aleksander Bang-Larsen
       - THEME=Dark
-      - FAVICON_URL=https://www.dropbox.com/s/d9ta6t1xocq5ms8/SH_HF_Aleksander_Bang_Larsen.jpg?dl=0
-      - AVATAR_URL=https://www.dropbox.com/s/d9ta6t1xocq5ms8/SH_HF_Aleksander_Bang_Larsen.jpg?dl=0
-      - AVATAR_2X_URL=https://www.dropbox.com/s/d9ta6t1xocq5ms8/SH_HF_Aleksander_Bang_Larsen.jpg?dl=0
+      - FAVICON_URL=https://drive.google.com/file/d/1XAOOR1gOSuCsHlPpteKNuAMTOdGEMbHx/view?usp=share_link
+      - AVATAR_URL=https://drive.google.com/file/d/1XAOOR1gOSuCsHlPpteKNuAMTOdGEMbHx/view?usp=share_link
+      - AVATAR_2X_URL=https://drive.google.com/file/d/1XAOOR1gOSuCsHlPpteKNuAMTOdGEMbHx/view?usp=share_link
       - AVATAR_ALT=Aleksander's profile pic
       - NAME=Aleksanders links
       - BIO=Hey! Here is all of my links!
