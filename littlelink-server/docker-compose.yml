@@ -47,13 +47,13 @@ services:
       - BUTTON_ORDER=YOUTUBE,TWITCH,TWITTER,GITHUB,INSTAGRAM,LINKED_IN,DISCORD,FACEBOOK,TIKTOK,PATREON,GEAR,DOCUMENTATION
       # you can render an unlimited amount of custom buttons by adding
       # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
-      - CUSTOM_BUTTON_TEXT=Documentation
-      - CUSTOM_BUTTON_URL=https://docs.aleksanderbl.dk
-      - CUSTOM_BUTTON_COLOR=#000000
-      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff
-      - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab
-      - CUSTOM_BUTTON_NAME=DOCUMENTATION
-      - CUSTOM_BUTTON_ICON=fas file-alt
+      - CUSTOM_BUTTON_TEXT=Documentation, Status
+      - CUSTOM_BUTTON_URL=https://docs.aleksanderbl.dk, https://uptime.aleksanderbl.dk
+      - CUSTOM_BUTTON_COLOR=#000000, #000000
+      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff, #ffffff
+      - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab, Status page for my services
+      - CUSTOM_BUTTON_NAME=DOCUMENTATION, STATUS
+      - CUSTOM_BUTTON_ICON=fas file-alt, https://github.com/louislam/uptime-kuma/blob/master/public/icon.svg
       - FOOTER=Aleksander Bang-Larsen © 2023
     ports:
       - 8080:3000
