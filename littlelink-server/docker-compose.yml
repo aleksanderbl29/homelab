@@ -53,7 +53,7 @@ services:
       - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff,#ffffff
       - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab,Status page for my services,My friends travel blog
       - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,THESTUDENTTRAVELLER
-      - CUSTOM_BUTTON_ICON=fas file-alt,https://github.com/louislam/uptime-kuma/blob/master/public/icon.svg,fas plane
+      - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas plane
       - FOOTER=Aleksander Bang-Larsen © 2023
     ports:
       - 8080:3000
