@@ -5,7 +5,7 @@ on:
       - 'main'
 
 jobs:
-  conditional_step-littlelink:
+  Littlelink-Server:
     runs-on: 'ubuntu-20.04'
     steps:
     - uses: actions/checkout@v2
@@ -31,9 +31,9 @@ jobs:
       # steps.<step_id>.outputs.<output name>
       if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
       with:
-          url: https://192.168.99.5:9443/api/stacks/webhooks/8f2c2f31-f57a-4e94-9132-b610b19015ca
+          url: https://portainer.aleksanderbl.dk/api/stacks/webhooks/8f2c2f31-f57a-4e94-9132-b610b19015ca
 
-  conditional_step-uptimekuma:
+  Uptime-Kuma:
     runs-on: 'ubuntu-20.04'
     steps:
     - uses: actions/checkout@v2
@@ -59,7 +59,7 @@ jobs:
       # steps.<step_id>.outputs.<output name>
       if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
       with:
-          url: https://192.168.99.5:9443/api/stacks/webhooks/4916ef88-d5b2-4019-a2e7-faeec3fb71ea
+          url: https://portainer.aleksanderbl.dk/api/stacks/webhooks/4916ef88-d5b2-4019-a2e7-faeec3fb71ea
 
 #webhook:
 #    name: "call webhook"
@@ -69,13 +69,13 @@ jobs:
 #        uses: joelwmale/webhook-action@2.3.2
 #        with:
 #          url: https://192.168.99.5:9443/api/stacks/webhooks/8f2c2f31-f57a-4e94-9132-b610b19015ca
-#      
+#
 #      - name: UptimeKuma Webhook
 #        uses: joelwmale/webhook-action@2.3.2
 #        with:
 #          url: https://192.168.99.5:9443/api/stacks/webhooks/4916ef88-d5b2-4019-a2e7-faeec3fb71ea
-          
-          
+
+
 
 #  conditional_step:
 #    runs-on: 'ubuntu-20.04'
