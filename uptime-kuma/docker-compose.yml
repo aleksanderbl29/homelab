@@ -1,9 +1,5 @@
 version: '3'
 
-volumes:
-  uptimekuma-data:
-    driver: local
-
 services:
   uptimekuma:
     image: louislam/uptime-kuma:latest
@@ -12,7 +8,7 @@ services:
     # ports:
     #   - "3001:3001"
     volumes:
-      - uptimekuma-data:/app/data
+      - /var/lib/docker/volumes/uptime-kuma_uptimekuma-data/_data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - UPTIME_KUMA_CLOUDFLARED_TOKEN=${CF_TOKEN}
