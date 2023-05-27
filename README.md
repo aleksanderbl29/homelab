@@ -13,6 +13,7 @@ I am currently running the following services in my homelab
 * Uptime Kuma
 * Home Assistant
 * Littlelink
+* Jekyll and Chripy in aleksanderbl29.github.io
 ### Tools
 * Cloudflare tunnels
 * Github pages
