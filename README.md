@@ -13,7 +13,12 @@ I am currently running the following services in my homelab
 * Uptime Kuma
 * Home Assistant
 * Littlelink
-* Jekyll and Chripy in aleksanderbl29.github.io
+* Jekyll and Chripy
 ### Tools
 * Cloudflare tunnels
 * Github pages
+
+## Personal docs
+My personal docs site is run with [Jekyll and Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/).
+
+You can find it on [docs.aleksanderbl.dk](https://docs.aleksanderbl.dk) and [my docs repo](https://github.com/aleksanderbl29/aleksanderbl29.github.io)
