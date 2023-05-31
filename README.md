@@ -9,6 +9,7 @@ I am currently running the following services in my homelab
 * Home Assistant
 * Littlelink
 * Jekyll and Chripy
+* Watchtower
 ### Tools
 * Cloudflare tunnels
 * Github pages
