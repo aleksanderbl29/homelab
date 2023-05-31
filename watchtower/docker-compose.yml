@@ -1,0 +1,11 @@
+version: "3"
+services:
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - TZ=${timezone}
+      - WATCHTOWER_POLL_INTERVAL=${polling}
+      - WATCHTOWER_NOTIFICATIONS=${notifi_service}
+      - WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL=${webhook}
