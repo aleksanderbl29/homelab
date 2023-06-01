@@ -8,7 +8,7 @@ jobs:
   Littlelink-Server:
     runs-on: 'ubuntu-20.04'
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
@@ -39,7 +39,7 @@ jobs:
   Uptime-Kuma:
     runs-on: 'ubuntu-20.04'
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
@@ -69,7 +69,7 @@ jobs:
   Watchtower:
     runs-on: 'ubuntu-20.04'
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
