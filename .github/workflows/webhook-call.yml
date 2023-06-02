@@ -31,9 +31,9 @@ jobs:
       # steps.<step_id>.outputs.<output name>
       if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
       with:
-        url: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
-      # env:
-      #   LITTLELINK_PORTAINER_WEBHOOK: ${{ secrets.LITTLELINK_PORTAINER_WEBHOOK }}
+        url: ${LITTLELINK_PORTAINER_WEBHOOK}
+      env:
+        LITTLELINK_PORTAINER_WEBHOOK: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
 
   Uptime-Kuma:
     runs-on: 'ubuntu-20.04'
@@ -61,9 +61,9 @@ jobs:
       # steps.<step_id>.outputs.<output name>
       if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
       with:
-          url: ${{ secrets.UPTIME_KUMA_PORTAINER_WEBHOOK }}
-      # env:
-      #   UPTIME_KUMA_PORTAINER_WEBHOOK: ${{ secrets.UPTIME_KUMA_PORTAINER_WEBHOOK }}
+          url: ${UPTIME_KUMA_PORTAINER_WEBHOOK}
+      env:
+        UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_WEBHOOK}}
 
   Watchtower:
     runs-on: 'ubuntu-20.04'
@@ -91,9 +91,9 @@ jobs:
       # steps.<step_id>.outputs.<output name>
       if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
       with:
-          url: ${{ secrets.WATCHTOWER_PORTAINER_WEBHOOK }}
-      # env:
-      #   WATCHTOWER_PORTAINER_WEBHOOK: ${{ secrets.WATCHTOWER_PORTAINER_WEBHOOK }}
+          url: ${WATCHTOWER_PORTAINER_WEBHOOK}
+      env:
+        WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_WEBHOOK}}
 
 #webhook:
 #    name: "call webhook"
