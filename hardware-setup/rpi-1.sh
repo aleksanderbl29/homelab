@@ -1,9 +1,11 @@
 ## Update system
+echo "Updating system"
 sudo apt update && sudo apt upgrade -y
 
 ##############################
 ## Install docker and misc. ##
 ##############################
+echo "Installing docker and misc."
 sudo apt-get update
 sudo apt-get install \
     ca-certificates \
@@ -20,11 +22,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 ## Check docker and docker-compose
+echo "Checking docker and docker-compose"
 docker -v
 docker compose
 sudo apt install docker-compose -y
-
-#################################
-## Start uptime kuma in docker ##
-#################################
-docker-compose up -d -f /home/${USER}/homelab/uptime-kuma/docker-compose.yml -e /home/${USER}/homelab/uptime-kuma/.env
