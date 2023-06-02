@@ -38,12 +38,11 @@ newgrp docker
 
 ## Testing Docker
 echo "--------------  Testing Docker CLI with hello-world  --------------"
-docker run hello-world
+docker run hello-world --name hello-world
+docker rm hello-world
 
 ## Installing portainer
 echo "--------------  Installing Portainer BE  --------------"
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ee:latest
-echo "
---------------  Portainer is available on IP:9443  --------------
-"
+echo "--------------  Portainer is available on IP:9443  --------------"
