@@ -31,7 +31,7 @@ jobs:
       # steps.<step_id>.outputs.<output name>
       if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
       with:
-        url: ${{ secrets.LITTLELINK_PORTAINER_WEBHOOK }}
+        url: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
       # env:
       #   LITTLELINK_PORTAINER_WEBHOOK: ${{ secrets.LITTLELINK_PORTAINER_WEBHOOK }}
 
