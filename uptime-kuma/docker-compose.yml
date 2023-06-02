@@ -20,8 +20,9 @@ services:
     security_opt:
       - no-new-privileges:true
 
+  ###### Virker kun på x86
   # backup:
   #   image: jareware/docker-volume-backup
   #   volumes:
-  #     - uptimekuma-data:/backup/uptimekuma-data:ro    # Mount the Grafana data volume (as read-only)
-  #     - /home/aleksanderbang-larsen/backups:/archive                         # Mount a local folder as the backup archive
+  #     - uptimekuma-data:/backup/uptimekuma-data:ro           # Mount the Grafana data volume (as read-only)
+  #     - /home/aleksanderbang-larsen/backups:/archive         # Mount a local folder as the backup archive
