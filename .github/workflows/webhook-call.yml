@@ -63,7 +63,7 @@ jobs:
       with:
           url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
       env:
-        UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_WEBHOOK}}
+        UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_SECRET}}
 
   Watchtower:
     runs-on: 'ubuntu-20.04'
@@ -93,7 +93,7 @@ jobs:
       with:
           url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
       env:
-        WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_WEBHOOK}}
+        WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
 
 #webhook:
 #    name: "call webhook"
