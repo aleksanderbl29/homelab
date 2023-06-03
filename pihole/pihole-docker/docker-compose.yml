@@ -35,11 +35,6 @@ services:
     restart: unless-stopped
     networks:
       - traefik-proxy
-
-networks:
-  traefik-proxy:
-    external: true
-
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.pihole1.entrypoints=http"
@@ -53,3 +48,7 @@ networks:
       - "traefik.http.routers.pihole1-secure.service=pihole1"
       - "traefik.http.services.pihole1.loadbalancer.server.port=3000"
       - "traefik.docker.network=proxy"
+
+networks:
+  traefik-proxy:
+    external: true
