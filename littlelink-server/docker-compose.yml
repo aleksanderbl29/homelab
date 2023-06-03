@@ -55,8 +55,26 @@ services:
       - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,THESTUDENTTRAVELLER
       - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas plane
       - FOOTER=Aleksander Bang-Larsen © 2023
-    ports:
-      - 8080:3000
+#    ports:
+#      - 8080:3000
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    networks:
+      - traefik-proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.littlelink.entrypoints=http"
+      - "traefik.http.routers.littlelink.rule=Host(`links.local.aleksanderbl.dk`)"
+      - "traefik.http.middlewares.littlelink-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.littlelink.middlewares=littlelink-https-redirect"
+      - "traefik.http.routers.littlelink-secure.entrypoints=https"
+      - "traefik.http.routers.littlelink-secure.rule=Host(`links.local.aleksanderbl.dk`)"
+      - "traefik.http.routers.littlelink-secure.tls=true"
+      - "traefik.http.routers.littlelink-secure.service=littlelink"
+      - "traefik.http.services.littlelink.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+
+networks:
+  traefik-proxy:
+    external: true
