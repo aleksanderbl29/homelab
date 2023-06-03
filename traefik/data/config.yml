@@ -85,24 +85,6 @@ http:
         - https-redirectscheme
       tls: {}
       service: rancher
-    idrac:
-      entryPoints:
-        - "https"
-      rule: "Host(`idrac.local.example.com`)"
-      middlewares:
-        - idrac
-        - https-redirectscheme
-      tls: {}
-      service: idrac
-    idrac-console:
-      entryPoints:
-        - "idrac" # REQUIRED for iDRAC virtual console: Create a new TCP entry point in traefik on port 5900
-      rule: "Host(`idrac.local.example.com`)"
-      middlewares:
-        - idrac
-        - https-redirectscheme
-      tls: {}
-      service: idrac-console
     opnsense:
       entryPoints:
         - "https"
@@ -170,16 +152,6 @@ http:
         servers:
           - url: "https://192.168.0.107"
         passHostHeader: true
-    idrac:
-      loadBalancer:
-        servers:
-          - url: "https://192.168.0.108"
-        passHostHeader: true
-    idrac-console:
-      loadBalancer:
-        servers:
-          - url: "https://192.168.0.108:5900"
-        passHostHeader: true
     opnsense:
       loadBalancer:
         servers:
@@ -208,17 +180,6 @@ http:
         forceSTSHeader: true
         stsIncludeSubdomains: true
         stsPreload: true
-        stsSeconds: 15552000
-        customFrameOptionsValue: SAMEORIGIN
-        customRequestHeaders:
-          X-Forwarded-Proto: https
-
-    idrac:
-      headers:
-        frameDeny: true
-        browserXssFilter: true
-        forceSTSHeader: true
-        stsIncludeSubdomains: true
         stsSeconds: 15552000
         customFrameOptionsValue: SAMEORIGIN
         customRequestHeaders:
