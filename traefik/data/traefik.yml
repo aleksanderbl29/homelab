@@ -1,6 +1,7 @@
 api:
   dashboard: true
   debug: true
+  insecure: true
 entryPoints:
   http:
     address: ":80"
