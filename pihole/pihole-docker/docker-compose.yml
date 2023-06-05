@@ -34,7 +34,7 @@ services:
       - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
     restart: unless-stopped
     networks:
-      - traefik-proxy
+      - proxy
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.pihole1.entrypoints=http"
@@ -50,5 +50,5 @@ services:
       - "traefik.docker.network=proxy"
 
 networks:
-  traefik-proxy:
+  proxy:
     external: true

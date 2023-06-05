@@ -61,7 +61,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - traefik-proxy
+      - proxy
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.littlelink.entrypoints=http"
@@ -73,8 +73,8 @@ services:
       - "traefik.http.routers.littlelink-secure.tls=true"
       - "traefik.http.routers.littlelink-secure.service=littlelink"
       - "traefik.http.services.littlelink.loadbalancer.server.port=3000"
-      - "traefik.docker.network=traefik-proxy"
+      - "traefik.docker.network=proxy"
 
 networks:
-  traefik-proxy:
+  proxy:
     external: true
