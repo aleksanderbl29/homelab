@@ -128,5 +128,7 @@ api:
 
 providers:
   # Enable Docker configuration backend
-  docker: {}
-  exposedByDefault: false
+  docker:
+    exposedByDefault: false
+    tls:
+      insecureSkipVerify: true
