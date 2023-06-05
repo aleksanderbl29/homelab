@@ -4,7 +4,7 @@ http:
     proxmox:
       entryPoints:
         - "https"
-      rule: "Host(`proxmox.local.example.com`)"
+      rule: "Host(`proxmox.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -13,7 +13,7 @@ http:
     pihole:
       entryPoints:
         - "https"
-      rule: "Host(`pihole.local.example.com`)"
+      rule: "Host(`pihole.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - addprefix-pihole
@@ -23,7 +23,7 @@ http:
     homebridge:
       entryPoints:
         - "https"
-      rule: "Host(`homebridge.local.example.com`)"
+      rule: "Host(`homebridge.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -34,7 +34,7 @@ http:
       # This relies on Homeassistant using http. No certs are needed in the Homeassistant config.
       entryPoints:
         - "https"
-      rule: "Host(`homeassistant.local.example.com`)"
+      rule: "Host(`homeassistant.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -43,7 +43,7 @@ http:
     syncthing:
       entryPoints:
         - "https"
-      rule: "Host(`syncthing.local.example.com`)"
+      rule: "Host(`syncthing.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -52,7 +52,7 @@ http:
     truenas:
       entryPoints:
         - "https"
-      rule: "Host(`truenas.local.example.com`)"
+      rule: "Host(`truenas.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -61,7 +61,7 @@ http:
     plex:
       entryPoints:
         - "https"
-      rule: "Host(`plex.local.example.com`)"
+      rule: "Host(`plex.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -70,7 +70,7 @@ http:
     minio:
       entryPoints:
         - "https"
-      rule: "Host(`minio.local.example.com`)"
+      rule: "Host(`minio.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -79,7 +79,7 @@ http:
     rancher:
       entryPoints:
         - "https"
-      rule: "Host(`rancher.local.example.com`)"
+      rule: "Host(`rancher.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -88,7 +88,7 @@ http:
     idrac:
       entryPoints:
         - "https"
-      rule: "Host(`idrac.local.example.com`)"
+      rule: "Host(`idrac.local.aleksanderbl.dk`)"
       middlewares:
         - idrac
         - https-redirectscheme
@@ -97,7 +97,7 @@ http:
     idrac-console:
       entryPoints:
         - "idrac" # REQUIRED for iDRAC virtual console: Create a new TCP entry point in traefik on port 5900
-      rule: "Host(`idrac.local.example.com`)"
+      rule: "Host(`idrac.local.aleksanderbl.dk`)"
       middlewares:
         - idrac
         - https-redirectscheme
@@ -106,7 +106,7 @@ http:
     opnsense:
       entryPoints:
         - "https"
-      rule: "Host(`opnsense.local.example.com`)"
+      rule: "Host(`opnsense.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -115,7 +115,7 @@ http:
     pterodactyl:
       entryPoints:
         - "https"
-      rule: "Host(`pterodactyl.local.example.com`)"
+      rule: "Host(`pterodactyl.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
