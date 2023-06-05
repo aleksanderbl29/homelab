@@ -39,6 +39,8 @@ services:
       - traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk
       - traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk
 
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
+
       # - "traefik.enable=true"
       # - "traefik.http.routers.traefik.entrypoints=http"
       # - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)"

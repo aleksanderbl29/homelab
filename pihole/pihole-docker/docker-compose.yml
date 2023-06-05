@@ -46,7 +46,7 @@ services:
       - "traefik.http.routers.pihole1-secure.rule=Host(`pihole1.local.aleksanderbl.dk`)"
       - "traefik.http.routers.pihole1-secure.tls=true"
       - "traefik.http.routers.pihole1-secure.service=pihole1"
-      - "traefik.http.services.pihole1.loadbalancer.server.port=3000"
+      - "traefik.http.services.pihole1.loadbalancer.server.port=908"
       - "traefik.docker.network=proxy"
 
 networks:
