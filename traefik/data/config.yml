@@ -129,23 +129,4 @@ api:
 providers:
   # Enable Docker configuration backend
   docker: {}
-    # Docker server endpoint. Can be a tcp or a unix socket endpoint.
-    #
-    # Required
-    # Default: "unix:///var/run/docker.sock"
-    #
-#    endpoint: tcp://10.10.10.10:2375
-
-    # Default host rule.
-    #
-    # Optional
-    # Default: "Host(`{{ normalize .Name }}`)"
-    #
-#    defaultRule: Host(`{{ normalize .Name }}.docker.localhost`)
-
-    # Expose containers by default in traefik
-    #
-    # Optional
-    # Default: true
-    #
-#    exposedByDefault: false
+  exposedByDefault: false
