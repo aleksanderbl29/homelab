@@ -5,7 +5,7 @@ http:
       entryPoints:
         - "http"
         - "https"
-      rule: Host(`traefik-dashboard.local.aleksanderbl.dk`)"
+      rule: "Host(`traefik-dashboard.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
