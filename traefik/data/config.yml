@@ -4,6 +4,7 @@ http:
     traefik:
       entryPoints:
         - "http"
+        - "https"
       rule: "Host('traefik-dashboard.local.aleksanderbl.dk')"
       middlewares:
         - default-headers
