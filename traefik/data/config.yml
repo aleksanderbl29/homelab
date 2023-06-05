@@ -128,7 +128,7 @@ api:
 
 providers:
   # Enable Docker configuration backend
-  docker:
+  docker: {}
     # Docker server endpoint. Can be a tcp or a unix socket endpoint.
     #
     # Required
@@ -141,7 +141,7 @@ providers:
     # Optional
     # Default: "Host(`{{ normalize .Name }}`)"
     #
-    defaultRule: Host(`{{ normalize .Name }}.docker.localhost`)
+#    defaultRule: Host(`{{ normalize .Name }}.docker.localhost`)
 
     # Expose containers by default in traefik
     #
