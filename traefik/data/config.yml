@@ -135,6 +135,11 @@ http:
 #endregion
 #region services
   services:
+    traefik:
+      loadBalancer:
+        servers:
+          - url: "https://127.0.0.1:80"
+        passHostHeader: true
     proxmox:
       loadBalancer:
         servers:
