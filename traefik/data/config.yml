@@ -7,7 +7,6 @@ http:
       rule: "Host('traefik-dashboard.local.aleksanderbl.dk')"
       middlewares:
         - default-headers
-        - addprefix-traefik
         - https-redirectscheme
       tls: {}
       service: traefik
