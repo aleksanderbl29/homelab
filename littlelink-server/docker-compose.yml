@@ -4,6 +4,7 @@ services:
   little-link:
     image: ghcr.io/techno-tim/littlelink-server:latest
     container_name: littlelink-server
+    hostname: littlelink-server
     environment:
       - META_TITLE=Aleksander's little links
       - META_DESCRIPTION=Aleksanders små links
