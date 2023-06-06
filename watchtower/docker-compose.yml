@@ -2,7 +2,7 @@ version:  "3"
 services:
   watchtower:
     image: containrrr/watchtower
-    container_name: watchtower
+    container_name: watchtower-monitor
     hostname: watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
