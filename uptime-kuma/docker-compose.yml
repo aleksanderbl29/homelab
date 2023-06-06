@@ -8,6 +8,7 @@ services:
   uptimekuma:
     image: louislam/uptime-kuma:latest
     container_name: uptimekuma
+    hostname: uptimekuma
     ## Expose these ports for local access to GUI
     # ports:
     #   - "3001:3001"
