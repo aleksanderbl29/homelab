@@ -36,6 +36,8 @@ services:
     networks:
       - proxy
     labels:
+      - com.centurylinklabs.watchtower.monitor-only="true"
+
       - "traefik.enable=true"
       - "traefik.http.routers.pihole1.entrypoints=http"
       - "traefik.http.routers.pihole1.rule=Host(`pihole1.local.aleksanderbl.dk`)"
