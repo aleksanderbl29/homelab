@@ -9,15 +9,21 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "friday
-      time: "14:00
+      # Check for npm updates at 9am UTC
+      time: "14:00"
+      day: "friday"
     reviewers:
-      - "aleksanderbl29"
+      - aleksanderbl29
+    assignees:
+      - aleksanderbl29
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "friday
-      time: "14:00
+      # Check for npm updates at 9am UTC
+      time: "14:00"
+      day: "friday"
     reviewers:
-      - "aleksanderbl29"
+      - aleksanderbl29
+    assignees:
+      - aleksanderbl29
