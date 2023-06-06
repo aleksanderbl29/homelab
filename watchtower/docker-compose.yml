@@ -10,6 +10,7 @@ services:
       - WATCHTOWER_POLL_INTERVAL=${polling}
       - WATCHTOWER_NOTIFICATIONS=${notifi_service}
       - WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL=${webhook}
+      - WATCHTOWER_NOTIFICATIONS_LEVEL=${log_level}
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
