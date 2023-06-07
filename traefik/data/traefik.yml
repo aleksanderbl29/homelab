@@ -34,5 +34,5 @@ certificatesResolvers:
 global:
   checkNewVersion: true
   sendAnonymousUsage: true
-log:
-  level: DEBUG
+#log:
+#  level: DEBUG
