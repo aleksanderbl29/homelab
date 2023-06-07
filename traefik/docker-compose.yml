@@ -26,7 +26,7 @@ services:
       - /home/aleksanderbang-larsen/homelab/traefik/data/acme.json:/acme.json
       - /home/aleksanderbang-larsen/homelab/traefik/data/config.yml:/config.yml:ro
     env_file:
-      - /home/aleksanderbang-larsen/homelab/traefik/data/.env
+      - /home/aleksanderbang-larsen/homelab/traefik/data/ #.env
     labels:
       # - traefik.enable:true
       # - traefik.http.routers.traefik.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)
