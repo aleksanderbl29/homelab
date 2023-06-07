@@ -30,7 +30,7 @@ services:
       traefik.http.routers.uptime-secure.rule: Host(`uptime.local.aleksanderbl.dk`)
       traefik.http.routers.uptime-secure.tls: true
       traefik.http.routers.uptime-secure.service: uptime
-      traefik.http.services.uptime.loadbalancer.server.port: 3000
+      traefik.http.services.uptime.loadbalancer.server.port: 3001
       traefik.docker.network: proxy
 
   ###### Virker kun på x86
