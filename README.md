@@ -1,4 +1,6 @@
 # Aleksander's Homelab
+[![Redeploy Docker Containers](https://github.com/aleksanderbl29/homelab/actions/workflows/webhook-call.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/webhook-call.yml)
+
 
 This is the working repository for my homelab
 
