@@ -12,11 +12,13 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 8080:8080
     environment:
       - CF_API_EMAIL=${CF_API_EMAIL}
       # - CF_DNS_API_TOKEN=YOUR_API_TOKEN
       - CF_API_KEY=${CF_API_KEY}
       # be sure to use the correct one depending on if you are using a token or key
+      - api.insecure=true
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
