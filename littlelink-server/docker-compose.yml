@@ -57,7 +57,7 @@ services:
       - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas plane
       - FOOTER=Aleksander Bang-Larsen © 2023
     ports:
-      - 8080:3000
+      - 8089:3000
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
