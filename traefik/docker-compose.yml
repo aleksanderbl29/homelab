@@ -44,6 +44,8 @@ services:
 
       - traefik.http.services.traefik.loadbalancer.server.port=8080
       - traefik.http.middlewares.traefik-dash.addprefix.prefix=/dashboard
+      - traefik.http.routers.traefik.middlewares=traefik-dash
+
 
       # - "traefik.enable=true"
       # - "traefik.http.routers.traefik.entrypoints=http"
