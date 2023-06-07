@@ -20,6 +20,9 @@ services:
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    networks:
+      - proxy
+
     labels:
       traefik.enable: true
       traefik.http.routers.uptime.entrypoints: http
@@ -32,6 +35,13 @@ services:
       traefik.http.routers.uptime-secure.service: uptime
       traefik.http.services.uptime.loadbalancer.server.port: 3001
       traefik.docker.network: proxy
+
+
+networks:
+  proxy:
+    external: true
+
+
 
   ###### Virker kun på x86
   # backup:
