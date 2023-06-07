@@ -10,6 +10,7 @@ I am currently running the following services in my homelab
 * Littlelink
 * Jekyll and Chripy
 * Watchtower
+* [Pihole and Unbound in docker](https://github.com/aleksanderbl29/pihole-unbound-docker/)
 ### Tools
 * Cloudflare tunnels
 * Github pages
