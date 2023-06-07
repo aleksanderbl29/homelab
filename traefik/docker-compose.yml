@@ -26,42 +26,42 @@ services:
       - /home/aleksanderbang-larsen/homelab/traefik/data/acme.json:/acme.json
       - /home/aleksanderbang-larsen/homelab/traefik/data/config.yml:/config.yml:ro
     labels:
-      - "traefik.enable:true"
-      - traefik.http.routers.traefik.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)
-      - traefik.http.routers.traefik.entrypoints=http
-      - traefik.http.middlewares.traefik-auth.basicauth.users=${BASIC_AUTH}
+      # - traefik.enable:true
+      # - traefik.http.routers.traefik.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)
+      # - traefik.http.routers.traefik.entrypoints=http
+      # - traefik.http.middlewares.traefik-auth.basicauth.users=${BASIC_AUTH}
 
 
-      - traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)
-      - traefik.http.routers.traefik-secure.entrypoints=https
-      - traefik.http.routers.traefik-secure.tls=true
-      - traefik.http.routers.traefik-secure.service=api@internal
-      - traefik.http.routers.traefik-secure.middlewares=traefik-auth
+      # - traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)
+      # - traefik.http.routers.traefik-secure.entrypoints=https
+      # - traefik.http.routers.traefik-secure.tls=true
+      # - traefik.http.routers.traefik-secure.service=api@internal
+      # - traefik.http.routers.traefik-secure.middlewares=traefik-auth
 
-      - traefik.http.routers.traefik-secure.tls.certresolver=cloudflare
-      - traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk
-      - traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk
+      # - traefik.http.routers.traefik-secure.tls.certresolver=cloudflare
+      # - traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk
+      # - traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk
 
-      - traefik.http.services.traefik.loadbalancer.server.port=8080
-      - traefik.http.middlewares.traefik-dash.addprefix.prefix=/dashboard
-      - traefik.http.routers.traefik.middlewares=traefik-dash
+      # - traefik.http.services.traefik.loadbalancer.server.port=8080
+      # - traefik.http.middlewares.traefik-dash.addprefix.prefix=/dashboard
+      # - traefik.http.routers.traefik.middlewares=traefik-dash
+      # - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
 
-
-      # - "traefik.enable=true"
-      # - "traefik.http.routers.traefik.entrypoints=http"
-      # - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)"
-      # - "traefik.http.middlewares.traefik-auth.basicauth.users=${BASIC_AUTH}"
-      # - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-      # - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
-      # - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
-      # - "traefik.http.routers.traefik-secure.entrypoints=https"
-      # - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)"
-      # - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
-      # - "traefik.http.routers.traefik-secure.tls=true"
-      # - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
-      # - "traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk"
-      # - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
-      # - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)"
+#      - "traefik.http.middlewares.traefik-auth.basicauth.users=${BASIC_AUTH}"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)"
+#      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
 
 networks:
   proxy:
