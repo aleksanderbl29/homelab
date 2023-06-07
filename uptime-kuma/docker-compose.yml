@@ -20,6 +20,18 @@ services:
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    labels:
+      traefik.enable: true
+      traefik.http.routers.uptime.entrypoints: http
+      traefik.http.routers.uptime.rule: Host(`uptime.local.aleksanderbl.dk`)
+      traefik.http.middlewares.uptime-https-redirect.redirectscheme.scheme: https
+      traefik.http.routers.uptime.middlewares: uptime-https-redirect
+      traefik.http.routers.uptime-secure.entrypoints: https
+      traefik.http.routers.uptime-secure.rule: Host(`uptime.local.aleksanderbl.dk`)
+      traefik.http.routers.uptime-secure.tls: true
+      traefik.http.routers.uptime-secure.service: uptime
+      traefik.http.services.uptime.loadbalancer.server.port: 3000
+      traefik.docker.network: proxy
 
   ###### Virker kun på x86
   # backup:
