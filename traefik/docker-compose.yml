@@ -38,10 +38,12 @@ services:
       - traefik.http.routers.traefik-secure.service=api@internal
       - traefik.http.routers.traefik-secure.middlewares=traefik-auth
 
+      - traefik.http.routers.traefik-secure.tls.certresolver=cloudflare
       - traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk
       - traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk
 
       - traefik.http.services.traefik.loadbalancer.server.port=8080
+      - traefik.http.middlewares.traefik-dash.addprefix.prefix=/dashboard
 
       # - "traefik.enable=true"
       # - "traefik.http.routers.traefik.entrypoints=http"
