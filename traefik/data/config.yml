@@ -212,10 +212,10 @@ http:
         scheme: https
         permanent: true
 
-    pihole1-redirect:
-      redirectRegex:
-        regex: "^https?://pihole1.local.aleksanderbl.dk/$"
-        replacement: "https://pihole1.local.aleksanderbl.dk/admin/"
+    # pihole1-redirect:
+    #   redirectRegex:
+    #     regex: "^https?://pihole1.local.aleksanderbl.dk/$"
+    #     replacement: "https://pihole1.local.aleksanderbl.dk/admin/"
 
     default-headers:
       headers:
