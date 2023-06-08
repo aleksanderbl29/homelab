@@ -1,6 +1,6 @@
-# http:
+http:
 #  #region routers
-#   routers:
+  routers:
 #     traefik:
 #       entryPoints:
 #         - "http"
@@ -36,17 +36,17 @@
 #         - https-redirectscheme
 #       tls: {}
 #       service: homebridge
-#     homeassistant:
-#       # For Homeassistant config, check: https://www.home-assistant.io/integrations/http/#reverse-proxies
-#       # This relies on Homeassistant using http. No certs are needed in the Homeassistant config.
-#       entryPoints:
-#         - "https"
-#       rule: "Host(`homeassistant.local.aleksanderbl.dk`)"
-#       middlewares:
-#         - default-headers
-#         - https-redirectscheme
-#       tls: {}
-#       service: homeassistant
+    homeassistant:
+      # For Homeassistant config, check: https://www.home-assistant.io/integrations/http/#reverse-proxies
+      # This relies on Homeassistant using http. No certs are needed in the Homeassistant config.
+      entryPoints:
+        - "https"
+      rule: "Host(`homeassistant.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: homeassistant
 #     syncthing:
 #       entryPoints:
 #         - "https"
@@ -131,7 +131,7 @@
 
 # #endregion
 # #region services
-#   services:
+  services:
 #     traefik:
 #       loadBalancer:
 #         servers:
@@ -152,11 +152,11 @@
 #         servers:
 #           - url: "http://192.168.0.102:10999"
 #         passHostHeader: true
-#     homeassistant:
-#       loadBalancer:
-#         servers:
-#           - url: "http://192.168.0.102:10999"
-#         passHostHeader: true
+    homeassistant:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.107.115:8123"
+        passHostHeader: true
 #     syncthing:
 #       loadBalancer:
 #         servers:
