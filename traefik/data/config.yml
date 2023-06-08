@@ -41,7 +41,7 @@ http:
       # This relies on Homeassistant using http. No certs are needed in the Homeassistant config.
       entryPoints:
         - "https"
-      rule: "Host(`homeassistant.local.aleksanderbl.dk`)"
+      rule: "Host(`ha.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
@@ -207,10 +207,10 @@ http:
 #     addprefix-pihole:
 #       addPrefix:
 #         prefix: "/admin"
-#     https-redirectscheme:
-#       redirectScheme:
-#         scheme: https
-#         permanent: true
+    https-redirectscheme:
+      redirectScheme:
+        scheme: https
+        permanent: true
 
     default-headers:
       headers:
