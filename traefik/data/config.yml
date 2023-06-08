@@ -203,7 +203,7 @@ http:
 #           - url: "http://192.168.0.110:80"
 #         passHostHeader: true
 # #endregion
-#   middlewares:
+  middlewares:
 #     addprefix-pihole:
 #       addPrefix:
 #         prefix: "/admin"
@@ -212,18 +212,18 @@ http:
 #         scheme: https
 #         permanent: true
 
-#     default-headers:
-#       headers:
-#         frameDeny: true
-#         browserXssFilter: true
-#         contentTypeNosniff: true
-#         forceSTSHeader: true
-#         stsIncludeSubdomains: true
-#         stsPreload: true
-#         stsSeconds: 15552000
-#         customFrameOptionsValue: SAMEORIGIN
-#         customRequestHeaders:
-#           X-Forwarded-Proto: https
+    default-headers:
+      headers:
+        frameDeny: true
+        browserXssFilter: true
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 15552000
+        customFrameOptionsValue: SAMEORIGIN
+        customRequestHeaders:
+          X-Forwarded-Proto: https
 
 #     idrac:
 #       headers:
@@ -243,8 +243,8 @@ http:
 #         - "192.168.0.0/16"
 #         - "172.16.0.0/12"
 
-#     secured:
-#       chain:
-#         middlewares:
-#         - default-whitelist
-#         - default-headers
+    secured:
+      chain:
+        middlewares:
+        - default-whitelist
+        - default-headers
