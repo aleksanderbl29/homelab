@@ -1,0 +1,14 @@
+name: Selfhost redeploy
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  Traefik-Config:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+        # Checkout as many commits as needed for the diff
+          fetch-depth: 2
