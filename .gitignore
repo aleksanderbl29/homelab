@@ -48,3 +48,8 @@ acme.json
 # VS Code #
 ######################
 *.vscode*
+
+
+# Portainer #
+######################
+*portainer-compose-unpacker*

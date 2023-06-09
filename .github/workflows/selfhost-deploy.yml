@@ -6,10 +6,10 @@ on:
       - 'main'
 
 jobs:
-  Traefik-Config:
+  GitPull:
     runs-on: self-hosted
     steps:
-      - name: Hello World
+      - name: Update local git
         shell: sh
         run: |
           cd /home/aleksanderbang-larsen/homelab
