@@ -44,7 +44,7 @@ services:
       traefik.http.routers.pihole1.rule: Host(`pihole1.local.aleksanderbl.dk`)
       traefik.http.middlewares.pihole1-https-redirect.redirectscheme.scheme: https
       traefik.http.middlewares.pihole1-admin.addprefix.prefix: /admin
-      traefik.http.routers.pihole1.middlewares: pihole1-admin, pihole1-https-redirect
+      traefik.http.routers.pihole1.middlewares: pihole1-https-redirect, pihole1-admin
       traefik.http.routers.pihole1-secure.entrypoints: https
       traefik.http.routers.pihole1-secure.rule: Host(`pihole1.local.aleksanderbl.dk`)
       traefik.http.routers.pihole1-secure.tls: true
