@@ -116,9 +116,17 @@ jobs:
         # Set the output named "docker-compose-changed"
         Write-Host "::set-output name=docker-compose-changed::$HasDiff"
 
-    - name: Sleep for 30 seconds
-      run: sleep 30s
-      shell: bash
+    # - name: Sleep for 30 seconds
+    #   run: sleep 30s
+    #   shell: bash
+
+    - name: Wait for git pull to succeed
+      uses: lewagon/wait-on-check-action@v1.3.1
+      with:
+        ref: main
+        check-name: Update local git
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        wait-interval: 20
     # Run the step only if "docker-compose-changed" equals "True"
     - uses: joelwmale/webhook-action@2.3.2
       # steps.<step_id>.outputs.<output name>
