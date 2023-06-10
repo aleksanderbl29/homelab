@@ -124,7 +124,7 @@ jobs:
       uses: lewagon/wait-on-check-action@v1.3.1
       with:
         ref: main
-        check-name: Update local git
+        check-name: GitPull
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         wait-interval: 20
     # Run the step only if "docker-compose-changed" equals "True"
