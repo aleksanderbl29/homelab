@@ -5,7 +5,7 @@ on:
     types: [opened, edited, milestoned, demilestoned, closed, reopened, assigned, unassigned, labeled, unlabeled]
   push:
     branches:
-      - master
+      - main
 
 jobs:
   auto-issue:
