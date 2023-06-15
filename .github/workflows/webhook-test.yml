@@ -68,7 +68,7 @@ jobs:
       run: echo $output
     - uses: actions/checkout@v3
     - uses: joelwmale/webhook-action@2.3.2
-      if: $output == 'littlelink-server/docker-compose.yml'
+      if: env.output == 'littlelink-server/docker-compose.yml'
       with:
         url: ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
       env:
