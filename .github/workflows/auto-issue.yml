@@ -7,6 +7,11 @@ on:
     branches:
       - main
 
+permissions: # Optional
+  issues: write
+  pull-requests: write
+  contents: write
+
 jobs:
   auto-issue:
     runs-on: ubuntu-latest
