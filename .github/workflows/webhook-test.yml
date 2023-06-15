@@ -38,7 +38,7 @@ jobs:
     - name: Check for changes
       id: check_for_changes
       run: |
-        git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+        git fetch --depth=2 origin +refs/tags/*:refs/tags/*
         git diff --name-only ${{ github.event.before }} ${{ github.event.after }} > changes.txt
         cat changes.txt
         echo "::set-output name=changes::$(cat changes.txt)"
