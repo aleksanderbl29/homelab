@@ -1,4 +1,4 @@
-name: Selfhost redeploy
+name: Portainer and Traefik Deployment
 on:
   workflow_dispatch:
   push:
@@ -8,6 +8,10 @@ on:
       - '.github/workflows/auto-issue.yml'
       - '.github/workflows/webhook-call.yml'
       - '.github/dependabot.yml'
+    paths:
+      - 'portainer-traefik/**'
+      - 'traefik/**'
+      - '.github/**'
 
 jobs:
   GitPull:
