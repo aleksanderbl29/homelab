@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - 'main'
+    paths-ignore:
+      - '.github/workflows/auto-issue.yml'
+      - '.github/workflows/selfhost-deploy.yml'
 
 jobs:
   Littlelink-Server:
