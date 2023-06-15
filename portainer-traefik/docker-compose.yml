@@ -52,6 +52,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
+    networks:
+      - proxy
     ports:
       - 9000:9000
       - 9443:9443
@@ -63,7 +65,7 @@ services:
       traefik.http.routers.portainer.middlewares: portainer-https-redirect
       traefik.http.routers.portainer-secure.entrypoints: https
       traefik.http.routers.portainer-secure.rule: Host(`portainer.local.aleksanderbl.dk`)
-      # traefik.http.routers.portainer-secure.tls: true
+      traefik.http.routers.portainer-secure.tls: true
       traefik.http.routers.portainer-secure.service: portainer
       traefik.http.services.portainer.loadbalancer.server.port: 9443
       traefik.docker.network: proxy
