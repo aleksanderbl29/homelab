@@ -47,6 +47,15 @@ http:
         - https-redirectscheme
       tls: {}
       service: homeassistant
+    ha_observer:
+      entryPoints:
+        - "https"
+      rule: "Host(`ha_observer.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: ha_observer
 #     syncthing:
 #       entryPoints:
 #         - "https"
@@ -157,6 +166,10 @@ http:
         servers:
           - url: "http://192.168.107.115:8123"
         passHostHeader: true
+    ha_observer:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.107.115:4357"
 #     syncthing:
 #       loadBalancer:
 #         servers:
