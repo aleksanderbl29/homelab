@@ -47,6 +47,7 @@ services:
   portainer:
     image: portainer/portainer-ee:latest
     command: -H unix:///var/run/docker.sock
+    container_name: portainer
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
