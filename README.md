@@ -8,6 +8,11 @@ This is the working repository for my homelab
 I am currently working on the following issues
 <!-- issueTable -->
 
+| Title                                                                                               |         Status          |                                                           Assignee                                                            | Body                                                                                                                                                                                   |
+| :-------------------------------------------------------------------------------------------------- | :---------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="https://github.com/aleksanderbl29/homelab/issues/6">Maybe connect webhook workflows?</a>   | :eight_spoked_asterisk: | <a href="https://github.com/aleksanderbl29"><img src="https://avatars.githubusercontent.com/u/73799306?v=4" width="20" /></a> | Dont know if this is possible or even worth it<br /><br />Would connect the original workflow to trigger others on the self hosted runner. To save compute on the self hosted<br />... |
+| <a href="https://github.com/aleksanderbl29/homelab/issues/5">Change portainer webhook structure</a> | :eight_spoked_asterisk: | <a href="https://github.com/aleksanderbl29"><img src="https://avatars.githubusercontent.com/u/73799306?v=4" width="20" /></a> | - [ ] Update webhook secrets to LAN webhook URL<br />- [ ] Add actions workflow to run on self hosted runner with webhooks<br />- [ ] #6                                               |
+
 <!-- issueTable -->
 
 
