@@ -1,0 +1,27 @@
+name: Automatic issue list in Readme
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, edited, milestoned, demilestoned, closed, reopened, assigned, unassigned, labeled, unlabeled]
+
+jobs:
+  auto-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: rewriteReadme
+        uses: seed-of-apricot/issue-list-readme@v1.1.0
+        with:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          pattern: '<!-- issueTable -->'
+          labels: 'Working on it'
+          state: 'open'
+      - name: add
+        run: git add README.md
+      - name: commit
+        run: git commit -m "Automatic issue list in Readme"
+      - name: push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

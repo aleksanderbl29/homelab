@@ -4,9 +4,11 @@
 
 This is the working repository for my homelab
 
-## Current To-Do
-- [ ]  Redo webhooks so that portainer does not have to be exposed to the interwebs
-- [ ] Update actions workflow to use local webhooks instead
+## Current projects
+<!-- issueTable -->
+
+<!-- issueTable -->
+
 
 ## Software
 I am currently running the following services in my homelab
