@@ -61,7 +61,7 @@ services:
       traefik.http.routers.portainer-secure.rule: Host(`portainer.local.aleksanderbl.dk`)
       traefik.http.routers.portainer-secure.tls: true
       traefik.http.routers.portainer-secure.service: portainer
-      traefik.http.services.portainer.loadbalancer.server.port: 9000
+      traefik.http.services.portainer.loadbalancer.server.port: 9443
       traefik.docker.network: proxy
 
 networks:
