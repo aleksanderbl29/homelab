@@ -20,7 +20,10 @@ jobs:
       - name: add
         run: git add README.md
       - name: commit
-        run: git commit -m "Automatic issue list in Readme"
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          message: 'Update README.md with latest issues'
       - name: push
         uses: ad-m/github-push-action@master
         with:
