@@ -33,6 +33,8 @@ jobs:
 
   littlelink-server-changes:
     runs-on: ubuntu-latest
+    outputs:
+      changes: ${{ steps.check_for_changes.outputs.changes }}
     steps:
     - uses: actions/checkout@v3
     - name: Check for changes
@@ -43,84 +45,53 @@ jobs:
         git diff --name-only ${{ github.event.before }} ${{ github.event.after }} > changes.txt
         cat changes.txt
         echo "::set-output name=changes::$(cat changes.txt)"
+    - shell: sh
+      # Give an id to the step, so we can reference it later
+      id: check_file_changed
+      run: |
+        # Diff HEAD with the previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+
+        # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+        $SourceDiff = $diff | Where-Object { $_ -match '^littlelink-server/' -and $_ -match '.yml$' }
+        $HasDiff = $SourceDiff.Length -gt 0
+
+        # Set the output named "docker-compose-changed"
+        Write-Host "::set-output name=docker-compose-changed::$HasDiff"
+
   littlelink-redeploy:
     runs-on: self-hosted
     needs: littlelink-server-changes
     steps:
+    - env:
+        output: ${{needs.littlelink-server-changes.outputs.changes}}
+      run: echo $output
     - uses: actions/checkout@v3
     - uses: joelwmale/webhook-action@2.3.2
-      if: steps.check_for_changes.outputs.changes == 'littlelink-server/docker-compose.yml'
+      if: $output == 'littlelink-server/docker-compose.yml'
       with:
         url: ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
       env:
         LITTLELINK_PORTAINER_WEBHOOK: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
 
 
-  #   # Run the step only if "docker-compose-changed" equals "True"
-  #   - uses: joelwmale/webhook-action@2.3.2
-  #     # steps.<step_id>.outputs.<output name>
-  #     if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
-  #     with:
-  #       url: ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
-  #     env:
-  #       LITTLELINK_PORTAINER_WEBHOOK: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
-
-  # Uptime-Kuma:
-  #   runs-on: self-hosted
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #     with:
-  #       # Checkout as many commits as needed for the diff
-  #       fetch-depth: 2
-  #   - shell: sh
-  #     # Give an id to the step, so we can reference it later
-  #     id: check_file_changed
-  #     run: |
-  #       # Diff HEAD with the previous commit
-  #       $diff = git diff --name-only HEAD^ HEAD
-
-  #       # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-  #       $SourceDiff = $diff | Where-Object { $_ -match '^uptime-kuma/' -and $_ -match '.yml$' }
-  #       $HasDiff = $SourceDiff.Length -gt 0
-
-  #       # Set the output named "docker-compose-changed"
-  #       Write-Host "::set-output name=docker-compose-changed::$HasDiff"
-
-  #   # Run the step only if "docker-compose-changed" equals "True"
-  #   - uses: joelwmale/webhook-action@2.3.2
-  #     # steps.<step_id>.outputs.<output name>
-  #     if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
-  #     with:
-  #         url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
-  #     env:
-  #       UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_SECRET}}
-
-  # Watchtower:
-  #   runs-on: self-hosted
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #     with:
-  #       # Checkout as many commits as needed for the diff
-  #       fetch-depth: 2
-  #   - shell: sh
-  #     # Give an id to the step, so we can reference it later
-  #     id: check_file_changed
-  #     run: |
-  #       # Diff HEAD with the previous commit
-  #       $diff = git diff --name-only HEAD^ HEAD
-
-  #       # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-  #       $SourceDiff = $diff | Where-Object { $_ -match '^watchtower/' -and $_ -match '.yml$' }
-  #       $HasDiff = $SourceDiff.Length -gt 0
-
-  #       # Set the output named "docker-compose-changed"
-  #       Write-Host "::set-output name=docker-compose-changed::$HasDiff"
-
-  #   # Run the step only if "docker-compose-changed" equals "True"
-  #   - uses: joelwmale/webhook-action@2.3.2
-  #     # steps.<step_id>.outputs.<output name>
-  #     if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
-  #     with:
-  #         url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
-  #     env:
-  #       WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
+        # jobs:
+        #   job1:
+        #     runs-on: ubuntu-latest
+        #     # Map a step output to a job output
+        #     outputs:
+        #       output1: ${{ steps.step1.outputs.test }}
+        #       output2: ${{ steps.step2.outputs.test }}
+        #     steps:
+        #       - id: step1
+        #         run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        #       - id: step2
+        #         run: echo "test=world" >> "$GITHUB_OUTPUT"
+        #   job2:
+        #     runs-on: ubuntu-latest
+        #     needs: job1
+        #     steps:
+        #       - env:
+        #           OUTPUT1: ${{needs.job1.outputs.output1}}
+        #           OUTPUT2: ${{needs.job1.outputs.output2}}
+        #         run: echo "$OUTPUT1 $OUTPUT2"
