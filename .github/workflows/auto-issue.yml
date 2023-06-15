@@ -27,6 +27,7 @@ jobs:
         with:
           author_name: GitHub Actions
           message: 'Update README.md with latest issues'
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - name: push
         uses: ad-m/github-push-action@master
         with:
