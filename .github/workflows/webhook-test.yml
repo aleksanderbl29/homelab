@@ -46,30 +46,27 @@ jobs:
   #       echo "changed files: ${{ steps.changed-files.outputs.files }}"
   #       echo "::set-output name=changes::${{ steps.changed-files.outputs.files }}"
 
-  littlelink-redeploy:
+  redeploy:
     runs-on: self-hosted
     steps:
     - uses: joelwmale/webhook-action@2.3.2
+      name: littlelink-server
       with:
         url: ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
       env:
         LITTLELINK_PORTAINER_WEBHOOK: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
-  uptime-kuma-redeploy:
-    runs-on: self-hosted
-    steps:
     - uses: joelwmale/webhook-action@2.3.2
+      name: uptime-kuma
       with:
         url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
       env:
         UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_SECRET}}
-  watchtower-redeploy:
-    runs-on: self-hosted
-    steps:
-      - uses: joelwmale/webhook-action@2.3.2
-        with:
-            url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
-        env:
-          WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
+    - uses: joelwmale/webhook-action@2.3.2
+      name: watchtower
+      with:
+          url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
+      env:
+        WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
 
 
         # jobs:
