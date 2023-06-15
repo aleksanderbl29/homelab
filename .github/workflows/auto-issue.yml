@@ -32,7 +32,7 @@ jobs:
         with:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           pattern: '<!-- issueTable -->'
-          # labels: 'Working on it'
+          labels: 'Working on it'
           state: 'open'
       - name: add
         run: git add README.md
