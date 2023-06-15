@@ -8,6 +8,7 @@ on:
       - '.github/workflows/selfhost-deploy.yml'
       - '.github/dependabot.yml'
       - 'portainer-traefik/**'
+      - '.github/workflows/webhook-test.yml'
 
 jobs:
   Littlelink-Server:
