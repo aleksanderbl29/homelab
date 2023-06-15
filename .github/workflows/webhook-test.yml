@@ -31,33 +31,45 @@ jobs:
   #       # Set the output named "docker-compose-changed"
   #       Write-Host "::set-output name=docker-compose-changed::$HasDiff"
 
-  littlelink-server-changes:
-    runs-on: ubuntu-latest
-    outputs:
-      changes: ${{ steps.check_for_changes.outputs.changes }}
-    steps:
-    - uses: actions/checkout@v3
-    - name: Get changed files
-      id: changed-files
-      uses: tj-actions/changed-files@v36
-    - name: output changed files
-      id: check_for_changes
-      run: |
-        echo "changed files: ${{ steps.changed-files.outputs.files }}"
-        echo "::set-output name=changes::${{ steps.changed-files.outputs.files }}"
+  # littlelink-server-changes:
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     changes: ${{ steps.check_for_changes.outputs.changes }}
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Get changed files
+  #     id: changed-files
+  #     uses: tj-actions/changed-files@v36
+  #   - name: output changed files
+  #     id: check_for_changes
+  #     run: |
+  #       echo "changed files: ${{ steps.changed-files.outputs.files }}"
+  #       echo "::set-output name=changes::${{ steps.changed-files.outputs.files }}"
 
   littlelink-redeploy:
     runs-on: self-hosted
-    needs: littlelink-server-changes
     steps:
-    - uses: actions/checkout@v3
     - uses: joelwmale/webhook-action@2.3.2
-      # if:  == 'littlelink-server/docker-compose.yml'
-      if: ${{ needs.littlelink-server-changes.outputs.changes }} == 'littlelink-server/docker-compose.yml'
       with:
         url: ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
       env:
         LITTLELINK_PORTAINER_WEBHOOK: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
+  uptime-kuma-redeploy:
+    runs-on: self-hosted
+    steps:
+    - uses: joelwmale/webhook-action@2.3.2
+      with:
+        url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
+      env:
+        UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_SECRET}}
+  watchtower-redeploy:
+    runs-on: self-hosted
+    steps:
+      - uses: joelwmale/webhook-action@2.3.2
+        with:
+            url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
+        env:
+          WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
 
 
         # jobs:
