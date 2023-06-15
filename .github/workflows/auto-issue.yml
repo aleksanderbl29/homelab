@@ -13,6 +13,16 @@ permissions: # Optional
   contents: write
 
 jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/users/aleksanderbl29/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          labeled: 'Working on it'
   auto-issue:
     runs-on: ubuntu-latest
     steps:
