@@ -4,14 +4,10 @@ on:
   push:
     branches:
       - 'main'
-    paths-ignore:
-      - '.github/workflows/auto-issue.yml'
-      - '.github/workflows/webhook-call.yml'
-      - '.github/dependabot.yml'
     paths:
       - 'portainer-traefik/**'
       - 'traefik/**'
-      - '.github/**'
+      - '.github/workflows/selfhost-deploy.yml'
 
 jobs:
   GitPull:
