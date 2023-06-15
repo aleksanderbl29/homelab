@@ -5,7 +5,7 @@ on:
     types: [opened, edited, milestoned, demilestoned, closed, reopened, assigned, unassigned, labeled, unlabeled]
   push:
     paths:
-      - '.github/workflows/**'
+      - '.github/workflows/auto-issue.yml'
 
 permissions: # Optional
   issues: write
