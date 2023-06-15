@@ -53,18 +53,21 @@ jobs:
       name: littlelink-server
       with:
         url: ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
+        insecure: true
       env:
         LITTLELINK_PORTAINER_WEBHOOK: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
     - uses: joelwmale/webhook-action@2.3.2
       name: uptime-kuma
       with:
         url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
+        insecure: true
       env:
         UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_SECRET}}
     - uses: joelwmale/webhook-action@2.3.2
       name: watchtower
       with:
-          url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
+        url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
+        insecure: true
       env:
         WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
 
