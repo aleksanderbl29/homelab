@@ -7,6 +7,7 @@ on:
     paths-ignore:
       - '.github/workflows/auto-issue.yml'
       - '.github/workflows/webhook-call.yml'
+      - '.github/dependabot.yml'
 
 jobs:
   GitPull:

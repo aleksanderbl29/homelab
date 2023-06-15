@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '.github/workflows/auto-issue.yml'
       - '.github/workflows/selfhost-deploy.yml'
+      - '.github/dependabot.yml'
 
 jobs:
   Littlelink-Server:
