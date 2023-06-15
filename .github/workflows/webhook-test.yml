@@ -1,4 +1,4 @@
-name: Portainer Redeploy w. Webhook
+name: testing
 on:
   push:
     branches:
