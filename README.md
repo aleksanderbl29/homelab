@@ -5,6 +5,7 @@
 This is the working repository for my homelab
 
 ## Current projects
+I am currently working on the following issues
 <!-- issueTable -->
 
 <!-- issueTable -->
