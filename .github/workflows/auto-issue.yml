@@ -1,4 +1,4 @@
-name: Automatic issue list in Readme
+name: Automatic issue handling
 on:
   workflow_dispatch:
   issues:
