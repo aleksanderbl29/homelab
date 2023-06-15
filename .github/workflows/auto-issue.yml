@@ -3,9 +3,6 @@ on:
   workflow_dispatch:
   issues:
     types: [opened, edited, milestoned, demilestoned, closed, reopened, assigned, unassigned, labeled, unlabeled]
-  push:
-    branches:
-      - main
 
 permissions: # Optional
   issues: write
