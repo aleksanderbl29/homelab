@@ -18,4 +18,13 @@ jobs:
         run: |
           cd /home/aleksanderbang-larsen/homelab
           git pull
-
+  PortainerDeploy:
+    runs-on: self-hosted
+    needs: GitPull
+    steps:
+      - name: Deploy Portainer
+        shell: sh
+        run: |
+          cd
+          cd /home/aleksanderbang-larsen/homelab/portainer-traefik
+          docker-compose up -d --force-recreate
