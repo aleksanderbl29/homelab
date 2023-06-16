@@ -24,5 +24,5 @@ jobs:
         shell: sh
         run: |
           cd
-          cd /homelab/oci
+          cd homelab/oci
           docker-compose up -d --force-recreate
