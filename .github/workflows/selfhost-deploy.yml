@@ -10,7 +10,7 @@ on:
       - '.github/workflows/selfhost-deploy.yml'
 
 jobs:
-  GitPull:
+  GitPullandRedeploy:
     runs-on: self-hosted
     steps:
       - name: Update local git
@@ -18,11 +18,7 @@ jobs:
         run: |
           cd /home/aleksanderbang-larsen/homelab
           git pull
-  RedeployStack:
-    runs-on: self-hosted
-    needs: GitPull
-    steps:
-      - name: Deploy Portainer
+      - name: Deploy stack
         shell: sh
         run: |
           cd
