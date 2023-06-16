@@ -12,6 +12,10 @@ name: Lint Code Base
 on:
   push:
     branches: main
+    paths:
+      - '**.yaml'
+      - '**.yml'
+      - '.github/workflows/linter.yml'
   pull_request:
     branches: main
 
