@@ -39,7 +39,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'Update README.md with latest issues'
-          commit_options: '--no-verify'
+          commit_options: '--no-verify --fast-forward'
       - name: push
         uses: ad-m/github-push-action@master
         with:
