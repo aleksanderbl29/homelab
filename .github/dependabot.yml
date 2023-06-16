@@ -8,12 +8,9 @@ updates:
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "daily"
       # Check for npm updates at 9am UTC
       time: "14:00"
-      day: "friday"
-    reviewers:
-      - aleksanderbl29
     assignees:
       - aleksanderbl29
   - package-ecosystem: "docker" # See documentation for possible values
@@ -22,8 +19,6 @@ updates:
       interval: "weekly"
       # Check for npm updates at 9am UTC
       time: "14:00"
-      day: "friday"
-    reviewers:
-      - aleksanderbl29
+      day: "thursday"
     assignees:
       - aleksanderbl29
