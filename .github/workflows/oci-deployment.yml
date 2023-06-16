@@ -13,6 +13,7 @@ jobs:
       - name: git pull
         shell: sh
         run: |
+          cd
           cd /homelab/
           git pull
   deploy:
@@ -22,5 +23,6 @@ jobs:
       - name: deploy
         shell: sh
         run: |
+          cd
           cd /homelab/oci
           docker-compose up -d --force-recreate
