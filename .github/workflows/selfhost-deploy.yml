@@ -28,3 +28,4 @@ jobs:
         shell: sh
         run: |
           nslookup traefik-dashboard.local.aleksanderbl.dk 127.0.0.1
+          nslookup portainer.local.aleksanderbl.dk 127.0.0.1
