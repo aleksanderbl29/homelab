@@ -1,0 +1,25 @@
+name: OCI-Deployment
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'oci/*'
+jobs:
+  git_pull:
+    runs-on: oracle-cloud
+    steps:
+      - name: git pull
+        shell: sh
+        run: |
+          cd /homelab
+          git pull
+  deploy:
+    runs-on: oracle-cloud
+    needs: git_pull
+    steps:
+      - name: deploy
+        shell: sh
+        run: |
+          cd /homelab/oci
+          docker-compose up -d --force-recreate
