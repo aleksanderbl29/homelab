@@ -50,7 +50,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - shell: sh
-      run: curl ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
+      run: curl -k ${{env.LITTLELINK_PORTAINER_WEBHOOK}}
       name: littlelink-server
       env:
         LITTLELINK_PORTAINER_WEBHOOK: ${{secrets.LITTLELINK_PORTAINER_WEBHOOK}}
