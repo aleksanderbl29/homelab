@@ -18,7 +18,7 @@ jobs:
         run: |
           cd /home/aleksanderbang-larsen/homelab
           git pull
-  PortainerDeploy:
+  RedeployStack:
     runs-on: self-hosted
     needs: GitPull
     steps:
@@ -28,3 +28,7 @@ jobs:
           cd
           cd /home/aleksanderbang-larsen/homelab/portainer-traefik
           docker-compose up -d --force-recreate
+      - name: Check DNS
+        shell: sh
+        run: |
+          nslookup traefik-dashboard.local.aleksanderbl.dk 127.0.0.1
