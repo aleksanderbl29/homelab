@@ -12,7 +12,7 @@ jobs:
       - name: git pull
         shell: sh
         run: |
-          cd /homelab
+          cd /homelab/
           git pull
   deploy:
     runs-on: oracle-cloud
