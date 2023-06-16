@@ -17,7 +17,7 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
   #     - name: checkout
-  #       uses: actions/checkout@v2
+  #       uses: actions/checkout@v3
   #     - uses: actions/add-to-project@v0.5.0
   #       with:
   #         project-url: https://github.com/users/aleksanderbl29/projects/1
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: rewriteReadme
         uses: seed-of-apricot/issue-list-readme@v1.1.0
         with:
