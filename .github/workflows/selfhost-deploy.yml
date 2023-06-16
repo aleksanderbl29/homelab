@@ -11,7 +11,7 @@ on:
 
 jobs:
   GitPullandRedeploy:
-    runs-on: self-hosted
+    runs-on: pihole1
     steps:
       - name: Update local git
         shell: sh
