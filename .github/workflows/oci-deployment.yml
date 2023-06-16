@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 'oci/*'
+      - '.github/workflows/oci-deployment.yml'
 jobs:
   git_pull:
     runs-on: oracle-cloud
