@@ -56,6 +56,15 @@ http:
         - https-redirectscheme
       tls: {}
       service: ha-observer
+    oci-uptime:
+      entryPoints:
+        - "https"
+      rule: "Host(`oci-uptime.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: oci-uptime
 #     syncthing:
 #       entryPoints:
 #         - "https"
@@ -170,6 +179,10 @@ http:
       loadBalancer:
         servers:
           - url: "http://192.168.107.115:4357"
+    oci-uptime:
+      loadBalancer:
+        servers:
+          - url: "http://skjgldfjglkdfjgoci-uptime.aleksanderbl.dk"
 #     syncthing:
 #       loadBalancer:
 #         servers:
