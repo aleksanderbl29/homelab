@@ -1,5 +1,5 @@
 # Aleksander's Homelab
-[![Redeploy Docker Containers](https://github.com/aleksanderbl29/homelab/actions/workflows/webhook-call.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/webhook-call.yml) [![Selfhost redeploy](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml) [![OCI-Deployment](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml)
+[![Selfhost redeploy](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml) [![OCI-Deployment](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml)
 
 
 This is the working repository for my homelab
