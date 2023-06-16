@@ -4,21 +4,6 @@
 
 This is the working repository for my homelab
 
-## Current projects
-I am currently working on the following issues
-<!-- issueTable -->
-
-| Title                                                                                               |         Status          | Assignee | Body                                                                                                                                                                                   |
-| :-------------------------------------------------------------------------------------------------- | :---------------------: | :------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <a href="https://github.com/aleksanderbl29/homelab/issues/6">Maybe connect webhook workflows?</a>   | :eight_spoked_asterisk: |          | Dont know if this is possible or even worth it<br /><br />Would connect the original workflow to trigger others on the self hosted runner. To save compute on the self hosted<br />... |
-| <a href="https://github.com/aleksanderbl29/homelab/issues/5">Change portainer webhook structure</a> | :eight_spoked_asterisk: |          | - [x] Update webhook secrets to LAN webhook URL- [ ] Add actions workflow to run on self hosted runner with webhooks                                                                   |
-                                                                                                                                             - [ ] #6                                                                                                                                                                                
-                                                                                                                                             - [x] Add portainer DNS to pihole                                                                                                                                                       
-                                                                                                                                             - [x] #7                                                                                                                                                                                
-
-<!-- issueTable -->
-
-
 ## Software
 I am currently running the following services in my homelab
 ### Services
@@ -41,3 +26,7 @@ You can find it on [docs.aleksanderbl.dk](https://docs.aleksanderbl.dk) and [my 
 My homelab currently consists of the following devices:
 * Raspberry PI 3 Model B v1.2
 * Old Macbook Air
+
+## Hosting
+In addition to my homelab hardware I also use the Oracle Cloud to run some monitoring of my external services
+* Oracle Cloud
