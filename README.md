@@ -28,5 +28,6 @@ My homelab currently consists of the following devices:
 * Old Macbook Air
 
 ## Hosting
-In addition to my homelab hardware I also use the Oracle Cloud to run some monitoring of my external services
 * Oracle Cloud
+  * Monitoring
+  * Self-hosted Github Actions runnner
