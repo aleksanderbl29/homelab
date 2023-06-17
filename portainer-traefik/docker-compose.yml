@@ -55,7 +55,7 @@ services:
     networks:
       - proxy
     ports:
-      - 9000:9000
+#      - 9000:9000
       - 9443:9443
     labels:
       traefik.enable: true
