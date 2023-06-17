@@ -1,5 +1,5 @@
 # Aleksander's Homelab
-[![Selfhost redeploy](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml) [![OCI-Deployment](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml) [![YAML Lint](https://github.com/aleksanderbl29/homelab/actions/workflows/linter.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/linter.yml)
+[![Docker-Deployment](https://github.com/aleksanderbl29/homelab/actions/workflows/portainer-deploy.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/portainer-deploy.yml) [![Selfhost redeploy](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml) [![OCI-Deployment](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml) [![YAML Lint](https://github.com/aleksanderbl29/homelab/actions/workflows/linter.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/linter.yml)
 
 
 This is the working repository for my homelab
