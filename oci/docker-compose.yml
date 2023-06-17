@@ -31,7 +31,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - TZ=Europe/Copenhagen
-      - WATCHTOWER_POLL_INTERVAL=3600
+      - WATCHTOWER_POLL_INTERVAL=36000
       - WATCHTOWER_NOTIFICATIONS=slack
       - WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL=${notifi_webhook}
     restart: unless-stopped
