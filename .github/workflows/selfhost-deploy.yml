@@ -1,4 +1,4 @@
-name: Portainer and Traefik Deployment
+name: Portainer-Traefik Deploy
 on:
   workflow_dispatch:
   push:
