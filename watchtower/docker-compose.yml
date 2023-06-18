@@ -1,4 +1,5 @@
 version:  "3"
+
 services:
   watchtower:
     image: containrrr/watchtower
@@ -15,3 +16,9 @@ services:
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
