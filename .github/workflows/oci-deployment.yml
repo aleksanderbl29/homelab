@@ -1,5 +1,6 @@
 name: OCI-Deployment
 on:
+  pull_request:
   push:
     branches:
       - main
