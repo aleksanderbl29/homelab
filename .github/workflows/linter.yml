@@ -27,7 +27,7 @@ jobs:
     # Name the Job
     name: Lint Code Base
     # Set the agent to run on
-    runs-on: oracle-cloud or ubuntu-latest
+    runs-on: ubuntu-latest
 
     ############################################
     # Grant status permission for MULTI_STATUS #
