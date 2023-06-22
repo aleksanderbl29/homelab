@@ -56,6 +56,8 @@ services:
       - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,THESTUDENTTRAVELLER
       - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas plane
       - FOOTER=Aleksander Bang-Larsen © 2023
+      - SKIP_HEALTH_CHECK_LOGS=true
+      - GA_TRACKING=ID=${GA_TRACKING_ID}
     ports:
       - 8089:3000
     restart: unless-stopped
