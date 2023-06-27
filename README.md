@@ -2,7 +2,6 @@
 
 [![Local Docker](https://github.com/aleksanderbl29/homelab/actions/workflows/portainer-deploy.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/portainer-deploy.yml) [![Portainer and Traefik](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/selfhost-deploy.yml) [![OCI](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/oci-deployment.yml) [![YAML Lint](https://github.com/aleksanderbl29/homelab/actions/workflows/linter.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/linter.yml)
 
-
 This is the working repository for my homelab
 
 ## Software
