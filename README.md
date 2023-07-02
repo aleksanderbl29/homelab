@@ -21,6 +21,7 @@ I am currently running the following services in my homelab
 
 * Cloudflare tunnels
 * Github pages
+* Renovate bot
 
 ## Personal docs
 
