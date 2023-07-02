@@ -2,7 +2,7 @@ version: '3'
 
 services:
   traefik:
-    image: traefik:latest
+    image: traefik:v2.10.3
     container_name: traefik
     restart: unless-stopped
     security_opt:
@@ -43,6 +43,7 @@ services:
       - "traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk"
       - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
       - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "com.centurylinklabs.watchtower.monitor-only=true"
 
 networks:
   proxy:
