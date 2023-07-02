@@ -36,6 +36,8 @@ services:
       traefik.http.services.uptime.loadbalancer.server.port: 3001
       traefik.docker.network: proxy
 
+      com.centurylinklabs.watchtower.monitor-only: true
+
 
 networks:
   proxy:
