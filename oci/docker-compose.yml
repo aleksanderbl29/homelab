@@ -6,7 +6,7 @@ volumes:
 
 services:
   uptimekuma:
-    image: louislam/uptime-kuma:latest
+    image: louislam/uptime-kuma:1.22.0
     container_name: uptimekuma
     hostname: uptimekuma
     ## Expose these ports for local access to GUI
@@ -22,9 +22,11 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
+    labels:
+      com.centurylinklabs.watchtower.monitor-only: true
 
   watchtower:
-    image: containrrr/watchtower
+    image: containrrr/watchtower:1.5.3
     container_name: watchtower-oci
     hostname: oci-watchtower
     volumes:
@@ -39,6 +41,8 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
+    labels:
+      com.centurylinklabs.watchtower.monitor-only: true
 
 networks:
   proxy:

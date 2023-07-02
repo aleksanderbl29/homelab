@@ -6,7 +6,7 @@ volumes:
 
 services:
   uptimekuma:
-    image: louislam/uptime-kuma:latest
+    image: louislam/uptime-kuma:1.22.0
     container_name: uptimekuma
     hostname: uptimekuma
     ## Expose these ports for local access to GUI

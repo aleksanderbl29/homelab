@@ -2,7 +2,7 @@ version: '3'
 
 services:
   traefik:
-    image: traefik:latest
+    image: traefik:v2.10.3
     container_name: traefik
     restart: unless-stopped
     security_opt:
@@ -43,9 +43,10 @@ services:
       - "traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk"
       - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
       - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "com.centurylinklabs.watchtower.monitor-only=true"
 
   portainer:
-    image: portainer/portainer-ee:latest
+    image: portainer/portainer-ee:2.18.3
     command: -H unix:///var/run/docker.sock
     container_name: portainer
     restart: always
@@ -69,6 +70,7 @@ services:
       traefik.http.routers.portainer-secure.service: portainer
       traefik.http.services.portainer.loadbalancer.server.port: 9000
       traefik.docker.network: proxy
+      com.centurylinklabs.watchtower.monitor-only: true
 
 networks:
   proxy:

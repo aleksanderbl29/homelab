@@ -2,7 +2,7 @@ version:  "3"
 
 services:
   watchtower:
-    image: containrrr/watchtower
+    image: containrrr/watchtower:1.5.3
     container_name: watchtower-monitor
     hostname: watchtower
     volumes:
@@ -18,6 +18,8 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
+    labels:
+      com.centurylinklabs.watchtower.monitor-only: true
 
 networks:
   proxy:
