@@ -2,7 +2,7 @@
 version: '3'
 services:
   little-link:
-    image: ghcr.io/techno-tim/littlelink-server:sha256:d89489c60073ceddeda7541a1691188eee9c63284e64dcbfae12889ca4fbf6f6
+    image: ghcr.io/techno-tim/littlelink-server:latest
     container_name: littlelink-server
     hostname: littlelink-server
     environment:
