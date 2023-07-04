@@ -19,8 +19,6 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
-    # labels:
-      # com.centurylinklabs.watchtower.monitor-only: true
 
 networks:
   proxy:
