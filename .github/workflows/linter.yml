@@ -4,7 +4,7 @@
 ## Super Linter GitHub Actions ##
 #################################
 #################################
-name: YAML Lint
+name: Super-Linter - YAML Lint
 
 #############################
 # Start the job on all push #
