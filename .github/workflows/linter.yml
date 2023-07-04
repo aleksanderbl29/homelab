@@ -10,14 +10,15 @@ name: Super-Linter - YAML Lint
 # Start the job on all push #
 #############################
 on:
-  push:
-    branches: main
-    paths:
-      - '**.yaml'
-      - '**.yml'
-      - '.github/workflows/linter.yml'
-  pull_request:
-    branches: main
+  # push:
+  #   branches: main
+  #   paths:
+  #     - '**.yaml'
+  #     - '**.yml'
+  #     - '.github/workflows/linter.yml'
+  # pull_request:
+  #   branches: main
+  workflow_dispatch:
 
 ###############
 # Set the Job #
