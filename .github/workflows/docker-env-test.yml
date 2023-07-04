@@ -9,9 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Git pull
+      - name: git pull
         run: |
           git pull origin main
+      - name: setup docker environment
+        run: |
+          docker network create proxy
       - name: littlelink
         run: |
           cd littlelink-server && docker-compose up -d
