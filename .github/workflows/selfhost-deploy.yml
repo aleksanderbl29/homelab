@@ -1,3 +1,4 @@
+---
 name: Portainer-Traefik Deploy
 'on':
   push:
