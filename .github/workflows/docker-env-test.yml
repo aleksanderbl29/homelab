@@ -1,0 +1,26 @@
+name: Docker-Test
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Git pull
+        run: |
+          git pull
+      - name: littlelink
+        run: |
+          cd littlelink-server && docker-compose up -d
+      - name: portainer-traefik
+        run: |
+          cd portainer-traefik && docker-compose up -d
+      - name: uptime-kuma
+        run: |
+          cd uptime-kuma && docker-compose up -d
+      - name: watchtower
+        run: |
+          cd watchtower && docker-compose up -d
