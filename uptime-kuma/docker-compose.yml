@@ -45,7 +45,7 @@ networks:
 
 
 
-  ###### Virker kun på x86 ######
+  ###### Virker kun på x86 ###### har ikke fundet en løsning til arm64 endnu
   # backup:
   #   image: jareware/docker-volume-backup
   #   volumes:
