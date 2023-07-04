@@ -15,6 +15,8 @@ jobs:
       - name: setup docker environment
         run: |
           docker network create proxy
+          docker volume create --name=portainer_data
+          docker volume create --name=uptimekuma-data
       - name: littlelink
         run: |
           cd littlelink-server && docker-compose up -d
