@@ -1,3 +1,4 @@
+---
 version: '3'
 
 volumes:
@@ -48,5 +49,4 @@ networks:
   proxy:
     external: true
 
-
-### END OF FILE ###
+      ### END OF FILE ###
