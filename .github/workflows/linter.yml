@@ -9,7 +9,7 @@ name: 99 dep -Super-Linter - YAML Lint
 #############################
 # Start the job on all push #
 #############################
-on:
+'on':
   # push:
   #   branches: main
   #   paths:

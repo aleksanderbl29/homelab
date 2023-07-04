@@ -1,5 +1,5 @@
 name: OCI-Deployment
-on:
+'on':
   push:
     branches:
       - main

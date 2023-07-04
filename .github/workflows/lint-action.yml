@@ -1,6 +1,6 @@
 ---
 name: 99 dep - Yaml Lint
-on:
+'on':
   # push:
   #   branches:
   #     - main

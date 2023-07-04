@@ -48,5 +48,3 @@ services:
 networks:
   proxy:
     external: true
-
-      ### END OF FILE ###

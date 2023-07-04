@@ -1,3 +1,4 @@
+---
 version: '3'
 
 volumes:
@@ -42,12 +43,3 @@ services:
 networks:
   proxy:
     external: true
-
-
-
-  ###### Virker kun på x86 ###### har ikke fundet en løsning til arm64 endnu
-  # backup:
-  #   image: jareware/docker-volume-backup
-  #   volumes:
-  #     - uptimekuma-data:/backup/uptimekuma-data:ro           # Mount the Grafana data volume (as read-only)
-  #     - /home/aleksanderbang-larsen/backups:/archive         # Mount a local folder as the backup archive
