@@ -3,5 +3,11 @@
   "extends": [
     "config:base",
     ":dependencyDashboard"
+  ],
+  "timezone": "Europe/Copenhagen",
+  "schedule": [
+    "after 10pm every weekday",
+    "before 5am every weekday",
+    "every weekend"
   ]
 }
