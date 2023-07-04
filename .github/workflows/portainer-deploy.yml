@@ -67,7 +67,7 @@ jobs:
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
         with:
-            url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
+          url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
         env:
           UPTIME_KUMA_PORTAINER_WEBHOOK: ${{secrets.UPTIME_KUMA_PORTAINER_SECRET}}
 
@@ -97,6 +97,6 @@ jobs:
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
         with:
-            url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
+          url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
         env:
           WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
