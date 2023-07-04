@@ -6,7 +6,6 @@ name: Docker-Test
     branches:
       - main
     paths:
-      - '*/docker-compose.yml'
       - '.github/workflows/docker-test.yml'
 jobs:
   Testing:
