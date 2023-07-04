@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '*/docker-compose.yml'
 jobs:
   Testing:
     runs-on: ubuntu-latest
