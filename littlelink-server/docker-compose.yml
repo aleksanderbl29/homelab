@@ -77,7 +77,7 @@ services:
       traefik.http.routers.littlelink-secure.service: littlelink
       traefik.http.services.littlelink.loadbalancer.server.port: 3000
       traefik.docker.network: proxy
-      com.centurylinklabs.watchtower.monitor-only: true
+      com.centurylinklabs.watchtower.monitor-only: false
 
 networks:
   proxy:
