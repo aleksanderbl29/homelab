@@ -10,5 +10,8 @@
     "before 5am every weekday",
     "every weekend"
   ],
-  "assignees": "aleksanderbl29"
+  "assignees": [
+    "aleksanderbl29"
+  ]
+}
 }
