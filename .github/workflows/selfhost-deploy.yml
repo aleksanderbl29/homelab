@@ -10,8 +10,37 @@ name: Portainer-Traefik Deploy
       - '.github/workflows/selfhost-deploy.yml'
 
 jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # - name: git pull
+      #   run: |
+      #     git pull origin main
+      - name: setup docker environment
+        run: |
+          docker network create proxy
+          docker volume create --name=portainer_data
+          docker volume create --name=uptimekuma-data
+      - name: littlelink
+        run: |
+          cd littlelink-server && docker-compose up -d
+      - name: portainer-traefik
+        run: |
+          cd portainer-traefik && docker-compose up -d
+      - name: uptime-kuma
+        run: |
+          cd uptime-kuma && docker-compose up -d
+      - name: watchtower
+        run: |
+          cd watchtower && docker-compose up -d
+      - name: portainer-traefik
+        run: |
+          cd portainer-traefik && docker-compose up -d
+
   GitPullandRedeploy:
     runs-on: pihole1
+    needs: Testing
     steps:
       - name: Update local git
         shell: sh
