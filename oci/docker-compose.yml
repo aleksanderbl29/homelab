@@ -10,9 +10,9 @@ services:
     image: louislam/uptime-kuma:1.22.1
     container_name: uptimekuma
     hostname: uptimekuma
-    ## Expose these ports for local access to GUI
-    # ports:
-    #   - "3001:3001"
+    # Expose these ports for local access to GUI
+    ports:
+      - "3001:3001"
     volumes:
       - uptimekuma-data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
