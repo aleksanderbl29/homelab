@@ -38,7 +38,7 @@ jobs:
         run: |
           cd portainer-traefik && docker-compose up -d
 
-  GitPullandRedeploy:
+  Deployment:
     runs-on: pihole1
     needs: Testing
     steps:
