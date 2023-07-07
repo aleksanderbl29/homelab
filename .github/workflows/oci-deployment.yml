@@ -32,7 +32,7 @@ jobs:
           git pull
   deploy:
     runs-on: oracle-cloud
-    needs: git_pull
+    needs: [ git_pull, Testing ]
     steps:
       - name: deploy
         shell: sh
