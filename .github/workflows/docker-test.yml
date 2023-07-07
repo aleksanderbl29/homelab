@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: git pull
-        run: |
-          git pull origin main
+      # - name: git pull
+      #   run: |
+      #     git pull origin main
       - name: setup docker environment
         run: |
           docker network create proxy
