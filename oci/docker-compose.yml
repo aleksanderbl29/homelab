@@ -46,6 +46,28 @@ services:
     labels:
       com.centurylinklabs.watchtower.monitor-only: true
 
+  jekyll:
+    image: jekyll/jekyll:4.2.2
+    container_name: jekyll
+    hostname: jekyll
+    volumes:
+      - /home/ubuntu/CV:/srv/jekyll:Z
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - proxy
+    command: jekyll serve
+
 networks:
   proxy:
     external: true
+
+
+# docker run --rm \
+#   --volume="$PWD:/srv/jekyll:Z" \
+#   --publish [::1]:4000:4000 \
+#   jekyll/jekyll \
+#   jekyll serve
