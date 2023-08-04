@@ -1,0 +1,28 @@
+# Author: @yuan3y
+# Date: 2017-09-29
+# Description: to make `jekyll serve` a system service and start on boot
+#
+# Usage: place this file at `/etc/systemd/system/jekyll.service`
+# then run
+#  sudo systemctl start jekyll.service
+#  sudo systemctl enable jekyll.service
+
+[Unit]
+Description=Jekyll service
+After=syslog.target network.target
+
+[Service]
+User=ubuntu
+Type=simple
+WorkingDirectory=/home/ubuntu/CV]
+ExecStart=/usr/local/bin/jekyll serve --watch --source "/home/ubuntu/CV"
+ExecStop=/usr/bin/pkill -f jekyll
+Restart=always
+TimeoutStartSec=60
+RestartSec=60
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=jekyll
+
+[Install]
+WantedBy=multi-user.target network-online.target
