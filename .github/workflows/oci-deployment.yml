@@ -30,6 +30,9 @@ jobs:
           cd
           cd homelab
           git pull
+          cd
+          cd CV
+          git pull
   deploy:
     runs-on: oracle-cloud
     needs: [git_pull, Testing]
