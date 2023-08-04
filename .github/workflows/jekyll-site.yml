@@ -1,16 +1,16 @@
 ---
-  name: Jekyll site pull
-  'on':
-    schedule:
-      - cron: '0 0 * * *'
-    workflow_dispatch:
-  jobs:
-    git_pull:
-      runs-on: oracle-cloud
-      steps:
-        - name: git pull
-          shell: sh
-          run: |
-            cd
-            cd CV
-            git pull
+name: Jekyll site pull
+'on':
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+jobs:
+  git_pull:
+    runs-on: oracle-cloud
+    steps:
+      - name: git pull
+        shell: sh
+        run: |
+          cd
+          cd CV
+          git pull
