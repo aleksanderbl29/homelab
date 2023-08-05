@@ -59,7 +59,7 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
-    # command: jekyll serve
+    command: jekyll liveserve
 
 networks:
   proxy:
