@@ -62,7 +62,7 @@ services:
   #   command: jekyll serve
 
   jekyll:
-    image: aleksanderbl/jekyll:latest
+    image: aleksanderbl/jekyll:4.0.0
     container_name: jekyll
     hostname: jekyll
     ports:
