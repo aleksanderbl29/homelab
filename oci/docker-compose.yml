@@ -46,36 +46,6 @@ services:
     labels:
       com.centurylinklabs.watchtower.monitor-only: true
 
-  # jekyll:
-  #   image: jekyll/jekyll:4.2.2
-  #   container_name: jekyll
-  #   hostname: jekyll
-  #   volumes:
-  #     - /home/ubuntu/CV:/srv/jekyll:Z
-  #   ports:
-  #     - "4000:4000"
-  #   restart: unless-stopped
-  #   security_opt:
-  #     - no-new-privileges:true
-  #   networks:
-  #     - proxy
-  #   command: jekyll serve
-
-  jekyll:
-    image: aleksanderbl/jekyll:4.0.0
-    container_name: jekyll
-    hostname: jekyll
-    ports:
-      - "80:8888"
-    environment:
-      - GIT_REPO=https://github.com/aleksanderbl29/CV
-    networks:
-      - proxy
-    restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
-
-
 networks:
   proxy:
     external: true

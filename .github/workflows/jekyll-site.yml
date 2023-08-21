@@ -21,9 +21,3 @@ jobs:
           cd
           cd CV
           git pull
-      - name: build
-        shell: sh
-        run: |
-          cd
-          cd CV
-          docker run --rm --volume="$PWD:/srv/jekyll" aleksanderbl/jekyll jekyll build
