@@ -103,7 +103,7 @@ services:
       traefik.http.routers.cv-secure.service: cv
       traefik.http.services.cv.loadbalancer.server.port: 80
       traefik.docker.network: proxy
-      com.centurylinklabs.watchtower.monitor-only: false
+      com.centurylinklabs.watchtower.monitor-only: true
 
 networks:
   proxy:
