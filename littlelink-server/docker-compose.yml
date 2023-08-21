@@ -81,7 +81,7 @@ services:
 
 
   cv:
-    image: aleksanderbl/cv:210823
+    image: aleksanderbl/cv:220823
     container_name: cv
     hostname: cv
     ports:
