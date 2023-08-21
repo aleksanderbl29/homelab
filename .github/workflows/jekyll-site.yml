@@ -9,8 +9,10 @@ name: Jekyll site pull
       - main
     paths:
       - '.github/workflows/jekyll-site.yml'
+permissions:
+  contents: write
 jobs:
-  git_pull:
+  Deployment:
     runs-on: oracle-cloud
     steps:
       - name: git pull
