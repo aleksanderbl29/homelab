@@ -1,3 +1,4 @@
+---
 name: Dashboard Config Pull
 'on':
   push:
