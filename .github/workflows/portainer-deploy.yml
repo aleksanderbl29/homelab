@@ -60,7 +60,7 @@ jobs:
           $HasDiff = $SourceDiff.Length -gt 0
 
           # Set the output named "docker-compose-changed"
-          Write-Host "::set-output name=docker-compose-changed::$HasDiff"
+          Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
 
       # Run the step only if "docker-compose-changed" equals "True"
       - uses: joelwmale/webhook-action@2.3.2
