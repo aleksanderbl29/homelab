@@ -127,6 +127,5 @@ services:
         icon: "fas fa-chart-line"
         subtitle: "Uptime Kuma"
         tag: "Website"
-        url: "https://uptime.aleksanderbl.dk"
-        type: "UptimeKuma"
+        url: "https://uptime.local.aleksanderbl.dk"
         target: "_blank"    # optional html a tag target attribute
