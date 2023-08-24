@@ -10,7 +10,7 @@ name: Docker-Deployment
       - 'watchtower/**'
       - '.github/workflows/portainer-deploy.yml'
       - 'dashboard/**'
-      - 'testing/**'
+      - 'development/**'
 
 jobs:
   Testing:
@@ -149,7 +149,7 @@ jobs:
           $diff = git diff --name-only HEAD^ HEAD
 
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match '^watchtower/' -and $_ -match '.yml$' }
+          $SourceDiff = $diff | Where-Object { $_ -match '^development/' -and $_ -match '.yml$' }
           $HasDiff = $SourceDiff.Length -gt 0
 
           # Set the output named "docker-compose-changed"
