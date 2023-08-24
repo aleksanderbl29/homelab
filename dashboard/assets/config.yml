@@ -3,11 +3,11 @@
 # See https://fontawesome.com/icons for icons options
 
 title: "Aleksanders Homelab"
-subtitle: "Homer"
+# subtitle: "Homer"
 logo: "logo.png"
-icon: "fas fa-skull-crossbones"   # Optional icon
+# icon: "fas fa-skull-crossbones"   # Optional icon
 
-header: true
+header: false
 footer: '<p>Created with <span class="has-text-danger">❤</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>'    # set false if you want to hide it.
 
 # Optional theme customization
@@ -67,7 +67,7 @@ links: []
 # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
   - name: "Smart Home"
-    icon: "fas fa-home"
+    icon: "fas fa-house"
     items:
       - name: "Home Assistant"
         logo: "assets/tools/sample.png"
@@ -96,3 +96,22 @@ services:
         tag: "Proxy"
         url: "https://traefik-dashboard.local.aleksanderbl.dk"
         # target: "_blank" # optional html a tag target attribute
+
+  - name: "Websites"
+    icon: "fas fa-globe"
+    items:
+      - name: Links
+        icon: "fas fa-link"
+        subtitle: "Littlelink server"
+        tag: "Website"
+        url: "https://aleksanderbl.dk"
+      - name: Documentation
+        icon: "fas fa-book"
+        subtitle: "Jekyll site with documentation"
+        tag: "Website"
+        url: "https://docs.aleksanderbl.dk"
+      - name: "CV"
+        icon: "fas fa-suitcase"
+        subtitle: "CV site"
+        tag: "Website"
+        url: "https://cv.aleksanderbl.dk"
