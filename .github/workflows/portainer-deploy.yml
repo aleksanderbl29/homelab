@@ -9,6 +9,8 @@ name: Docker-Deployment
       - 'uptime-kuma/**'
       - 'watchtower/**'
       - '.github/workflows/portainer-deploy.yml'
+      - 'dashboard/**'
+      - 'testing/**'
 
 jobs:
   Testing:
@@ -35,6 +37,9 @@ jobs:
       - name: watchtower
         run: |
           cd watchtower && docker-compose up -d
+      - name: dashboard
+        run: |
+          cd dashboard && docker-compose up -d
   littlelink:
     runs-on: ubuntu-latest
     needs: Testing
