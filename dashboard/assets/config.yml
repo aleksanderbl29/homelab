@@ -10,6 +10,9 @@ logo: "logo.png"
 header: true
 footer: false       # '<p>Created with <span class="has-text-danger">❤</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>'    # set false if you want to hide it.
 
+columns: "auto"     # must be a factor of 12: 1, 2, 3, 4, 6, 12
+connectivityCheck: true
+
 # Optional theme customization
 theme: default
 colors:
@@ -48,19 +51,10 @@ message: []
 
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
-links: []
-  # - name: "Contribute"
-  #   icon: "fab fa-github"
-  #   url: "https://github.com/bastienwirtz/homer"
-  #   target: "_blank" # optional html a tag target attribute
-  # - name: "Wiki"
-  #   icon: "fas fa-book"
-  #   url: "https://www.wikipedia.org/"
-  # # this will link to a second homer page that will load config from additionnal-page.yml and keep default config values as in config.yml file
-  # # see url field and assets/additionnal-page.yml.dist used in this example:
-  # - name: "another page!"
-  #   icon: "fas fa-file-alt"
-  #   url: "#additionnal-page"
+links:
+  - name: "Github"
+    icon: "fab fa-github"
+    url: "https://github.com/aleksanderbl29"
 
 # Services
 # First level array represent a group.
@@ -89,13 +83,20 @@ services:
         subtitle: "Network-wide ad blocking and local DNS"
         tag: "DNS"
         url: "https://pihole1.local.aleksanderbl.dk"
-        # target: "_blank" # optional html a tag target attribute
+        type: "PiHole"
+        apikey: "$piholeapikey"
       - name: Traefik
         logo: "https://docs.traefik.io/assets/img/traefik.logo.png"
         subtitle: "Traefik is a modern HTTP reverse proxy and load balancer"
         tag: "Proxy"
         url: "https://traefik-dashboard.local.aleksanderbl.dk"
-        # target: "_blank" # optional html a tag target attribute
+      - name: "Portainer"
+        logo: "https://www.portainer.io/wp-content/uploads/2018/10/logo-portainer.png"
+        subtitle: "Simple management UI for Docker"
+        tag: "Docker"
+        url: "https://portainer.local.aleksanderbl.dk"
+        apikey: "$portaineraccestoken"
+        type: "Portainer"
 
   - name: "Websites"
     icon: "fas fa-globe"
@@ -115,3 +116,9 @@ services:
         subtitle: "CV site"
         tag: "Website"
         url: "https://cv.aleksanderbl.dk"
+      - name: "Uptime Kuma"
+        icon: "fas fa-chart-line"
+        subtitle: "Uptime Kuma"
+        tag: "Website"
+        url: "https://uptime.aleksanderbl.dk"
+        type: "UptimeKuma"
