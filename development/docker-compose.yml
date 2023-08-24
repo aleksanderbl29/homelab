@@ -5,10 +5,10 @@ services:
 
   cv:
     image: aleksanderbl/cv-nginx:220823
-    container_name: cv
-    hostname: cv
-    ports:
-      - 6969:80
+    container_name: dev-cv
+    hostname: dev-cv
+    # ports:
+    #   - 6969:80
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
