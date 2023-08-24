@@ -1,0 +1,18 @@
+name: Dashboard Config Pull
+'on':
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/dashboard-config-pull.yml'
+      - 'dashboard/**'
+
+jobs:
+  GitPULL:
+    runs-on: pihole1
+    steps:
+      - name: Pull config
+        run: |
+          cd
+          cd homelab
+          git pull

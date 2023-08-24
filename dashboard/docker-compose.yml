@@ -3,8 +3,6 @@ version: "2"
 services:
   homer:
     image: b4bz/homer:v23.05.1
-    #To build from source, comment previous line and uncomment below
-    #build: .
     container_name: homer
     hostname: homer
     volumes:
@@ -31,7 +29,6 @@ services:
       traefik.docker.network: proxy
 
       com.centurylinklabs.watchtower.monitor-only: true
-
 
 networks:
   proxy:
