@@ -9,7 +9,7 @@ name: Docker-Deployment
       - 'uptime-kuma/**'
       - 'watchtower/**'
       - '.github/workflows/portainer-deploy.yml'
-      - 'dashboard/**'
+      - 'dashboard/docker-compose.yml'
       - 'development/**'
 
 jobs:
@@ -179,7 +179,7 @@ jobs:
           $diff = git diff --name-only HEAD^ HEAD
 
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match '^dashboard/docker-compose.yml' }
+          $SourceDiff = $diff | Where-Object { $_ -match '^dashboard/' -and $_ -match '.yml$' }
           $HasDiff = $SourceDiff.Length -gt 0
 
           # Set the output named "docker-compose-changed"
@@ -193,6 +193,3 @@ jobs:
           url: ${{env.DASHBOARD_PORTAINER_WEBHOOK}}
         env:
           DASHBOARD_PORTAINER_WEBHOOK: ${{secrets.DASHBOARD_PORTAINER_SECRET}}
-
-          # ' -and $_ -match '.yml$' }
-
