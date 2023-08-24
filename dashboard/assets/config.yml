@@ -91,12 +91,13 @@ services:
         tag: "Proxy"
         url: "https://traefik-dashboard.local.aleksanderbl.dk"
       - name: "Portainer"
-        logo: "https://www.portainer.io/wp-content/uploads/2018/10/logo-portainer.png"
+        logo: "https://cdn.worldvectorlogo.com/logos/portainer.svg"
         subtitle: "Simple management UI for Docker"
         tag: "Docker"
         url: "https://portainer.local.aleksanderbl.dk"
         apikey: "$portaineraccestoken"
         type: "Portainer"
+        target: "_blank"    # optional html a tag target attribute
 
   - name: "Websites"
     icon: "fas fa-globe"
