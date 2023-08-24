@@ -2,10 +2,10 @@
 # Homepage configuration
 # See https://fontawesome.com/icons for icons options
 
-title: "Demo dashboard"
+title: "Aleksanders Homelab"
 subtitle: "Homer"
 logo: "logo.png"
-# icon: "fas fa-skull-crossbones" # Optional icon
+icon: "fas fa-skull-crossbones" # Optional icon
 
 header: true
 footer: '<p>Created with <span class="has-text-danger">❤</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
@@ -48,35 +48,51 @@ message:
 
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
-links:
-  - name: "Contribute"
-    icon: "fab fa-github"
-    url: "https://github.com/bastienwirtz/homer"
-    target: "_blank" # optional html a tag target attribute
-  - name: "Wiki"
-    icon: "fas fa-book"
-    url: "https://www.wikipedia.org/"
-  # this will link to a second homer page that will load config from additionnal-page.yml and keep default config values as in config.yml file
-  # see url field and assets/additionnal-page.yml.dist used in this example:
-  - name: "another page!"
-    icon: "fas fa-file-alt"
-    url: "#additionnal-page"
+links: []
+  # - name: "Contribute"
+  #   icon: "fab fa-github"
+  #   url: "https://github.com/bastienwirtz/homer"
+  #   target: "_blank" # optional html a tag target attribute
+  # - name: "Wiki"
+  #   icon: "fas fa-book"
+  #   url: "https://www.wikipedia.org/"
+  # # this will link to a second homer page that will load config from additionnal-page.yml and keep default config values as in config.yml file
+  # # see url field and assets/additionnal-page.yml.dist used in this example:
+  # - name: "another page!"
+  #   icon: "fas fa-file-alt"
+  #   url: "#additionnal-page"
 
 # Services
 # First level array represent a group.
 # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
-  - name: "Applications"
-    icon: "fas fa-cloud"
+  - name: "Smart Home"
+    icon: "fas fa-home"
     items:
-      - name: "Awesome app"
+      - name: "Home Assistant"
         logo: "assets/tools/sample.png"
-        subtitle: "Bookmark example"
-        tag: "app"
-        url: "https://www.reddit.com/r/selfhosted/"
+        subtitle: "Open Source smart home platform"
+        tag: "SmartHome"
+        url: "https://ha.local.aleksanderbl.dk"
         target: "_blank" # optional html a tag target attribute
-      - name: "Another one"
-        logo: "assets/tools/sample2.png"
-        subtitle: "Another application"
-        tag: "app"
-        url: "#"
+      # - name: "Another one"
+      #   logo: "assets/tools/sample2.png"
+      #   subtitle: "Another application"
+      #   tag: "app"
+      #   url: "#"
+
+  - name: Infrastructure
+    icon: "fas fa-server"
+    items:
+      - name: "PiHole"
+        logo: "https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png.webp"
+        subtitle: "Network-wide ad blocking and local DNS"
+        tag: "DNS"
+        url: "https://pihole1.local.aleksanderbl.dk"
+        # target: "_blank" # optional html a tag target attribute
+      - name: Traefik
+        logo: "https://docs.traefik.io/assets/img/traefik.logo.png"
+        subtitle: "Traefik is a modern HTTP reverse proxy and load balancer"
+        tag: "Proxy"
+        url: "https://traefik-dashboard.local.aleksanderbl.dk"
+        # target: "_blank" # optional html a tag target attribute
