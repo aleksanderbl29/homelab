@@ -11,6 +11,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/volumes:/var/lib/docker/volumes
+    networks:
+      - proxy2
   traefik:
     image: traefik:v2.10.4
     container_name: traefik
@@ -18,7 +20,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - proxy
+      - proxy2
     ports:
       - 80:80
       - 443:443
@@ -54,3 +56,7 @@ services:
       - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
       - "traefik.http.routers.traefik-secure.service=api@internal"
       - "com.centurylinklabs.watchtower.monitor-only=true"
+
+networks:
+  proxy2:
+    external: true
