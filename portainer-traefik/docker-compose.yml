@@ -73,6 +73,15 @@ services:
       traefik.docker.network: proxy
       com.centurylinklabs.watchtower.monitor-only: true
 
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - redis:/data
+
 networks:
   proxy:
     external: true
@@ -80,3 +89,5 @@ networks:
 volumes:
   portainer_data:
     external: true
+  redis:
+    driver: local
