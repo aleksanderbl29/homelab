@@ -11,3 +11,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/volumes:/var/lib/docker/volumes
+  traefik-kop:
+    image: "ghcr.io/jittering/traefik-kop:latest"
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - "REDIS_ADDR=192.168.99.5:6379"
+      # - "BIND_IP=192.168.10"
