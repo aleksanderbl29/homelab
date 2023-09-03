@@ -38,7 +38,7 @@ jobs:
           cd portainer-traefik && docker-compose up -d
 
   Deployment:
-    runs-on: ha-pi
+    runs-on: rpi4
     needs: Testing
     steps:
       - name: Update local git
