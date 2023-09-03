@@ -2,6 +2,15 @@
 http:
   # region routers
   routers:
+    proxmox:
+      entryPoints:
+        - "https"
+      rule: "Host(`proxmox.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: proxmox
     test-ha:
       entryPoints:
         - "https"
@@ -44,6 +53,11 @@ http:
 # #endregion
 # #region services
   services:
+    proxmox:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.107.240:8006"
+        passHostHeader: true
     test-ha:
       loadBalancer:
         servers:
