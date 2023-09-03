@@ -4,9 +4,9 @@ version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    image: ghcr.io/homeassistant/home-assistant:stable
+    image: ghcr.io/home-assistant/home-assistant:stable
     volumes:
-      - /home/pi/homeassistant:/config
+      - /home/aleksanderbang-larsen/homeassistant-config:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     labels:
@@ -23,6 +23,12 @@ services:
       traefik.docker.network: proxy2
     networks:
       - proxy2
+    security_opt:
+      - no-new-privileges:true
+    privileged: true
+    network_mode: host
+    ports:
+      - 8123:8123
 
 networks:
   proxy2:
