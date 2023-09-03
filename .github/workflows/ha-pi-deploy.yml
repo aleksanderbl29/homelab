@@ -1,59 +1,59 @@
 ---
-  name: Portainer agent deploy
-  'on':
-    push:
-      branches:
-        - 'main'
-      paths:
-        - 'portainer-agent/**'
-        - '.github/workflows/ha-pi-deploy.yml'
+name: Portainer agent deploy
+'on':
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'portainer-agent/**'
+      - '.github/workflows/ha-pi-deploy.yml'
 
-  jobs:
-    Testing:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        # - name: git pull
-        #   run: |
-        #     git pull origin main
-        - name: setup docker environment
-          run: |
-            docker network create proxy
-            docker volume create --name=portainer_data
-            docker volume create --name=uptimekuma-data
-        - name: littlelink
-          run: |
-            cd littlelink-server && docker-compose up -d
-        - name: portainer-traefik
-          run: |
-            cd portainer-traefik && docker-compose up -d
-        - name: uptime-kuma
-          run: |
-            cd uptime-kuma && docker-compose up -d
-        - name: watchtower
-          run: |
-            cd watchtower && docker-compose up -d
-        - name: portainer-traefik
-          run: |
-            cd portainer-traefik && docker-compose up -d
+jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # - name: git pull
+      #   run: |
+      #     git pull origin main
+      - name: setup docker environment
+        run: |
+          docker network create proxy
+          docker volume create --name=portainer_data
+          docker volume create --name=uptimekuma-data
+      - name: littlelink
+        run: |
+          cd littlelink-server && docker-compose up -d
+      - name: portainer-traefik
+        run: |
+          cd portainer-traefik && docker-compose up -d
+      - name: uptime-kuma
+        run: |
+          cd uptime-kuma && docker-compose up -d
+      - name: watchtower
+        run: |
+          cd watchtower && docker-compose up -d
+      - name: portainer-traefik
+        run: |
+          cd portainer-traefik && docker-compose up -d
 
-    Deployment:
-      runs-on: ha-pi
-      needs: Testing
-      steps:
-        - name: Update local git
-          shell: sh
-          run: |
-            cd /home/aleksanderbang-larsen/homelab
-            git pull
-        - name: Deploy stack
-          shell: sh
-          run: |
-            cd
-            cd /home/aleksanderbang-larsen/homelab/portainer-agent
-            docker-compose up -d --force-recreate
-        - name: Check DNS
-          shell: sh
-          run: |
-            nslookup traefik-dashboard.local.aleksanderbl.dk 127.0.0.1
-            nslookup portainer.local.aleksanderbl.dk 127.0.0.1
+  Deployment:
+    runs-on: ha-pi
+    needs: Testing
+    steps:
+      - name: Update local git
+        shell: sh
+        run: |
+          cd /home/aleksanderbang-larsen/homelab
+          git pull
+      - name: Deploy stack
+        shell: sh
+        run: |
+          cd
+          cd /home/aleksanderbang-larsen/homelab/portainer-agent
+          docker-compose up -d --force-recreate
+      - name: Check DNS
+        shell: sh
+        run: |
+          nslookup traefik-dashboard.local.aleksanderbl.dk 127.0.0.1
+          nslookup portainer.local.aleksanderbl.dk 127.0.0.1
