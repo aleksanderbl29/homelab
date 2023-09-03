@@ -29,7 +29,7 @@ services:
       - CF_API_EMAIL=${CF_API_EMAIL}
       - CLOUDFLARE_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
       - CLOUDFLARE_ZONE_API_TOKEN=${CF_ZONE_API_TOKEN}
-      # - CF_API_KEY=${CF_API_KEY}
+      - CF_API_KEY=${CF_API_KEY}
       ### be sure to use the correct one depending on if you are using a token or key
       # - api.insecure=true
     volumes:
