@@ -21,12 +21,12 @@ services:
       traefik.routers.homeassistant-secure.service: homeassistant
       traefik.http.services.homeassistant.loadbalancer.server.port: 8123
       traefik.docker.network: proxy2
-    networks:
-      - proxy2
+    # networks:
+    #   - proxy2
     security_opt:
       - no-new-privileges:true
     privileged: true
-    # network_mode: host
+    network_mode: host
     ports:
       - 8123:8123
 
