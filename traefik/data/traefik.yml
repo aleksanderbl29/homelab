@@ -21,9 +21,6 @@ providers:
     exposedByDefault: false
   file:
     filename: /config.yml
-  redis:
-    endpoints:
-      - "redis:6379"
 certificatesResolvers:
   cloudflare:
     acme:
