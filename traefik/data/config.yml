@@ -9,7 +9,7 @@ http:
       middlewares:
         - default-headers
         - https-redirectscheme
-      # tls: {}
+      tls: {}
       service: proxmox
     test-ha:
       entryPoints:
