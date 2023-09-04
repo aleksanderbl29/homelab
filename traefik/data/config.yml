@@ -8,7 +8,7 @@ http:
       rule: "Host(`proxmox.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
-        - https-redirectscheme
+        # - https-redirectscheme
       tls: {}
       service: proxmox
     test-ha:
