@@ -65,16 +65,13 @@ http:
     homeassistant:
       loadBalancer:
         servers:
-          - url: "http://192.168.107.115:8123"
+          - url: "http://192.168.107.207:8123"
         passHostHeader: true
     ha-observer:
       loadBalancer:
         servers:
-          - url: "http://192.168.107.115:4357"
-    oci-uptime:
-      loadBalancer:
-        servers:
-          - url: "http://skjgldfjglkdfjgoci-uptime.aleksanderbl.dk"
+          - url: "http://192.168.107.207:4357"
+
 # #endregion
   middlewares:
     # addprefix-pihole:
