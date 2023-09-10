@@ -11,15 +11,15 @@ http:
         - https-redirectscheme
       tls: {}
       service: proxmox
-    test-ha:
+    ha-uptime:
       entryPoints:
         - "https"
-      rule: "Host(`test-ha.local.aleksanderbl.dk`)"
+      rule: "Host(`ha-uptime.local.aleksanderbl.dk`)"
       middlewares:
         - default-headers
         - https-redirectscheme
       tls: {}
-      service: test-ha
+      service: ha-uptime
     homeassistant:
       # For Homeassistant config, check: https://www.home-assistant.io/integrations/http/#reverse-proxies
       # This relies on Homeassistant using http. No certs are needed in the Homeassistant config.
@@ -58,10 +58,10 @@ http:
         servers:
           - url: "https://192.168.107.240:8006"
         passHostHeader: true
-    test-ha:
+    ha-uptime:
       loadBalancer:
         servers:
-          - url: "http://192.168.107.6:8123"
+          - url: "http://192.168.107.207:3001"
     homeassistant:
       loadBalancer:
         servers:
