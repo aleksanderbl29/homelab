@@ -7,7 +7,7 @@ volumes:
 
 services:
   uptimekuma:
-    image: louislam/uptime-kuma:1.23.1
+    image: louislam/uptime-kuma:1.23.2
     container_name: uptimekuma
     hostname: uptimekuma
     # command: sudo sysctl -w net.core.rmem_max=2500000 && sudo sysctl -w net.core.wmem_max=2500000
