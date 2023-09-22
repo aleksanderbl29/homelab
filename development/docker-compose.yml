@@ -4,7 +4,7 @@ version: '3'
 services:
 
   cv:
-    image: aleksanderbl/cv-nginx:220823
+    image: aleksanderbl/cv-nginx:230923
     container_name: dev-cv
     hostname: dev-cv
     # ports:
