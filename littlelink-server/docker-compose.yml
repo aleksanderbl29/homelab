@@ -45,16 +45,16 @@ services:
       # - GOODREADS=https://www.goodreads.com/
       # - SKOOB=https://www.skoob.com.br/
       # use ENV variable names for order, listed buttons will be boosted to the top
-      - BUTTON_ORDER=YOUTUBE,TWITCH,TWITTER,GITHUB,INSTAGRAM,LINKED_IN,DISCORD,FACEBOOK,TIKTOK,PATREON,GEAR,,THESTUDENTTRAVELLER,STATUS,DOCUMENTATION
+      - BUTTON_ORDER=YOUTUBE,TWITCH,TWITTER,GITHUB,INSTAGRAM,LINKED_IN,CV,DISCORD,FACEBOOK,TIKTOK,PATREON,GEAR,,THESTUDENTTRAVELLER,STATUS,DOCUMENTATION
       # you can render an unlimited amount of custom buttons by adding
       # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
-      - CUSTOM_BUTTON_TEXT=Documentation,Status,The Student Traveller
-      - CUSTOM_BUTTON_URL=https://docs.aleksanderbl.dk,https://uptime.aleksanderbl.dk,https://thestudenttraveller.dk
-      - CUSTOM_BUTTON_COLOR=#000000,#000000,#000000
-      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff,#ffffff
-      - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab,Status page for my services,My friend's great travel blog
-      - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,THESTUDENTTRAVELLER
-      - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas plane
+      - CUSTOM_BUTTON_TEXT=Documentation,Status,The Student Traveller,CV
+      - CUSTOM_BUTTON_URL=https://docs.aleksanderbl.dk,https://uptime.aleksanderbl.dk,https://thestudenttraveller.dk,https://cv.aleksanderbl.dk
+      - CUSTOM_BUTTON_COLOR=#000000,#000000,#000000,#000000
+      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff,#ffffff,#ffffff
+      - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab,Status page for my services,My friend's great travel blog,My CV
+      - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,THESTUDENTTRAVELLER,CV
+      - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas plane,fas file-alt
       - FOOTER=Aleksander Bang-Larsen © 2023
       - SKIP_HEALTH_CHECK_LOGS=true
       - GA_TRACKING=ID=${GA_TRACKING_ID}
