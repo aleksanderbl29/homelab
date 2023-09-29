@@ -53,7 +53,7 @@ services:
       - CUSTOM_BUTTON_COLOR=#000000,#000000,#000000,#000000
       - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff,#ffffff,#ffffff
       - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab,Status page for my services,My friend's great travel blog,My CV
-      - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,THESTUDENTTRAVELLER,CV
+      - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,MY FRIEND'S TRAVEL BLOG,CV
       - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas plane,fas file-alt
       - FOOTER=Aleksander Bang-Larsen © 2023
       - SKIP_HEALTH_CHECK_LOGS=true
