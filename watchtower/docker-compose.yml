@@ -3,7 +3,7 @@ version: "3"
 
 services:
   watchtower:
-    image: containrrr/watchtower:1.5.3
+    image: containrrr/watchtower:1.6.0
     container_name: watchtower-monitor
     hostname: watchtower
     volumes:

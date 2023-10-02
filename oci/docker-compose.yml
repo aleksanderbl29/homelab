@@ -28,7 +28,7 @@ services:
       com.centurylinklabs.watchtower.monitor-only: true
 
   watchtower:
-    image: containrrr/watchtower:1.5.3
+    image: containrrr/watchtower:1.6.0
     container_name: watchtower-oci
     hostname: oci-watchtower
     volumes:
