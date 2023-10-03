@@ -48,7 +48,7 @@ services:
       - BUTTON_ORDER=YOUTUBE,TWITCH,TWITTER,GITHUB,INSTAGRAM,LINKED_IN,CV,DISCORD,FACEBOOK,TIKTOK,PATREON,GEAR,,THESTUDENTTRAVELLER,STATUS,DOCUMENTATION
       # you can render an unlimited amount of custom buttons by adding
       # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
-      - CUSTOM_BUTTON_TEXT=Documentation,Status,The Student Traveller,CV
+      - CUSTOM_BUTTON_TEXT=Documentation,Status,Friend's Travel Blog,CV
       - CUSTOM_BUTTON_URL=https://docs.aleksanderbl.dk,https://uptime.aleksanderbl.dk,https://thestudenttraveller.dk,https://cv.aleksanderbl.dk
       - CUSTOM_BUTTON_COLOR=#000000,#000000,#000000,#000000
       - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff,#ffffff,#ffffff
