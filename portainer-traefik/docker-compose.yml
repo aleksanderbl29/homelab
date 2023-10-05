@@ -10,6 +10,7 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
+      - media
     ports:
       - 80:80
       - 443:443
@@ -75,6 +76,8 @@ services:
 
 networks:
   proxy:
+    external: true
+  media:
     external: true
 
 volumes:

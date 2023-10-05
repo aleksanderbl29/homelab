@@ -40,15 +40,6 @@ http:
         - https-redirectscheme
       tls: {}
       service: ha-observer
-    oci-uptime:
-      entryPoints:
-        - "https"
-      rule: "Host(`oci-uptime.local.aleksanderbl.dk`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: oci-uptime
 
 # #endregion
 # #region services
