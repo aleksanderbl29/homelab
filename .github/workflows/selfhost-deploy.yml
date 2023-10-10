@@ -16,7 +16,18 @@ name: Portainer-Traefik Deploy
         default: 'main'
 
 jobs:
+  yamllint:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v4
+      - name: 🚀 Run yamllint
+        uses: frenck/action-yamllint@v1
+        with:
+          config: "./custom/.yamllint"
   Testing:
+    name: yamllint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -13,7 +13,18 @@ name: Docker-Deployment
       - 'development/**'
 
 jobs:
+  yamllint:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v4
+      - name: 🚀 Run yamllint
+        uses: frenck/action-yamllint@v1
+        with:
+          config: "./custom/.yamllint"
   Testing:
+    needs: yamllint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
