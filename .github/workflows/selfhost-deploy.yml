@@ -26,8 +26,10 @@ jobs:
         uses: frenck/action-yamllint@v1
         with:
           config: "./custom/.yamllint"
+
   Testing:
-    name: yamllint
+    name: Testing
+    needs: yamllint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
