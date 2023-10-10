@@ -8,6 +8,12 @@ name: Portainer-Traefik Deploy
       - 'portainer-traefik/**'
       - 'traefik/**'
       - '.github/workflows/selfhost-deploy.yml'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
 
 jobs:
   Testing:
