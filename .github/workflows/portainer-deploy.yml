@@ -110,7 +110,7 @@ jobs:
       # Run the step only if "docker-compose-changed" equals "True" !
       - uses: joelwmale/webhook-action@2.3.2
         # steps.<step_id>.outputs.<output name>
-        if: steps.check_file_changed.outputs.docker-compose-changed == True
+        if: steps.check_file_changed.outputs.docker-compose-changed == true
         with:
           url: ${{env.UPTIME_KUMA_PORTAINER_WEBHOOK}}
         env:
