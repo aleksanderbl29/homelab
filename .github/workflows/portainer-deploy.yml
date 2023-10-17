@@ -107,7 +107,7 @@ jobs:
           # Set the output named "docker-compose-changed"
           Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
 
-      # Run the step only if "docker-compose-changed" equals "True"
+      # Run the step only if "docker-compose-changed" equals "True" !
       - uses: joelwmale/webhook-action@2.3.2
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == '{docker-compose-changed}={True}'
