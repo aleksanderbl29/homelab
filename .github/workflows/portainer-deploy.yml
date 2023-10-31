@@ -10,7 +10,6 @@ name: Docker-Deployment
       - 'watchtower/**'
       - '.github/workflows/portainer-deploy.yml'
       - 'dashboard/docker-compose.yml'
-      - 'development/**'
 
 jobs:
   yamllint:
@@ -146,36 +145,6 @@ jobs:
           url: ${{env.WATCHTOWER_PORTAINER_WEBHOOK}}
         env:
           WATCHTOWER_PORTAINER_WEBHOOK: ${{secrets.WATCHTOWER_PORTAINER_SECRET}}
-
-  Development-deployment:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          # Checkout as many commits as needed for the diff
-          fetch-depth: 2
-      - shell: pwsh
-        # Give an id to the step, so we can reference it later
-        id: check_file_changed
-        run: |
-          # Diff HEAD with the previous commit
-          $diff = git diff --name-only HEAD^ HEAD
-
-          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match '^development/' -and $_ -match '.yml$' }
-          $HasDiff = $SourceDiff.Length -gt 0
-
-          # Set the output named "docker-compose-changed"
-          Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
-
-      # Run the step only if "docker-compose-changed" equals "True"
-      - uses: joelwmale/webhook-action@2.3.2
-        # steps.<step_id>.outputs.<output name>
-        if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
-        with:
-          url: ${{env.DEVELOPMENT_PORTAINER_WEBHOOK}}
-        env:
-          DEVELOPMENT_PORTAINER_WEBHOOK: ${{secrets.DEVELOPMENT_PORTAINER_SECRET}}
 
   Dashboard:
     runs-on: ubuntu-latest
