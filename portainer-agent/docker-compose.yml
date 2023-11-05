@@ -12,7 +12,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/volumes:/var/lib/docker/volumes
     networks:
-      - proxy2
+      - proxy
   # traefik:
   #   image: traefik:v2.10.4
   #   container_name: traefik
@@ -59,5 +59,5 @@ services:
   #     # - "com.centurylinklabs.watchtower.monitor-only=true"
 
 networks:
-  proxy2:
+  proxy:
     external: true
