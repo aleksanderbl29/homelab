@@ -4,11 +4,15 @@ version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    image: ghcr.io/home-assistant/home-assistant:stable
+    image: linuxserver/homeassistant:2023.11.1
     volumes:
       - /home/aleksanderbang-larsen/homeassistant-config:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${timezone:-Europe/Copenhagen}
     labels:
       traefik.enable: true
       traefik.http.routers.homeassistant.entrypoints: http
@@ -31,5 +35,6 @@ services:
       - 8123:8123
 
 networks:
-  proxy2:
+  proxy:
     external: true
+
