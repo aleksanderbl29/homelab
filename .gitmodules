@@ -1,3 +1,3 @@
 [submodule "homeassistant/homeassistant-config"]
-	path = home-assistant/homeassistant-config
+	path = homeassistant/homeassistant-config
 	url = https://github.com/aleksanderbl29/homeassistant-config
