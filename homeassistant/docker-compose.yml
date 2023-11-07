@@ -6,7 +6,7 @@ services:
     container_name: homeassistant
     image: linuxserver/homeassistant:2023.11.1
     volumes:
-      - /home/aleksanderbang-larsen/homeassistant-config:/config
+      - ./homeassistant-config:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     environment:
