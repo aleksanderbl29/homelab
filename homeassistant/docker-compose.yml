@@ -7,6 +7,7 @@ services:
     image: linuxserver/homeassistant:2023.11.1
     volumes:
       - ../../homeassistant/config:/config
+      - ../../homeassistant/backups:/backup
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     environment:
