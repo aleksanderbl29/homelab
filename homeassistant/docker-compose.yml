@@ -33,7 +33,7 @@ services:
     privileged: true
     network_mode: host
     # ports:
-      # - 8123:8123     ## Ports removed to enable network_mode: host
+    # - 8123:8123     ## Ports removed to enable network_mode: host
 
 networks:
   proxy:

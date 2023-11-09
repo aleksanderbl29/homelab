@@ -13,50 +13,50 @@ services:
       - /var/lib/docker/volumes:/var/lib/docker/volumes
     networks:
       - proxy
-  # traefik:
-  #   image: traefik:v2.10.4
-  #   container_name: traefik
-  #   restart: unless-stopped
-  #   security_opt:
-  #     - no-new-privileges:true
-  #   networks:
-  #     - proxy2
-  #   ports:
-  #     - 80:80
-  #     - 443:443
-  #     # - 8080:8080
-  #   environment:
-  #     - CF_API_EMAIL=${CF_API_EMAIL}
-  #     - CLOUDFLARE_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
-  #     - CLOUDFLARE_ZONE_API_TOKEN=${CF_ZONE_API_TOKEN}
-  #     - CF_API_KEY=${CF_API_KEY}
-  #     ### be sure to use the correct one depending on if you are using a token or key
-  #     # - api.insecure=true
-  #   volumes:
-  #     - /etc/localtime:/etc/localtime:ro
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #     - /home/aleksanderbang-larsen/homelab/traefik/data/traefik.yml:/traefik.yml:ro
-  #     - /home/aleksanderbang-larsen/homelab/traefik/data/acme.json:/acme.json
-  #     - /home/aleksanderbang-larsen/homelab/traefik/data/config.yml:/config.yml:ro
-  #   # env_file:
-  #   #   - /home/aleksanderbang-larsen/homelab/traefik/data/ #.env
-  #   labels:
-  #     - "traefik.enable=true"
-  #     - "traefik.http.routers.traefik.entrypoints=http"
-  #     - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard2.local.aleksanderbl.dk`)"
-  #     # - "traefik.http.middlewares.traefik-auth.basicauth.users=${BASIC_AUTH}"
-  #     - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-  #     - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
-  #     - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
-  #     - "traefik.http.routers.traefik-secure.entrypoints=https"
-  #     - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard2.local.aleksanderbl.dk`)"
-  #     # - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
-  #     - "traefik.http.routers.traefik-secure.tls=true"
-  #     - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
-  #     - "traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk"
-  #     - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
-  #     - "traefik.http.routers.traefik-secure.service=api@internal"
-  #     # - "com.centurylinklabs.watchtower.monitor-only=true"
+    # traefik:
+    #   image: traefik:v2.10.4
+    #   container_name: traefik
+    #   restart: unless-stopped
+    #   security_opt:
+    #     - no-new-privileges:true
+    #   networks:
+    #     - proxy2
+    #   ports:
+    #     - 80:80
+    #     - 443:443
+    #     # - 8080:8080
+    #   environment:
+    #     - CF_API_EMAIL=${CF_API_EMAIL}
+    #     - CLOUDFLARE_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
+    #     - CLOUDFLARE_ZONE_API_TOKEN=${CF_ZONE_API_TOKEN}
+    #     - CF_API_KEY=${CF_API_KEY}
+    #     ### be sure to use the correct one depending on if you are using a token or key
+    #     # - api.insecure=true
+    #   volumes:
+    #     - /etc/localtime:/etc/localtime:ro
+    #     - /var/run/docker.sock:/var/run/docker.sock:ro
+    #     - /home/aleksanderbang-larsen/homelab/traefik/data/traefik.yml:/traefik.yml:ro
+    #     - /home/aleksanderbang-larsen/homelab/traefik/data/acme.json:/acme.json
+    #     - /home/aleksanderbang-larsen/homelab/traefik/data/config.yml:/config.yml:ro
+    #   # env_file:
+    #   #   - /home/aleksanderbang-larsen/homelab/traefik/data/ #.env
+    #   labels:
+    #     - "traefik.enable=true"
+    #     - "traefik.http.routers.traefik.entrypoints=http"
+    #     - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard2.local.aleksanderbl.dk`)"
+    #     # - "traefik.http.middlewares.traefik-auth.basicauth.users=${BASIC_AUTH}"
+    #     - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+    #     - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+    #     - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+    #     - "traefik.http.routers.traefik-secure.entrypoints=https"
+    #     - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard2.local.aleksanderbl.dk`)"
+    #     # - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+    #     - "traefik.http.routers.traefik-secure.tls=true"
+    #     - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
+    #     - "traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk"
+    #     - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
+    #     - "traefik.http.routers.traefik-secure.service=api@internal"
+    #     # - "com.centurylinklabs.watchtower.monitor-only=true"
 
 networks:
   proxy:
