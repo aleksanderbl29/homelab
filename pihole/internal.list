@@ -1,0 +1,8 @@
+# Domains for traefik
+192.168.99.5    traefik-dashboard.local.aleksanderbl.dk
+192.168.99.5    pihole1.local.aleksanderbl.dk
+192.168.99.5    uptime.local.aleksanderbl.dk
+192.168.99.5    dash.local.aleksanderbl.dk
+192.168.99.5    cv.local.aleksanderbl.dk
+192.168.99.5    ha.local.aleksanderbl.dk
+
