@@ -21,9 +21,9 @@ services:
       # - 22/tcp # Uncomment to enable SSH
     environment:
       # - FTLCONF_LOCAL_IPV4=${FTLCONF_LOCAL_IPV4}
-      - TZ=${TZ:-UTC}
-      - WEBPASSWORD=${WEBPASSWORD}
-      - WEBTHEME=${WEBTHEME:-default-light}
+      - TZ=Europe/Copenhagen
+      - WEBPASSWORD=admingui
+      # - WEBTHEME=${WEBTHEME:-default-light}
       # - REV_SERVER=${REV_SERVER:-false}
       # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
       # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
