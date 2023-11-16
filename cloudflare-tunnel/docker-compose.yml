@@ -12,6 +12,8 @@ services:
       - TUNNEL_TOKEN=${cf-token}
     networks:
       - external
+    env_file:
+      - .env
 
 networks:
   external:
