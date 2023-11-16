@@ -65,6 +65,7 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
+      - external
     labels:
       traefik.enable: true
       traefik.http.routers.littlelink.entrypoints: http
@@ -81,4 +82,6 @@ services:
 
 networks:
   proxy:
+    external: true
+  external:
     external: true

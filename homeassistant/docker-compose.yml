@@ -28,6 +28,7 @@ services:
       traefik.docker.network: proxy
     networks:
       - proxy
+      - external
     security_opt:
       - no-new-privileges:true
     privileged: true
@@ -37,4 +38,6 @@ services:
 
 networks:
   proxy:
+    external: true
+  external:
     external: true
