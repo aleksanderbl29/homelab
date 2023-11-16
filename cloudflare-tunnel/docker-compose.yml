@@ -2,7 +2,7 @@ version: '2'
 
 services:
   cf-tunnel:
-    image: cloudflare/cloudflared:2023.10.0
+    image: erisamoe/cloudflared:2023.10.0
     container_name: cloudflare-tunnel
     restart: unless-stopped
     security_opt:
@@ -10,3 +10,9 @@ services:
     command: tunnel run
     environment:
       - TUNNEL_TOKEN=${cf-token}
+    networks:
+      - external
+
+networks:
+  external:
+    external: true
