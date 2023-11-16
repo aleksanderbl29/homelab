@@ -11,6 +11,7 @@ services:
     image: aleksanderbl/pihole-unbound:2023.10.0
     hostname: ${HOSTNAME}
     domainname: ${DOMAIN_NAME}
+    command: addn-hosts=/etc/pihole/internal.list
     ports:
       # - 443:443/tcp  ### Uncomment to use without proxy
       - 53:53/tcp
@@ -34,6 +35,7 @@ services:
     volumes:
       - etc_pihole-unbound:/etc/pihole:rw
       - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
+      - ../internal.list:/etc/pihole/internal.list
     restart: unless-stopped
     networks:
       - proxy
