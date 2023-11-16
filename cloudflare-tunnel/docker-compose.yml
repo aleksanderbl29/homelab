@@ -9,7 +9,7 @@ services:
       - no-new-privileges:true
     command: tunnel run
     environment:
-      - TUNNEL_TOKEN=${cf-token}
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     networks:
       - external
     env_file:
