@@ -22,7 +22,7 @@ services:
     environment:
       # - FTLCONF_LOCAL_IPV4=${FTLCONF_LOCAL_IPV4}
       - TZ=Europe/Copenhagen
-      - WEBPASSWORD=admingui
+      - WEBPASSWORD=${WEBPASSWORD}
       # - WEBTHEME=${WEBTHEME:-default-light}
       # - REV_SERVER=${REV_SERVER:-false}
       # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
