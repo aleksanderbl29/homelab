@@ -8,7 +8,7 @@ volumes:
 services:
   pihole:
     container_name: pihole
-    image: aleksanderbl/pihole-unbound:2023.10.0-force-2023-11-17
+    image: aleksanderbl/pihole-unbound:2023.10.0
     hostname: ${HOSTNAME}
     domainname: ${DOMAIN_NAME}
     # command: addn-hosts=/etc/pihole/internal.list
