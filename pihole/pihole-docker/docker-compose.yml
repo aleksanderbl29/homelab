@@ -37,6 +37,8 @@ services:
       - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
       - ../internal.list:/etc/pihole/custom.list
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
     networks:
       - proxy
     labels:

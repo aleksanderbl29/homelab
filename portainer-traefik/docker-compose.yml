@@ -57,6 +57,8 @@ services:
       - portainer_data:/data
     networks:
       - proxy
+    security_opt:
+      - no-new-privileges:true
     ports:
       # - 9000:9000
       - 9443:9443

@@ -13,6 +13,8 @@ services:
       - /var/lib/docker/volumes:/var/lib/docker/volumes
     networks:
       - proxy
+    security_opt:
+      - no-new-privileges:true
     # traefik:
     #   image: traefik:v2.10.4
     #   container_name: traefik
