@@ -23,7 +23,7 @@ services:
       # - FTLCONF_LOCAL_IPV4=${FTLCONF_LOCAL_IPV4}
       - TZ=Europe/Copenhagen
       - WEBPASSWORD=${WEBPASSWORD}
-      # - WEBTHEME=${WEBTHEME:-default-light}
+      - WEBTHEME=${WEBTHEME:-default-dark}
       # - REV_SERVER=${REV_SERVER:-false}
       # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
       # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
