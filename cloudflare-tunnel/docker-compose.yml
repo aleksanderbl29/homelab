@@ -15,6 +15,19 @@ services:
     env_file:
       - .env
 
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns:latest
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    env_file:
+      - .env
+    environment:
+      - API_KEY=${CF_API_KEY}
+      - ZONE=aleksanderbl.dk
+      - SUBDOMAIN=ddns
+      - PROXIED=true
+
 networks:
   external:
     external: true
