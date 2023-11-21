@@ -19,6 +19,7 @@ jobs:
         run: |
           docker network create proxy
           docker network create media
+          docker network create external
           docker volume create --name=portainer_data
           docker volume create --name=uptimekuma-data
       - name: littlelink
