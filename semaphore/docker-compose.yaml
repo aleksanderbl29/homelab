@@ -11,38 +11,32 @@ services:
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
       MYSQL_DATABASE: semaphore
-      MYSQL_USER: semaphore
-      MYSQL_PASSWORD: semaphore
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     networks:
       - semaphore
     security_opt:
       - no-new-privileges:true
+    env_file:
+      - .env
   semaphore:
     restart: unless-stopped
     ports:
       - 3000:3000
     image: semaphoreui/semaphore:latest
     environment:
-      SEMAPHORE_DB_USER: semaphore
-      SEMAPHORE_DB_PASS: semaphore
+      SEMAPHORE_DB_USER: ${DB_USER}
+      SEMAPHORE_DB_PASS: ${DB_PASSWORD}
       SEMAPHORE_DB_HOST: mysql     # for postgres, change to: postgres
       SEMAPHORE_DB_PORT: 3306     # change to 5432 for postgres
       SEMAPHORE_DB_DIALECT: mysql     # for postgres, change to: postgres
       SEMAPHORE_DB: semaphore
       SEMAPHORE_PLAYBOOK_PATH: /tmp/semaphore/
-      SEMAPHORE_ADMIN_PASSWORD: changeme
+      SEMAPHORE_ADMIN_PASSWORD: ${SEMAPHORE_ADMIN_PASSWORD}
       SEMAPHORE_ADMIN_NAME: admin
-      SEMAPHORE_ADMIN_EMAIL: admin@localhost
+      SEMAPHORE_ADMIN_EMAIL: ${SEMAPHORE_ADMIN_EMAIL}
       SEMAPHORE_ADMIN: admin
       SEMAPHORE_ACCESS_KEY_ENCRYPTION: gs72mPntFATGJs9qK0pQ0rKtfidlexiMjYCH9gWKhTU=
-      SEMAPHORE_LDAP_ACTIVATED: 'no'     # if you wish to use ldap, set to: 'yes'
-      SEMAPHORE_LDAP_HOST: dc01.local.example.com
-      SEMAPHORE_LDAP_PORT: '636'
-      SEMAPHORE_LDAP_NEEDTLS: 'yes'
-      SEMAPHORE_LDAP_DN_BIND: 'uid=bind_user,cn=users,cn=accounts,dc=local,dc=shiftsystems,dc=net'
-      SEMAPHORE_LDAP_PASSWORD: 'ldap_bind_account_password'
-      SEMAPHORE_LDAP_DN_SEARCH: 'dc=local,dc=example,dc=com'
-      SEMAPHORE_LDAP_SEARCH_FILTER: "(\u0026(uid=%s)(memberOf=cn=ipausers,cn=groups,cn=accounts,dc=local,dc=example,dc=com))"
     depends_on:
       - mysql     # for postgres, change to: postgres
     networks:
@@ -50,6 +44,8 @@ services:
       - proxy
     security_opt:
       - no-new-privileges:true
+    env_file:
+      - .env
 
     labels:
       traefik.enable: 'true'
