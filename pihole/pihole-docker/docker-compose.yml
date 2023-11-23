@@ -30,7 +30,7 @@ services:
       # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
       # - REV_SERVER_CIDR=${REV_SERVER_CIDR}
       - PIHOLE_DNS_=127.0.0.1#5335
-      - DNSSEC="true"
+      - DNSSEC="false"
       - DNSMASQ_LISTENING=single
       - VIRTUAL_HOST=pi.hole
     volumes:
