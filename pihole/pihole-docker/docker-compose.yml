@@ -11,6 +11,8 @@ services:
     image: aleksanderbl/pihole-unbound:2023.05.2
     hostname: ${HOSTNAME}
     domainname: ${DOMAIN_NAME}
+    dns:
+      - 127.0.0.1
     ports:
       # - 443:443/tcp  ### Uncomment to use without proxy
       - 53:53/tcp
