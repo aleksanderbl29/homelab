@@ -37,6 +37,9 @@ services:
       SEMAPHORE_ADMIN_EMAIL: ${SEMAPHORE_ADMIN_EMAIL}
       SEMAPHORE_ADMIN: admin
       SEMAPHORE_ACCESS_KEY_ENCRYPTION: gs72mPntFATGJs9qK0pQ0rKtfidlexiMjYCH9gWKhTU=
+    volumes:
+      - ~/deployment/cd.inventory.ini/:/tmp/semaphore/cd.inventory.ini:ro
+      - ~/ansible4homelab:/tmp/semaphore/ansible4homelab:ro
     depends_on:
       - mysql     # for postgres, change to: postgres
     networks:
