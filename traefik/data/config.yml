@@ -65,11 +65,11 @@ http:
     hyperion:
       loadBalancer:
         servers:
-          - url: "http://192.168.207.65:8090"
+          - url: "http://192.168.207.123:8090"
     hyperhdr:
       loadBalancer:
         servers:
-          - url: "http://192.168.207.65:8090"
+          - url: "http://192.168.207.123:8090"
     proxmox:
       loadBalancer:
         servers:
