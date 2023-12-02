@@ -38,6 +38,7 @@ services:
       - etc_pihole-unbound:/etc/pihole:rw
       - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
       - ../internal.list:/etc/pihole/custom.list
+      - ./resolver.conf:/etc/resolv.conf:rw
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
