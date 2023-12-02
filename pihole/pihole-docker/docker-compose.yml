@@ -46,21 +46,21 @@ services:
   #   labels:
   #     com.centurylinklabs.watchtower.monitor-only: true
 
-      ## Traefik config ##
-      traefik.enable: true
-      traefik.http.routers.pihol1.entrypoints: http
-      traefik.http.routers.pihole1.rule: Host(`pihole1.local.aleksanderbl.dk`)
-      traefik.http.middlewares.pihole1-https-redirect.redirectscheme.scheme: https
-      traefik.http.middlewares.pihole1-admin.addprefix.prefix: /admin
-      traefik.http.routers.pihole1.middlewares: pihole1-https-redirect
-      traefik.http.routers.pihole1-secure.entrypoints: https
-      traefik.http.routers.pihole1-secure.rule: Host(`pihole1.local.aleksanderbl.dk`)
-      traefik.http.routers.pihole1-secure.tls: true
-      traefik.http.routers.pihole1-secure.middlewares: pihole1-admin
-      # traefik.http.routers.pihole1-secure.middlewares: pihole1-redirect
-      traefik.http.routers.pihole1-secure.service: pihole1
-      traefik.http.services.pihole1.loadbalancer.server.port: 80
-      traefik.docker.network: proxy
+      # ## Traefik config ##
+      # traefik.enable: true
+      # traefik.http.routers.pihol1.entrypoints: http
+      # traefik.http.routers.pihole1.rule: Host(`pihole1.local.aleksanderbl.dk`)
+      # traefik.http.middlewares.pihole1-https-redirect.redirectscheme.scheme: https
+      # traefik.http.middlewares.pihole1-admin.addprefix.prefix: /admin
+      # traefik.http.routers.pihole1.middlewares: pihole1-https-redirect
+      # traefik.http.routers.pihole1-secure.entrypoints: https
+      # traefik.http.routers.pihole1-secure.rule: Host(`pihole1.local.aleksanderbl.dk`)
+      # traefik.http.routers.pihole1-secure.tls: true
+      # traefik.http.routers.pihole1-secure.middlewares: pihole1-admin
+      # # traefik.http.routers.pihole1-secure.middlewares: pihole1-redirect
+      # traefik.http.routers.pihole1-secure.service: pihole1
+      # traefik.http.services.pihole1.loadbalancer.server.port: 80
+      # traefik.docker.network: proxy
 
   pihole2:
     container_name: pihole2
