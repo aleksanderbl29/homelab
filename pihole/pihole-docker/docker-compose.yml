@@ -29,8 +29,8 @@ services:
       # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
       # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
       # - REV_SERVER_CIDR=${REV_SERVER_CIDR}
-      # - PIHOLE_DNS_=127.0.0.1#5335
-      - PIHOLE_DNS_=1.1.1.1
+      - PIHOLE_DNS_=127.0.0.1#5335
+      # - PIHOLE_DNS_=1.1.1.1
       - DNSSEC="true"
       - DNSMASQ_LISTENING=all
       - VIRTUAL_HOST=pi.hole
