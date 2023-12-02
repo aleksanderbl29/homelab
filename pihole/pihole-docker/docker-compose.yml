@@ -6,45 +6,45 @@ volumes:
   etc_pihole_dnsmasq-unbound:
 
 services:
-  pihole:
-    container_name: pihole
-    image: aleksanderbl/pihole-unbound:2023.11.0
-    hostname: ${HOSTNAME}
-    domainname: ${DOMAIN_NAME}
-    dns:
-      - 127.0.0.1
-    ports:
-      # - 443:443/tcp  ### Uncomment to use without proxy
-      - 53:53/tcp
-      - 53:53/udp
-      - 908:80/tcp  ## Uncomment to use without proxy   #Allows use of different port to access pihole web interface when other docker containers use port 80
-      # - 5335:5335/tcp # Uncomment to enable unbound access on local server
-      # - 22/tcp # Uncomment to enable SSH
-    environment:
-      # - FTLCONF_LOCAL_IPV4=${FTLCONF_LOCAL_IPV4}
-      - TZ=Europe/Copenhagen
-      - WEBPASSWORD=${WEBPASSWORD}
-      # - WEBTHEME=${WEBTHEME:-default-dark}
-      # - REV_SERVER=${REV_SERVER:-false}
-      # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
-      # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
-      # - REV_SERVER_CIDR=${REV_SERVER_CIDR}
-      # - PIHOLE_DNS_=127.0.0.1#5335
-      - PIHOLE_DNS_=1.1.1.1
-      - DNSSEC="true"
-      - DNSMASQ_LISTENING=single
-      - VIRTUAL_HOST=pi.hole
-    volumes:
-      - etc_pihole-unbound:/etc/pihole:rw
-      - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
-      - ../internal.list:/etc/pihole/custom.list
-    restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
-    networks:
-      - proxy
-    labels:
-      com.centurylinklabs.watchtower.monitor-only: true
+  # pihole:
+  #   container_name: pihole
+  #   image: aleksanderbl/pihole-unbound:2023.11.0
+  #   hostname: ${HOSTNAME}
+  #   domainname: ${DOMAIN_NAME}
+  #   dns:
+  #     - 127.0.0.1
+  #   ports:
+  #     # - 443:443/tcp  ### Uncomment to use without proxy
+  #     - 53:53/tcp
+  #     - 53:53/udp
+  #     - 908:80/tcp  ## Uncomment to use without proxy   #Allows use of different port to access pihole web interface when other docker containers use port 80
+  #     # - 5335:5335/tcp # Uncomment to enable unbound access on local server
+  #     # - 22/tcp # Uncomment to enable SSH
+  #   environment:
+  #     # - FTLCONF_LOCAL_IPV4=${FTLCONF_LOCAL_IPV4}
+  #     - TZ=Europe/Copenhagen
+  #     - WEBPASSWORD=${WEBPASSWORD}
+  #     # - WEBTHEME=${WEBTHEME:-default-dark}
+  #     # - REV_SERVER=${REV_SERVER:-false}
+  #     # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
+  #     # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
+  #     # - REV_SERVER_CIDR=${REV_SERVER_CIDR}
+  #     # - PIHOLE_DNS_=127.0.0.1#5335
+  #     - PIHOLE_DNS_=1.1.1.1
+  #     - DNSSEC="true"
+  #     - DNSMASQ_LISTENING=single
+  #     - VIRTUAL_HOST=pi.hole
+  #   volumes:
+  #     - etc_pihole-unbound:/etc/pihole:rw
+  #     - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
+  #     - ../internal.list:/etc/pihole/custom.list
+  #   restart: unless-stopped
+  #   security_opt:
+  #     - no-new-privileges:true
+  #   networks:
+  #     - proxy
+  #   labels:
+  #     com.centurylinklabs.watchtower.monitor-only: true
 
       ## Traefik config ##
       traefik.enable: true
