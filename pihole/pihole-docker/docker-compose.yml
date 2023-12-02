@@ -32,7 +32,7 @@ services:
       # - PIHOLE_DNS_=127.0.0.1#5335
       - PIHOLE_DNS_=1.1.1.1
       - DNSSEC="true"
-      - DNSMASQ_LISTENING=single
+      - DNSMASQ_LISTENING=all
       - VIRTUAL_HOST=pi.hole
     volumes:
       - etc_pihole-unbound:/etc/pihole:rw
