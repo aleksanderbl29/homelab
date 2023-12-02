@@ -22,6 +22,12 @@ jobs:
           docker network create external
           docker volume create --name=portainer_data
           docker volume create --name=uptimekuma-data
+      - name: cloudflared
+        run: |
+          cd cloudflared && docker-compose up -d
+      - name: dashboard
+        run: |
+          cd dashboard && docker-compose up -d
       - name: littlelink
         run: |
           cd littlelink-server && docker-compose up -d
@@ -34,6 +40,3 @@ jobs:
       - name: watchtower
         run: |
           cd watchtower && docker-compose up -d
-      - name: dashboard
-        run: |
-          cd dashboard && docker-compose up -d
