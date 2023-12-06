@@ -24,7 +24,7 @@ jobs:
           docker volume create --name=uptimekuma-data
       - name: cloudflared
         run: |
-          cd cloudflared && docker-compose up -d
+          cd cloudflare-tunnel && docker-compose up -d
       - name: dashboard
         run: |
           cd dashboard && docker-compose up -d
