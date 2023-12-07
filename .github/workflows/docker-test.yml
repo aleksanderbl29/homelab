@@ -22,6 +22,7 @@ jobs:
           docker network create external
           docker volume create --name=portainer_data
           docker volume create --name=uptimekuma-data
+          cd cloudflare-tunnel && touch .env
       - name: cloudflared
         run: |
           cd cloudflare-tunnel && docker-compose up -d
