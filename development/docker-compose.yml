@@ -7,8 +7,8 @@ services:
     image: aleksanderbl/cv-nginx:311023
     container_name: dev-cv
     hostname: dev-cv
-    # ports:
-    #   - 6969:80
+    ports:
+      - 6969:80
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
