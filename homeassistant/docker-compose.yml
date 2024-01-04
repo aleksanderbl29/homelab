@@ -4,7 +4,7 @@ version: '2'
 services:
   homeassistant:
     container_name: homeassistant
-    image: linuxserver/homeassistant:2023.12.4
+    image: linuxserver/homeassistant:2024.1.0
     volumes:
       - ../../homeassistant/config:/config
       - ../../homeassistant/backups:/backup
