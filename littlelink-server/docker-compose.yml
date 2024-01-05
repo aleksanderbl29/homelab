@@ -24,16 +24,16 @@ services:
       - EMAIL=kontakt@aleksanderbl.dk
       - EMAIL_TEXT=Send mig en mail!
       # use ENV variable names for order, listed buttons will be boosted to the top
-      - BUTTON_ORDER=TWITTER,BLUESKY,GITHUB,INSTAGRAM,LINKED_IN,CV,STATUS,DOCUMENTATION,EMAIL
+      - BUTTON_ORDER=TWITTER,BLUESKY,GITHUB,INSTAGRAM,LINKED_IN,CV,EMAIL
       # you can render an unlimited amount of custom buttons by adding
       # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
-      - CUSTOM_BUTTON_TEXT=Documentation,Status,CV
-      - CUSTOM_BUTTON_URL=https://docs.aleksanderbl.dk,https://uptime.aleksanderbl.dk,https://cv.aleksanderbl.dk
-      - CUSTOM_BUTTON_COLOR=#000000,#000000,#000000
-      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff,#ffffff
-      - CUSTOM_BUTTON_ALT_TEXT=Documentation for my homelab,Status page for my services,My CV
-      - CUSTOM_BUTTON_NAME=DOCUMENTATION,STATUS,CV
-      - CUSTOM_BUTTON_ICON=fas file-alt,fa-solid fa-stethoscope,fas file-alt
+      - CUSTOM_BUTTON_TEXT=CV
+      - CUSTOM_BUTTON_URL=https://cv.aleksanderbl.dk
+      - CUSTOM_BUTTON_COLOR=#000000
+      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff
+      - CUSTOM_BUTTON_ALT_TEXT=My CV
+      - CUSTOM_BUTTON_NAME=CV
+      - CUSTOM_BUTTON_ICON=fas file-alt
       - FOOTER=Aleksander Bang-Larsen © 2023
       - SKIP_HEALTH_CHECK_LOGS=true
       - GA_TRACKING=ID=${GA_TRACKING_ID}
