@@ -24,7 +24,7 @@ services:
       - EMAIL=kontakt@aleksanderbl.dk
       - EMAIL_TEXT=Send mig en mail!
       # use ENV variable names for order, listed buttons will be boosted to the top
-      - BUTTON_ORDER=YOUTUBE,TWITCH,TWITTER,GITHUB,INSTAGRAM,LINKED_IN,CV,DISCORD,FACEBOOK,TIKTOK,PATREON,GEAR,,THESTUDENTTRAVELLER,STATUS,DOCUMENTATION
+      - BUTTON_ORDER=TWITTER,BLUESKY,GITHUB,INSTAGRAM,LINKED_IN,CV,STATUS,DOCUMENTATION,EMAIL
       # you can render an unlimited amount of custom buttons by adding
       # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
       - CUSTOM_BUTTON_TEXT=Documentation,Status,CV
