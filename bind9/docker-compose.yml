@@ -3,7 +3,7 @@ version: "2"
 
 services:
   bind9:
-    container_name: dns-prod-1
+    container_name: bind9-prod-1
     image: ubuntu/bind9:9.18-23.04_edge
     environment:
       - BIND9_USER=root
