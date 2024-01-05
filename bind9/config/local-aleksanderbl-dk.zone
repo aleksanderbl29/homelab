@@ -1,0 +1,24 @@
+$TTL 2d
+
+$ORIGIN local.aleksanderbl.dk.
+
+@ 						IN			SOA			ns.local.aleksanderbl.dk. aleksanderbl.live.dk. (
+															2023010500 	; serial
+															12h					; refresh
+															15m					; retry
+															3w					; expiry
+															3h					; minimum ttl
+															)
+
+							IN			NS			ns.local.aleksanderbl.dk. 		; Name server
+
+ns 						IN			A				192.168.99.2
+
+
+; -- add dns records below
+
+rpi4					IN			A				192.168.99.2
+ha						IN			A				192.168.207.207
+homeassistant	IN			A				192.168.207.207
+
+hyperhdr			IN			A				192.168.207.123
