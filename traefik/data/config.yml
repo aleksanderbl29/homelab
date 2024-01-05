@@ -2,6 +2,15 @@
 http:
   # region routers
   routers:
+    jellyfin:
+      entryPoints:
+        - "https"
+      rule: "Host(`jellyfin.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: jellyfin
     hyperion:
       entryPoints:
         - "https"
@@ -62,6 +71,10 @@ http:
 # #endregion
 # #region services
   services:
+    jellyfin:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.207.207:8096"
     hyperion:
       loadBalancer:
         servers:
