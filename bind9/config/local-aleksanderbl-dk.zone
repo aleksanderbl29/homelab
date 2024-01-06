@@ -21,6 +21,6 @@ rpi4					IN			A				192.168.99.2
 ha						IN			A				192.168.207.207
 homeassistant	IN			A				192.168.207.207
 
-hyperhdr			IN			A				192.168.207.123
+ssh-hyperhdr	IN			A				192.168.207.123
 
 *							IN			A				192.168.99.2 ; catch all
