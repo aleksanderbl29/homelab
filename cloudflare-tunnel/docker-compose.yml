@@ -2,7 +2,7 @@ version: '2'
 
 services:
   cf-tunnel:
-    image: erisamoe/cloudflared:2024.1.2
+    image: erisamoe/cloudflared:2024.1.3
     container_name: cloudflare-tunnel
     restart: unless-stopped
     security_opt:
