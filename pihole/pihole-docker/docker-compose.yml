@@ -40,28 +40,39 @@ services:
       - ../internal.list:/etc/pihole/custom.list
       - ../resolv.conf:/etc/resolv.conf:rw
     restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
+    # security_opt:
+    #   - no-new-privileges:true
     networks:
       - proxy
     labels:
       com.centurylinklabs.watchtower.monitor-only: true
 
-      ## Traefik config ##
-      traefik.enable: true
-      traefik.http.routers.pihol1.entrypoints: http
-      traefik.http.routers.pihole1.rule: Host(`pihole1.local.aleksanderbl.dk`)
-      traefik.http.middlewares.pihole1-https-redirect.redirectscheme.scheme: https
-      traefik.http.middlewares.pihole1-admin.addprefix.prefix: /admin
-      traefik.http.routers.pihole1.middlewares: pihole1-https-redirect
-      traefik.http.routers.pihole1-secure.entrypoints: https
-      traefik.http.routers.pihole1-secure.rule: Host(`pihole1.local.aleksanderbl.dk`)
-      traefik.http.routers.pihole1-secure.tls: true
-      traefik.http.routers.pihole1-secure.middlewares: pihole1-admin
-      # traefik.http.routers.pihole1-secure.middlewares: pihole1-redirect
-      traefik.http.routers.pihole1-secure.service: pihole1
-      traefik.http.services.pihole1.loadbalancer.server.port: 80
-      traefik.docker.network: proxy
+  # real_pihole:
+  #   container_name: realpihole
+  #   image: pihole/pihole
+  #   ports:
+  #     # - 443:443/tcp  ### Uncomment to use without proxy
+  #     - 53:53/tcp
+  #     - 53:53/udp
+  #     - 908:80/tcp  ## Uncomment to use without proxy   #Allows use of different port to access pihole web interface when other docker containers use port 80
+  #     # - 5335:5335/tcp # Uncomment to enable unbound access on local server
+  #     # - 22/tcp # Uncomment to enable SSH
+  #   environment:
+  #     - TZ=Europe/Copenhagen
+  #     - WEBPASSWORD=${WEBPASSWORD}
+  #     - VIRTUAL_HOST=pi.hole
+  #   volumes:
+  #     - etc_pihole-unbound:/etc/pihole:rw
+  #     - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
+  #     - ../internal.list:/etc/pihole/custom.list
+  #     - ../resolv.conf:/etc/resolv.conf:rw
+  #   restart: unless-stopped
+  #   # security_opt:
+  #   #   - no-new-privileges:true
+  #   networks:
+  #     - proxy
+  #   labels:
+  #     com.centurylinklabs.watchtower.monitor-only: true
 
 networks:
   proxy:
