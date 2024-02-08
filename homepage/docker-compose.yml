@@ -1,7 +1,7 @@
 version: "2"
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:latest
+    image: ghcr.io/gethomepage/homepage:v0.8.7
     container_name: homepage
     environment:
       PUID: 1000 -- optional, your user id
