@@ -6,7 +6,7 @@ services:
     container_name: homer
     hostname: homer
     volumes:
-      - /home/aleksanderbang-larsen/homelab/dashboard/assets/:/www/assets
+      - ./assets:/www/assets
     # ports:
     #   - 8080:8080
     restart: unless-stopped
