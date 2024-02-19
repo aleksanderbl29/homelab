@@ -2,6 +2,15 @@
 http:
   # region routers
   routers:
+    sonos-stream:
+      entryPoints:
+        - "https"
+      rule: "Host(`sonos-stream.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: sonos-stream
     jellyfin:
       entryPoints:
         - "https"
@@ -71,6 +80,10 @@ http:
 # #endregion
 # #region services
   services:
+    sonos-stream:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.207.123:8000/rapi.mp3"
     jellyfin:
       loadBalancer:
         servers:
