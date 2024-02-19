@@ -28,7 +28,7 @@ jobs:
           cd cloudflare-tunnel && docker-compose up -d
       - name: dashboard
         run: |
-          cd dashboard && docker-compose up -d
+          cd homer && docker-compose up -d
       - name: littlelink
         run: |
           cd littlelink-server && docker-compose up -d
