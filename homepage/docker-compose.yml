@@ -6,7 +6,6 @@ services:
     environment:
       PUID: ${PUID}
       PGID: ${PGID}
-    dns: ${DNS_IP}
     # ports:
     #   - 3000:3000
     env_file:
