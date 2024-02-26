@@ -1,0 +1,30 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Smart Home:
+    - Home Assistant:
+        href: https://ha.local.aleksanderbl.dk
+        description: Open Source smart home platform
+
+- Infrastructure:
+    - PiHole:
+        icon: pi-hole.svg # icons found here https://github.com/walkxcode/dashboard-icons
+        href: https://pihole1.local.aleksanderbl.dk
+        description: PiHole1
+        container: pihole
+    - traefik:
+        icon: traefik.svg
+        href: https://traefik-dashboard.local.aleksanderbl.dk
+        description: Traefik Dashboard
+        container: traefik
+    - watchtower:
+        icon: watchtower.svg
+        description: Watchtower
+        container: watchtower
+
+- Media:
+    - Jellyfin:
+        icon: jellyfin.svg
+        href: https://jellyfin.local.aleksanderbl.dk
+        description: Jellyfin Media Server
