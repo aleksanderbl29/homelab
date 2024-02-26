@@ -7,9 +7,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - POSTGRES_USER=gatus_uptime_user # postgres user with access to the database
-      - POSTGRES_PASSWORD=gatuspassword # postgres user password
-      - POSTGRES_DB=gatus_uptime # this should be the name of your postgres database
+      - POSTGRES_USER=${POSTGRES_USER} # postgres user with access to the database
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} # postgres user password
+      - POSTGRES_DB=${POSTGRES_GATUS_DB} # this should be the name of your postgres database
     volumes:
       - ./config:/config
     labels:
@@ -28,3 +28,10 @@ services:
       com.centurylinklabs.watchtower.monitor-only: true
     networks:
       - proxy
+      - database
+
+networks:
+  database:
+    external: true
+  proxy:
+    external: true

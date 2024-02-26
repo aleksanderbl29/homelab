@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres:16.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_GATUS_DB}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - database
+
+networks:
+  database:
+    external: true
