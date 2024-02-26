@@ -21,6 +21,10 @@
         description: PiHole1
         server: rpi4-1
         container: pihole
+        widget:
+            type: pihole
+            url: http://192.168.99.2:908
+            key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY}}"
     - traefik:
         icon: traefik.svg
         href: https://traefik-dashboard.local.aleksanderbl.dk
