@@ -4,6 +4,7 @@
 
 - Smart Home:
     - Home Assistant:
+        icon: home-assistant.svg
         href: https://ha.local.aleksanderbl.dk
         description: Open Source smart home platform
 
