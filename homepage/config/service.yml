@@ -7,30 +7,8 @@
         href: http://localhost/
         description: Homepage is awesome
 
-- My Second Group:
-    - My Second Service:
-        href: http://localhost/
-        description: Homepage is the best
-
-- My Third Group:
-    - My Third Service:
-        href: http://localhost/
-        description: Homepage is 😎
-- Top Services:
-    - Proxmox:
-        icon: proxmox.png # icons found here https://github.com/walkxcode/dashboard-icons
-        href: https://192.168.0.15:8006
-        description: Proxmox VE
+- Infrastructure:
     - PiHole:
         icon: pi-hole.svg # icons found here https://github.com/walkxcode/dashboard-icons
-        href: http://192.168.60.10/admin
-        description: Server 1
-    - Cowboy:
-        icon: mdi-account-cowboy-hat-#FF0000 # icons found here https://pictogrammers.com/library/mdi/
-        href: https://localhost/
-        description: giddyup service
-    - McDonald’s:
-        icon: si-mcdonalds-#FFD700 # icons found here https://simpleicons.org/
-        href: https://www.mcdonalds.com/
-        description: homepage
-    # ^^^ add this block
+        href: https://pihole1.local.aleksanderbl.dk
+        description: PiHole1
