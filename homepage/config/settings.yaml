@@ -17,3 +17,8 @@ color: slate
 providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
+
+# layout:
+#   Media:
+#     style: row
+#     columns: 2
