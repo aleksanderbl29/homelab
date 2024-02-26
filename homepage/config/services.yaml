@@ -13,13 +13,13 @@
         icon: jellyfin.svg
         href: https://jellyfin.local.aleksanderbl.dk
         description: Jellyfin Media Server
-        widget:
-            type: jellyfin
-            # url: https://192.168.207.207:8096
-            url: http://192.168.207.207:8096
-            key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
-            enableBlocks: false
-            enableNowPlaying: true
+        # widget:
+        #     type: jellyfin
+        #     # url: https://192.168.207.207:8096
+        #     url: http://192.168.207.207:8096
+        #     key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
+        #     enableBlocks: false
+        #     enableNowPlaying: true
 
 - Infrastructure:
     - PiHole:
