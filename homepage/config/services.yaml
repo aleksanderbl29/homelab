@@ -13,6 +13,13 @@
         icon: jellyfin.svg
         href: https://jellyfin.local.aleksanderbl.dk
         description: Jellyfin Media Server
+        widget:
+            type: jellyfin
+            # url: https://192.168.207.207:8096
+            url: http://192.168.207.207:8096
+            key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
+            enableBlocks: false
+            enableNowPlaying: true
 
 - Infrastructure:
     - PiHole:
@@ -25,25 +32,34 @@
             type: pihole
             url: http://192.168.99.2:908
             key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY}}"
-    - traefik:
+    - Traefik:
         icon: traefik.svg
         href: https://traefik-dashboard.local.aleksanderbl.dk
         description: Traefik Dashboard
+        # widget:
+        #     type: traefik
+            # url: https://traefik-dashboard.local.aleksanderbl.dk
         # server: rpi4-1
         # container: traefik
-    - watchtower:
+    - Watchtower:
         icon: watchtower.svg
         description: Watchtower
         # server: rpi4-1
         # container: watchtower
+    # - Cloudflare Tunnel:
+    #     icon: cloudflare.svg
+    #     widget:
+    #         type: cloudflared
+    #         accountid: "{{HOMEPAGE_VAR_CF_ACCOUNTID}}"
+    #         tunnelid: "{{HOMEPAGE_VAR_CF_TUNNELID}}"
+    #         key: "{{HOMEPAGE_VAR_CF_KEY}}"
+
 
 - Social:
     - LittleLink:
         icon: mdi-link-box-variant
         href: https://links.local.aleksanderbl.dk
         server: rpi4-1
-        container: littlelink-server
-        description: Littlelink server
     - CV:
         icon: mdi-account-card
         href: https://cv.aleksanderbl.dk
