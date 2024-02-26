@@ -5,7 +5,7 @@ services:
     image: twinproduction/gatus:latest
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "8080:9384"
     environment:
       - POSTGRES_USER=${POSTGRES_USER} # postgres user with access to the database
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} # postgres user password
@@ -22,7 +22,7 @@ services:
       traefik.http.routers.gatus-secure.rule: Host(`gatus.local.aleksanderbl.dk`)
       traefik.http.routers.gatus-secure.tls: true
       traefik.http.routers.gatus-secure.service: gatus
-      traefik.http.services.gatus.loadbalancer.server.port: 8080
+      traefik.http.services.gatus.loadbalancer.server.port: 9384
       traefik.docker.network: proxy
 
       com.centurylinklabs.watchtower.monitor-only: true
