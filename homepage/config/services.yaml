@@ -33,6 +33,14 @@
         server: rpi4-1
         container: watchtower
 
+- Social:
+    - LittleLink:
+        icon: littlelink.svg
+        href: https://links.local.aleksanderbl.dk
+        server: rpi4-1
+        container: littlelink-server
+        description: Littlelink server
+
     # - widget:
     #     type: gatus
     #     url: https://gatus.local.aleksanderbl.dk
