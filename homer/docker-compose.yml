@@ -7,8 +7,8 @@ services:
     hostname: homer
     volumes:
       - ./assets:/www/assets
-    # ports:
-    #   - 8080:8080
+    ports:
+      - 8080:8888
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
@@ -24,7 +24,7 @@ services:
       traefik.http.routers.homer-secure.entrypoints: https
       traefik.http.routers.homer-secure.rule: Host(`homer.local.aleksanderbl.dk`)
       traefik.http.routers.homer-secure.tls: true
-      traefik.http.routers.homer-secure.service: dash
+      traefik.http.routers.homer-secure.service: homer
       traefik.http.services.homer.loadbalancer.server.port: 8080
       traefik.docker.network: proxy
 
