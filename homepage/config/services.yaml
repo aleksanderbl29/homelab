@@ -8,6 +8,12 @@
         href: https://ha.local.aleksanderbl.dk
         description: Open Source smart home platform
 
+- Media:
+    - Jellyfin:
+        icon: jellyfin.svg
+        href: https://jellyfin.local.aleksanderbl.dk
+        description: Jellyfin Media Server
+
 - Infrastructure:
     - PiHole:
         icon: pi-hole.svg # icons found here https://github.com/walkxcode/dashboard-icons
@@ -24,8 +30,3 @@
         description: Watchtower
         container: watchtower
 
-- Media:
-    - Jellyfin:
-        icon: jellyfin.svg
-        href: https://jellyfin.local.aleksanderbl.dk
-        description: Jellyfin Media Server
