@@ -29,7 +29,7 @@ services:
       traefik.http.routers.dash-secure.rule: Host(`dash.local.aleksanderbl.dk`)
       traefik.http.routers.dash-secure.tls: true
       traefik.http.routers.dash-secure.service: dash
-      traefik.http.services.dash.loadbalancer.server.port: 8080
+      traefik.http.services.dash.loadbalancer.server.port: 3000
       traefik.docker.network: proxy
 
       com.centurylinklabs.watchtower.monitor-only: true
