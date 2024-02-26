@@ -18,9 +18,9 @@
     - PiHole:
         icon: pi-hole.svg # icons found here https://github.com/walkxcode/dashboard-icons
         href: https://pihole1.local.aleksanderbl.dk
-        description: PiHole1
-        server: rpi4-1
-        container: pihole
+        # description: PiHole1
+        # server: rpi4-1
+        # container: pihole
         widget:
             type: pihole
             url: http://192.168.99.2:908
@@ -29,13 +29,13 @@
         icon: traefik.svg
         href: https://traefik-dashboard.local.aleksanderbl.dk
         description: Traefik Dashboard
-        server: rpi4-1
-        container: traefik
+        # server: rpi4-1
+        # container: traefik
     - watchtower:
         icon: watchtower.svg
         description: Watchtower
-        server: rpi4-1
-        container: watchtower
+        # server: rpi4-1
+        # container: watchtower
 
 - Social:
     - LittleLink:
@@ -44,6 +44,9 @@
         server: rpi4-1
         container: littlelink-server
         description: Littlelink server
+    - CV:
+        icon: mdi-account-card
+        href: https://cv.aleksanderbl.dk
 
     # - widget:
     #     type: gatus
