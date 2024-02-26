@@ -33,3 +33,6 @@
         server: rpi4-1
         container: watchtower
 
+- widget:
+    type: gatus
+    url: https://gatus.local.aleksanderbl.dk
