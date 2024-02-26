@@ -1,9 +1,9 @@
 ---
 - resources:
-  cpu: true
-  memory: true
-  disk: /
+    cpu: true
+    memory: true
+    disk: /
 
 - search:
-  provider: duckduckgo
-  target: _blank
+    provider: google
+    target: _blank
