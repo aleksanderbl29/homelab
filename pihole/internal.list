@@ -1,4 +1,4 @@
-# Domains for traefik
+## Domains for traefik
 192.168.99.2    traefik-dashboard.local.aleksanderbl.dk
 192.168.99.2    pihole1.local.aleksanderbl.dk
 192.168.99.2    uptime.local.aleksanderbl.dk
