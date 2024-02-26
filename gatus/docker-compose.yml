@@ -1,0 +1,30 @@
+---
+version: '2'
+services:
+  gatus:
+    image: twinproduction/gatus:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - POSTGRES_USER=gatus_uptime_user # postgres user with access to the database
+      - POSTGRES_PASSWORD=gatuspassword # postgres user password
+      - POSTGRES_DB=gatus_uptime # this should be the name of your postgres database
+    volumes:
+      - ./config:/config
+    labels:
+      traefik.enable: true
+      traefik.http.routers.gatus.entrypoints: http
+      traefik.http.routers.gatus.rule: Host(`gatus.local.aleksanderbl.dk`)
+      traefik.http.middlewares.gatus-https-redirect.redirectscheme.scheme: https
+      traefik.http.routers.gatus.middlewares: gatus-https-redirect
+      traefik.http.routers.gatus-secure.entrypoints: https
+      traefik.http.routers.gatus-secure.rule: Host(`gatus.local.aleksanderbl.dk`)
+      traefik.http.routers.gatus-secure.tls: true
+      traefik.http.routers.gatus-secure.service: gatus
+      traefik.http.services.gatus.loadbalancer.server.port: 8080
+      traefik.docker.network: proxy
+
+      com.centurylinklabs.watchtower.monitor-only: true
+    networks:
+      - proxy
