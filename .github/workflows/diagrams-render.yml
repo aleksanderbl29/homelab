@@ -20,6 +20,7 @@
           run: |
             python -m pip install --upgrade pip
             pip install -r requirements.txt
+            apt install graphviz -y
         - name: Render diagrams
           run: |
             python diagrams/diagram.py
