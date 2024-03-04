@@ -34,7 +34,7 @@ You can find it on [docs.aleksanderbl.dk](https://docs.aleksanderbl.dk) and [my 
 My homelab currently consists of the following devices:
 
 * Raspberry PI 3 Model B v1.2
-* Old Macbook Air
+* 2x Raspberry Pi 4 Model B 8gb
 
 ## Hosting
 
