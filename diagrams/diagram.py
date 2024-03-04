@@ -7,28 +7,35 @@ from diagrams.onprem.iac import Ansible
 
 from diagrams.onprem.network import Internet
 from diagrams.onprem.network import Traefik
-
 from diagrams.generic.network import Firewall
 from diagrams.generic.network import Switch
 
-from diagrams.generic.os import Raspbian
-from diagrams.generic.os import Ubuntu
+from diagrams.generic.compute import Rack as generic
+
+from diagrams.generic.os import Raspbian as hyperhdr
 from diagrams.generic.os import Debian
+from diagrams.generic.os import Ubuntu as rpi41
 
 from diagrams.saas.chat import Slack
 from diagrams.saas.cdn import Cloudflare
 
 
-with Diagram("Infrastructure", show=False, filename="diagrams/png/infra_diagram"):
-  with Cluster("RPI4-1"):
-    with Cluster("Raspbian"):
-      rpi4_1 = Raspbian("RPI4-1")
+with Diagram("", show=False, filename="diagrams/png/infra_diagram", direction="TB"):
+  with Cluster("Infrastructure"):
+    with Cluster("Network"):
+      Internet = Internet("Internet") >> Firewall("Firewall") >> Switch("Switch")
+    with Cluster(""):
+      Slack("Notifications")
+      Ansible("Deployment & IAC")
 
-    with Cluster("Docker"):
-      with Cluster("Traefik"):
-        traefik = Traefik("Traefik")
-      with Cluster("PostgreSQL"):
-        postgres = PostgreSQL("PostgreSQL")
+  with Cluster("Services"):
+    with Cluster("HyperHDR"):
+      hyperhdr = hyperhdr()
+      Docker("Docker")
+    with Cluster("RPI4-1", direction="LR"):
+      rpi41 = rpi41()
+      Docker("Docker")
+      with Cluster("Containers"):
+        Traefik("Traefik")
+        PostgreSQL("PostgreSQL") - generic("Gatus")
 
-      with Cluster("Docker"):
-        docker = Docker("Docker")
