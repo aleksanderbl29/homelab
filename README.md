@@ -35,3 +35,7 @@ My homelab currently consists of the following devices:
 * Oracle Cloud
   * Monitoring
   * Self-hosted Github Actions runnner
+
+## Infrastructure diagram
+
+![Infrastructure](/diagrams/png/infra_diagram.png)
