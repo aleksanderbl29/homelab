@@ -7,6 +7,10 @@
       paths:
         - '.github/workflows/diagrams-render.yml'
         - 'diagrams/diagram.py'
+
+  permissions:
+    contents: write
+
   jobs:
     render-diagrams:
       runs-on: ubuntu-latest
