@@ -31,4 +31,4 @@
           uses: EndBug/add-and-commit@v7
           with:
             message: "Render diagrams from Github Actions"
-            add: 'diagrams/png/diagram.png'
+            add: 'diagrams/png/infra_diagram.png'
