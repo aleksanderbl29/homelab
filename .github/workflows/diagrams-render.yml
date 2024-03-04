@@ -8,7 +8,7 @@
         - '.github/workflows/diagrams-render.yml'
         - 'diagrams/diagram.py'
   jobs:
-    Render:
+    render-diagrams:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
