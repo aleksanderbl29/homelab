@@ -27,3 +27,8 @@
         - name: Render diagrams
           run: |
             python diagrams/diagram.py
+        - name: Commit diagram
+          uses: EndBug/add-and-commit@v7
+          with:
+            message: "Render diagrams from Github Actions"
+            add: 'diagrams/png/diagram.png'
