@@ -1,24 +1,25 @@
-from diagrams import Diagram, Cluster
+from diagrams import Diagram
+from diagrams import Cluster
 
-from diagrams.onprem.container.Docker import Docker
-from diagrams.onprem.database.postgresql import PostgreSQL
-from diagrams.onprem.iac.Ansible import Ansible
+from diagrams.onprem.container import Docker
+from diagrams.onprem.database import PostgreSQL
+from diagrams.onprem.iac import Ansible
 
-from diagrams.onprem.network.Internet import Internet
-from diagrams.onprem.network.Traefik import Traefik
+from diagrams.onprem.network import Internet
+from diagrams.onprem.network import Traefik
 
-from diagrams.generic.network.Firewall import Firewall
-from diagrams.generic.network.Switch import Switch
+from diagrams.generic.network import Firewall
+from diagrams.generic.network import Switch
 
-from diagrams.generic.os.Raspbian import Raspbian
-from diagrams.generic.os.Ubuntu import Ubuntu
-from diagrams.generic.os.Debian import Debian
+from diagrams.generic.os import Raspbian
+from diagrams.generic.os import Ubuntu
+from diagrams.generic.os import Debian
 
-from diagrams.saas.chat.Slack import Slack
-from diagrams.saas.cdn.Cloudflare import Cloudflare
+from diagrams.saas.chat import Slack
+from diagrams.saas.cdn import Cloudflare
 
 
-with Diagram("Infrastructure", show=False, filename="png/infra_diagram.png"):
+with Diagram("Infrastructure", show=False, filename="diagrams/png/infra_diagram"):
   with Cluster("RPI4-1"):
     with Cluster("Raspbian"):
       rpi4_1 = Raspbian("RPI4-1")
