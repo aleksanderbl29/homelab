@@ -1,6 +1,6 @@
 # Aleksander's Homelab
 
-[![Yaml Lint](https://github.com/aleksanderbl29/homelab/actions/workflows/frenck-yaml-lint.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/frenck-yaml-lint.yml) [![Docker-Test](https://github.com/aleksanderbl29/homelab/actions/workflows/docker-test.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/docker-test.yml)
+[![Yaml Lint](https://github.com/aleksanderbl29/homelab/actions/workflows/frenck-yaml-lint.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/frenck-yaml-lint.yml) [![Docker-Test](https://github.com/aleksanderbl29/homelab/actions/workflows/docker-test.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/docker-test.yml) [![Render diagrams](https://github.com/aleksanderbl29/homelab/actions/workflows/diagrams-render.yml/badge.svg)](https://github.com/aleksanderbl29/homelab/actions/workflows/diagrams-render.yml)
 
 This is the working repository for my homelab
 
