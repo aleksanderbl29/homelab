@@ -18,8 +18,8 @@
             python-version: '3.12'
         - name: Install graphviz
           run: |
-            apt-get update
-            apt-get install graphviz -y
+            sudo apt-get update
+            sudo apt-get install graphviz -y
         - name: Install dependencies
           run: |
             python -m pip install --upgrade pip
