@@ -59,7 +59,7 @@
     - LittleLink:
         icon: mdi-link-box-variant
         href: https://links.local.aleksanderbl.dk
-        server: rpi4-1
+        # server: rpi4-1
     - CV:
         icon: mdi-account-card
         href: https://cv.aleksanderbl.dk
@@ -67,3 +67,8 @@
     # - widget:
     #     type: gatus
     #     url: https://gatus.local.aleksanderbl.dk
+
+- Development:
+    - OLLamas:
+        icon: mdi-llama
+        href: http://localhost:3000
