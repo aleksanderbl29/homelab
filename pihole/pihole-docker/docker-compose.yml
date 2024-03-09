@@ -25,10 +25,10 @@ services:
       - TZ=Europe/Copenhagen
       - WEBPASSWORD=${WEBPASSWORD}
       # - WEBTHEME=${WEBTHEME:-default-dark}
-      # - REV_SERVER=${REV_SERVER:-false}
-      # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
-      # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
-      # - REV_SERVER_CIDR=${REV_SERVER_CIDR}
+      - REV_SERVER=true
+      - REV_SERVER_TARGET=192.160.20.1
+      - REV_SERVER_DOMAIN=local
+      - REV_SERVER_CIDR=192.168.0.0/16
       - PIHOLE_DNS_=127.0.0.1#5335
       # - PIHOLE_DNS_=1.1.1.1
       - DNSSEC="true"
