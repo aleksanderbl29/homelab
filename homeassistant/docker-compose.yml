@@ -9,32 +9,33 @@ services:
       - ../../homeassistant/config:/config
       - ../../homeassistant/backups:/backup
       - /etc/localtime:/etc/localtime:ro
+      - /dev/:/dev/:ro
     restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=${timezone:-Europe/Copenhagen}
-    # labels:
-    #   traefik.enable: true
-    #   traefik.http.routers.homeassistant.entrypoints: http
-    #   traefik.http.routers.homeassistant.rule: Host(`ha-test.local.aleksanderbl.dk`)
-    #   traefik.http.middlewares.homeassistant-https-redirect.redirectscheme.scheme: https
-    #   traefik.http.routers.homeassistant.middlewares: homeassistant-https-redirect
-    #   traefik.http.routers.homeassistant-secure.entrypoints: https
-    #   traefik.http.routers.homeassistant-secure.rule: Host(`ha-test.local.aleksanderbl.dk`)
-    #   traefik.http.routers.homeassistant-secure.tls: true
-    #   traefik.routers.homeassistant-secure.service: homeassistant
-    #   traefik.http.services.homeassistant.loadbalancer.server.port: 8123
-    #   traefik.docker.network: proxy
-    # networks:
-    #   - proxy
-    #   - external
+    labels:
+      traefik.enable: true
+      traefik.http.routers.homeassistant.entrypoints: http
+      traefik.http.routers.homeassistant.rule: Host(`ha-test.local.aleksanderbl.dk`)
+      traefik.http.middlewares.homeassistant-https-redirect.redirectscheme.scheme: https
+      traefik.http.routers.homeassistant.middlewares: homeassistant-https-redirect
+      traefik.http.routers.homeassistant-secure.entrypoints: https
+      traefik.http.routers.homeassistant-secure.rule: Host(`ha-test.local.aleksanderbl.dk`)
+      traefik.http.routers.homeassistant-secure.tls: true
+      traefik.routers.homeassistant-secure.service: homeassistant
+      traefik.http.services.homeassistant.loadbalancer.server.port: 8123
+      traefik.docker.network: proxy
+    networks:
+      - proxy
+      - external
     security_opt:
       - no-new-privileges:true
     privileged: true
-    network_mode: host
-    # ports:
-    #   - 8123:8123     ## Ports removed to enable network_mode: host
+    # network_mode: host
+    ports:
+      - 8123:8123     ## Ports removed to enable network_mode: host
 
 networks:
   proxy:
