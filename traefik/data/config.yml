@@ -2,6 +2,15 @@
 http:
   # region routers
   routers:
+    ha-test:
+      entryPoints:
+        - "https"
+      rule: "Host(`ha-test.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: ha-test
     sonos-stream:
       entryPoints:
         - "https"
@@ -80,6 +89,10 @@ http:
 # #endregion
 # #region services
   services:
+    ha-test:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.207.207:8123"
     sonos-stream:
       loadBalancer:
         servers:
