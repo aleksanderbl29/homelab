@@ -9,7 +9,7 @@ services:
       - ../../homeassistant/config:/config
       - ../../homeassistant/backups:/backup
       - /etc/localtime:/etc/localtime:ro
-      - /dev/:/dev/:ro
+      - /run/dbus:/run/dbus:ro
     restart: unless-stopped
     environment:
       - PUID=1000
