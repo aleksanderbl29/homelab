@@ -5,5 +5,8 @@ yaml-files:
   - '*.yml'
   - ',yamllint'
 
+ignore:
+  - /homepage/config/
+
 rules:
   line-length: disable
