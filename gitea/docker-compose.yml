@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  gitea:
+    image: gitea/gitea:1.21.0
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    volumes:
+      - /mnt/media/gitea:/data
+    ports:
+      - "3000:3000"
+      - "22:22"
+    restart: unless-stopped
+    networks:
+      - proxy
