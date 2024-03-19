@@ -5,8 +5,8 @@
     disk: /
 
 - search:
-    provider: google
-    target: _blank
+    provider: duckduckgo
+#    target: _blank
 
 - datetime:
     text_size: xl
