@@ -18,7 +18,7 @@ services:
       # - ./data:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-    # ports:
+    ports:
       - "3000:3000"
     #   - "22:22"
     #   - "2222:2222"
