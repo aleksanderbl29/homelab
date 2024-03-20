@@ -27,7 +27,7 @@ services:
       traefik.http.routers.gitea-secure.rule: Host(`gitea.local.aleksanderbl.dk`)
       traefik.http.routers.gitea-secure.tls: true
       traefik.http.routers.gitea-secure.service: gitea
-      traefik.http.services.gitea.loadbalancer.server.port: 8080
+      traefik.http.services.gitea.loadbalancer.server.port: 3000
       traefik.docker.network: proxy
 
       com.centurylinklabs.watchtower.monitor-only: true
