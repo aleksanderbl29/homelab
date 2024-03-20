@@ -1,3 +1,4 @@
-## Install Unbound after installing piHole
+# Install Unbound after installing piHole
+
 sudo apt install unbound -y
 sudo nano -w /etc/unbound/unbound.conf.d/pi-hole.conf
