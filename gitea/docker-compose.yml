@@ -3,7 +3,7 @@ version: '2'
 
 services:
   gitea:
-    image: gitea/gitea:1.21.8-rootless
+    image: gitea/gitea:1.21.8
     container_name: gitea
     environment:
       - USER_UID=${USER_UID}
@@ -14,8 +14,8 @@ services:
       - GITEA__database__USER=${GITEA__database__USER}
       - GITEA__database__PASSWD=${GITEA__database__PASSWD}
     volumes:
-      - ./data:/var/lib/gitea:rw
-      - ./config:/etc/gitea:rw
+      # - ./data:/var/lib/gitea
+      - ./config:/etc/gitea
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
