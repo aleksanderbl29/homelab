@@ -18,8 +18,8 @@ services:
       - ./config:/etc/gitea
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-    # ports:
-      # - "3000:3000"
+    ports:
+      - "3000:3000"
     #   - "22:22"
     #   - "2222:2222"
     restart: unless-stopped
