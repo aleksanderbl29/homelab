@@ -14,7 +14,9 @@ services:
       - GITEA__database__USER=${GITEA__database__USER}
       - GITEA__database__PASSWD=${GITEA__database__PASSWD}
     volumes:
-      - /mnt/media/gitea:/data
+      - /mnt/media/gitea/data:/data
+      - /mnt/media/gitea/lib/gitea:/var/lib/gitea
+      - /mnt/media/gitea/config:/etc/gitea
       # - ./data:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
