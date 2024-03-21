@@ -22,7 +22,7 @@
         #     enableNowPlaying: true
     - Gitea:
         icon: gitea.svg
-        href: https://gitea.local.aleksanderbl.dk
+        href: https://git.local.aleksanderbl.dk
         description: Self hosted git service with Gitea
 
 - Infrastructure:
