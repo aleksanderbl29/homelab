@@ -8,7 +8,7 @@
         href: https://ha.local.aleksanderbl.dk
         description: Open Source smart home platform
 
-- Media:
+- Services:
     - Jellyfin:
         icon: jellyfin.svg
         href: https://jellyfin.local.aleksanderbl.dk
@@ -20,6 +20,10 @@
         #     key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
         #     enableBlocks: false
         #     enableNowPlaying: true
+    - Gitea:
+        icon: gitea.svg
+        href: https://gitea.local.aleksanderbl.dk
+        description: Self hosted git service with Gitea
 
 - Infrastructure:
     - PiHole:
