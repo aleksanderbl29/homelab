@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   homepage:
     image: ghcr.io/gethomepage/homepage:v0.8.10
