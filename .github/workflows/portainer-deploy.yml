@@ -76,7 +76,7 @@ jobs:
           Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
 
       # Run the step only if "docker-compose-changed" equals "True"
-      - uses: joelwmale/webhook-action@2.4.0
+      - uses: joelwmale/webhook-action@2.4.1
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
         with:
@@ -107,7 +107,7 @@ jobs:
           Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
 
       # Run the step only if "docker-compose-changed" equals "True" !
-      - uses: joelwmale/webhook-action@2.4.0
+      - uses: joelwmale/webhook-action@2.4.1
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
         with:
@@ -138,7 +138,7 @@ jobs:
           Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
 
       # Run the step only if "docker-compose-changed" equals "True"
-      - uses: joelwmale/webhook-action@2.4.0
+      - uses: joelwmale/webhook-action@2.4.1
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
         with:
@@ -169,7 +169,7 @@ jobs:
           Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
 
       # Run the step only if "docker-compose-changed" equals "True"
-      - uses: joelwmale/webhook-action@2.4.0
+      - uses: joelwmale/webhook-action@2.4.1
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
         with:
@@ -200,7 +200,7 @@ jobs:
           Write-Host "{docker-compose-changed}={$HasDiff}" >> $GITHUB_OUTPUT
 
       # Run the step only if "docker-compose-changed" equals "True"
-      - uses: joelwmale/webhook-action@2.4.0
+      - uses: joelwmale/webhook-action@2.4.1
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docker-compose-changed == 'True'
         with:
