@@ -1,5 +1,4 @@
-version: '3'
-
+---
 services:
   cf-tunnel:
     image: erisamoe/cloudflared:2024.3.0

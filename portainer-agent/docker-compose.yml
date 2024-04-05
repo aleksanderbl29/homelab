@@ -1,6 +1,4 @@
 ---
-version: '3'
-
 services:
   portainer_agent:
     image: portainer/agent:2.20.0

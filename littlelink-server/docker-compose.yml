@@ -1,5 +1,4 @@
 ---
-version: '3'
 services:
   little-link:
     image: ghcr.io/techno-tim/littlelink-server:latest
