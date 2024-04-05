@@ -3,7 +3,7 @@ version: '3'
 
 services:
   portainer_agent:
-    image: portainer/agent:2.20.0
+    image: portainer/agent:2.20.1
     container_name: portainer_agent
     restart: always
     ports:
