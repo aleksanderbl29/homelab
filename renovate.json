@@ -6,9 +6,7 @@
   ],
   "timezone": "Europe/Copenhagen",
   "schedule": [
-    "after 10pm every weekday",
-    "before 5am every weekday",
-    "every weekend"
+    "after 5pm"
   ],
   "assignees": [
     "aleksanderbl29"
