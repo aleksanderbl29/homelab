@@ -76,3 +76,7 @@
     - OLLamas:
         icon: mdi-llama
         href: http://localhost:3000
+
+    - Quarto Preview:
+        icon: mdi-book-arrow-up-outline
+        href: http://localhost:4200
