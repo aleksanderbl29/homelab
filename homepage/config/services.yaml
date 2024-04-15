@@ -8,6 +8,11 @@
         href: https://ha.local.aleksanderbl.dk
         description: Open Source smart home platform
 
+    - HyperHDR:
+        icon: noget
+        href: https://hyperhdr.local.aleksanderbl.dk
+        description: Sejt lys bag fjernsynet
+
 - Services:
     - Jellyfin:
         icon: jellyfin.svg
@@ -24,6 +29,15 @@
         icon: gitea.svg
         href: https://git.local.aleksanderbl.dk
         description: Self hosted git service with Gitea
+
+    - Uptime Kuma:
+        icon: uptime-kuma.svg
+        href: https://uptime.local.aleksanderbl.dk
+        description: Uptime Kuma
+        # widget:
+        #     type: uptimekuma
+        #     url: https://uptime.local.aleksanderbl.dk
+        #     key: "{{HOMEPAGE_VAR_UPTIMEKUMA_KEY}}"
 
 - Infrastructure:
     - PiHole:
