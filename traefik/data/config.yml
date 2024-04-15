@@ -2,6 +2,15 @@
 http:
   # region routers
   routers:
+    uptime:
+      entryPoints:
+        - "https"
+      rule: "Host(`uptime.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: uptime
     ha-test:
       entryPoints:
         - "https"
@@ -89,6 +98,10 @@ http:
 # #endregion
 # #region services
   services:
+    uptime:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.207.207:3001"
     ha-test:
       loadBalancer:
         servers:
