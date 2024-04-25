@@ -1,10 +1,34 @@
 services:
   cv:
-    image: aleksanderbl/cv:latest
+    image: aleksanderbl/cv:2024-04-25
     container_name: cv
     hostname: cv
     labels:
       com.centurylinklabs.watchtower.monitor-only: false
+
+      traefik.enable: true
+      traefik.http.routers.cv.entrypoints: http
+      traefik.http.routers.cv.rule: Host(`cv.local.aleksanderbl.dk`)
+      traefik.http.middlewares.cv-https-redirect.redirectscheme.scheme: https
+      traefik.http.routers.cv.middlewares: cv-https-redirect
+      traefik.http.routers.cv-secure.entrypoints: https
+      traefik.http.routers.cv-secure.rule: Host(`cv.local.aleksanderbl.dk`)
+      traefik.http.routers.cv-secure.tls: true
+      traefik.http.routers.cv-secure.service: cv
+      traefik.http.services.cv.loadbalancer.server.port: 80
+      traefik.docker.network: proxy
+
     networks:
       - proxy
       - external
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 89:80
+
+networks:
+  proxy:
+    external: true
+  external:
+    external: true
