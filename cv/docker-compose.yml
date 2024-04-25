@@ -1,0 +1,10 @@
+services:
+  cv:
+    image: aleksanderbl/cv:latest
+    container_name: cv
+    hostname: cv
+    labels:
+      com.centurylinklabs.watchtower.monitor-only: false
+    networks:
+      - proxy
+      - external
