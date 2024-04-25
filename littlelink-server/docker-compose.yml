@@ -32,7 +32,7 @@ services:
       - CUSTOM_BUTTON_ALT_TEXT=My CV
       - CUSTOM_BUTTON_NAME=CV
       - CUSTOM_BUTTON_ICON=fas file-alt
-      - FOOTER=Aleksander Bang-Larsen © 2023
+      - FOOTER=Aleksander Bang-Larsen © 2024
       - SKIP_HEALTH_CHECK_LOGS=true
       - GA_TRACKING=ID=${GA_TRACKING_ID}
     ports:
