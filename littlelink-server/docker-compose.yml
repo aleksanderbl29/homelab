@@ -18,7 +18,6 @@ services:
       - GITHUB=https://github.com/aleksanderbl29
       - TWITTER=https://twitter.com/bang_aleksander
       - BLUESKY=https://bsky.app/profile/aleksanderbl.dk
-      - INSTAGRAM=https://www.instagram.com/aleksanderbl/
       - LINKED_IN=https://www.linkedin.com/in/aleksander-bang-larsen-405b03a4/
       - EMAIL=kontakt@aleksanderbl.dk
       - EMAIL_TEXT=Send mig en mail!
