@@ -17,7 +17,7 @@
     - Jellyfin:
         icon: jellyfin.svg
         href: https://jellyfin.local.aleksanderbl.dk
-        description: Jellyfin Media Server
+        # description: Jellyfin Media Server
         widget:
             type: jellyfin
             # url: https://192.168.207.207:8096
