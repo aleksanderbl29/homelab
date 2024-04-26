@@ -24,7 +24,7 @@
             url: "{{HOMEPAGE_VAR_JELLYFIN_IP}}"
             key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
             enableBlocks: true
-            enableNowPlaying: true
+            enableNowPlaying: false
     - Gitea:
         icon: gitea.svg
         href: https://git.local.aleksanderbl.dk
