@@ -82,6 +82,10 @@
         icon: mdi-account-card
         href: https://cv.aleksanderbl.dk
 
+    - Github:
+        icon: mdi-github
+        href: https://github.com/aleksanderbl29
+
     # - widget:
     #     type: gatus
     #     url: https://gatus.local.aleksanderbl.dk
