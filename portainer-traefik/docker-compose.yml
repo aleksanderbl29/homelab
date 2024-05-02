@@ -44,7 +44,7 @@ services:
       - "com.centurylinklabs.watchtower.monitor-only=true"
 
   portainer:
-    image: portainer/portainer-ee:2.20.1
+    image: portainer/portainer-ee:2.20.2
     command: -H unix:///var/run/docker.sock
     container_name: portainer
     restart: always
