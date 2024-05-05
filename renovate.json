@@ -10,5 +10,6 @@
   ],
   "assignees": [
     "aleksanderbl29"
-  ]
+  ],
+  "prBodyTemplate": "{{{header}}}{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}"
 }
