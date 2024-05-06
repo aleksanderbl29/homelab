@@ -11,8 +11,5 @@
   "assignees": [
     "aleksanderbl29"
   ],
-    "reviewers": [
-    "aleksanderbl29"
-  ],
   "prBodyTemplate": "{{{header}}}{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}"
 }
