@@ -1,6 +1,6 @@
 services:
   cv:
-    image: aleksanderbl/cv:2024.05.05
+    image: aleksanderbl/cv:2024.05.08
     container_name: cv
     hostname: cv
     labels:
