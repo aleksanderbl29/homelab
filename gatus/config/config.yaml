@@ -5,8 +5,10 @@ storage:
 metrics: true
 
 maintenance:
-  enabled: true
-  interval: 1h
+  start: 23:00
+  duration: 3h
+  every:
+    - Sunday
 
 endpoints:
   - name: back-end
