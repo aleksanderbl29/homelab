@@ -11,6 +11,10 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} # postgres user password
       - POSTGRES_DB=${POSTGRES_GATUS_DB} # this should be the name of your postgres database
       - POSTGRES_IP=${POSTGRES_IP} # the IP address of your postgres database
+      - GITHUB_TOKEN=${GITHUB_TOKEN} # github token with access to the repository
+      - MATRIX_ACCESS_TOKEN=${MATRIX_ACCESS_TOKEN} # matrix access token
+      - MATRIX_INTERNAL_ROOM_ID=${MATRIX_INTERNAL_ROOM_ID} # matrix room id
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL} # slack webhook url
     volumes:
       - ./config:/config
     labels:
