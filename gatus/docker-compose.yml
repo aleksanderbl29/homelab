@@ -29,7 +29,10 @@ services:
       com.centurylinklabs.watchtower.monitor-only: true
     networks:
       - proxy
+      - external
 
 networks:
   proxy:
+    external: true
+  external:
     external: true
