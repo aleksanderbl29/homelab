@@ -2,7 +2,13 @@ storage:
   type: postgres
   path: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_IP}:5432/${POSTGRES_DB}?sslmode=disable"
 
-metrics: true
+alerting:
+  github:
+    repository_url: "https://github.com/aleksanderbl29/homelab"
+    token: "${GITHUB_TOKEN}"
+    failure-threshold: 10
+    success-threshold: 5
+    send-on-resolved: true
 
 maintenance:
   start: 23:00
