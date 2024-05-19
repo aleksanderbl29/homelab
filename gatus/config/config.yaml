@@ -2,6 +2,8 @@ storage:
   type: postgres
   path: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_IP}:5432/${POSTGRES_DB}?sslmode=disable"
 
+metrics: true
+
 maintenance:
   enabled: true
   interval: 1h
