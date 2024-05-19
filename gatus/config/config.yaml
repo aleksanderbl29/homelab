@@ -9,8 +9,9 @@ alerting:
     failure-threshold: 10
     success-threshold: 5
     send-on-resolved: true
-  # matrix:
-
+  matrix:
+    access-token: ${MATRIX_ACCESS_TOKEN}
+    internal-room-id: ${MATRIX_INTERNAL_ROOM_ID}
 
 endpoints:
   - name: back-end
@@ -44,11 +45,15 @@ endpoints:
     conditions:
       - "[BODY] == 93.184.215.13"
       - "[DNS_RCODE] == NOERROR"
-    alert:
+    alerts:
       - type: github
+      - type: matrix
 
   - name: icmp-ping
-    url: "icmp://example.org"
-    interval: 1m
+    url: "icmp://192.168.20.20"
+    interval: 10s
     conditions:
       - "[CONNECTED] == true"
+    alerts:
+      - type: github
+      - type: matrix
