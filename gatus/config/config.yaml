@@ -1,4 +1,4 @@
----
+ ---
 storage:
   type: postgres
   path: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_IP}:5432/${POSTGRES_DB}?sslmode=disable"
@@ -29,7 +29,7 @@ alerting:
       send-on-resolved: true
 
 endpoints:
-  - name: Hjemmeside
+  - name: hjemmeside
     group: web
     url: "https://aleksanderbl.dk"
     interval: 5m
@@ -40,15 +40,15 @@ endpoints:
       - type: github
         repository-url: "https://github.com/aleksanderbl29/aleksanderbldk"
 
-  - name: Google.dk
-    group: Infra
+  - name: google.dk
+    group: infra
     url: "1.1.1.1" # Address of the DNS server to use
     interval: 3m
     dns:
       query-name: "google.dk"
       query-type: "A"
     conditions:
-      - "[BODY] == 216.58.211.3"
+      - "[BODY] == 142.251.9.94"
       - "[DNS_RCODE] == NOERROR"
     alerts:
       # - type: matrix
