@@ -1,6 +1,6 @@
 storage:
   type: postgres
-  path: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@192.168.207.207:5432/${POSTGRES_DB}?sslmode=disable"
+  path: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_IP}:5432/${POSTGRES_DB}?sslmode=disable"
 
 endpoints:
   - name: back-end
