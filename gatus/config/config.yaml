@@ -9,6 +9,8 @@ alerting:
     failure-threshold: 10
     success-threshold: 5
     send-on-resolved: true
+  # matrix:
+
 
 maintenance:
   start: 23:00
@@ -41,13 +43,15 @@ endpoints:
 
   - name: example-dns-query
     url: "8.8.8.8" # Address of the DNS server to use
-    interval: 5m
+    interval: 10s
     dns:
       query-name: "example.com"
       query-type: "A"
     conditions:
       - "[BODY] == 93.184.215.13"
       - "[DNS_RCODE] == NOERROR"
+    alert:
+      - type: github
 
   - name: icmp-ping
     url: "icmp://example.org"
