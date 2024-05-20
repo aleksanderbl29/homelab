@@ -43,12 +43,12 @@ endpoints:
   - name: google.dk
     group: infra
     url: "1.1.1.1" # Address of the DNS server to use
-    interval: 3m
+    interval: 5m
     dns:
       query-name: "google.dk"
       query-type: "A"
     conditions:
-      - "[BODY] == 142.251.9.94"
+      # - "[BODY] == 142.251.9.94"
       - "[DNS_RCODE] == NOERROR"
     alerts:
       # - type: matrix
@@ -57,12 +57,12 @@ endpoints:
   - name: dns
     group: infra
     url: "192.168.99.2" # Address of the DNS server to use
-    interval: 3m
+    interval: 5m
     dns:
       query-name: "google.dk"
       query-type: "A"
     conditions:
-      - "[BODY] == 216.58.211.3"
+      # - "[BODY] == 216.58.211.3"
       - "[DNS_RCODE] == NOERROR"
     alerts:
       # - type: matrix
