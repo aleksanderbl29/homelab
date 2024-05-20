@@ -53,3 +53,17 @@ endpoints:
     alerts:
       # - type: matrix
       - type: slack
+
+  - name: dns
+    group: infra
+    url: "192.168.99.2" # Address of the DNS server to use
+    interval: 3m
+    dns:
+      query-name: "google.dk"
+      query-type: "A"
+    conditions:
+      - "[BODY] == 216.58.211.3"
+      - "[DNS_RCODE] == NOERROR"
+    alerts:
+      # - type: matrix
+      - type: slack
