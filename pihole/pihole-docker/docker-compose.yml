@@ -33,9 +33,10 @@ services:
       - DNSMASQ_LISTENING=all
       - VIRTUAL_HOST=pi.hole
     volumes:
-      - etc_pihole-unbound:/etc/pihole:rw
-      - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
-      - ../internal.list:/etc/pihole/custom.list
+      - ../03-custom.conf:/etc/dnsmasq.d/03-custom.conf
+      # - etc_pihole-unbound:/etc/pihole:rw
+      # - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
+      # - ../internal.list:/etc/pihole/custom.list
     restart: unless-stopped
     # security_opt:
     #   - no-new-privileges:true
