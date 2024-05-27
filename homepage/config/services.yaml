@@ -86,6 +86,10 @@
         icon: mdi-github
         href: https://github.com/aleksanderbl29
 
+    - Hjemmeside:
+        icon: mdi-web
+        href: https://aleksanderbl.dk
+
     # - widget:
     #     type: gatus
     #     url: https://gatus.local.aleksanderbl.dk
