@@ -27,7 +27,7 @@ services:
       # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
       - CUSTOM_BUTTON_TEXT=CV
       - CUSTOM_BUTTON_URL=https://cv.aleksanderbl.dk,https://package.aleksanderbl.dk
-      - CUSTOM_BUTTON_COLOR=#000000,#000000
+      - CUSTOM_BUTTON_COLOR=#000000,#2568BD
       - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff
       - CUSTOM_BUTTON_ALT_TEXT=My CV,Min R-pakke
       - CUSTOM_BUTTON_NAME=CV,R-pakke
