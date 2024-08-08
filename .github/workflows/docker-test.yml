@@ -25,19 +25,19 @@ jobs:
           cd cloudflare-tunnel && touch .env
       - name: cloudflared
         run: |
-          cd cloudflare-tunnel && docker-compose up -d
+          cd cloudflare-tunnel && docker compose up -d
       - name: homer
         run: |
-          cd homer && docker-compose up -d
+          cd homer && docker compose up -d
       - name: littlelink
         run: |
-          cd littlelink-server && docker-compose up -d
+          cd littlelink-server && docker compose up -d
       - name: portainer-traefik
         run: |
-          cd portainer-traefik && docker-compose up -d
+          cd portainer-traefik && docker compose up -d
       - name: uptime-kuma
         run: |
-          cd uptime-kuma && docker-compose up -d
+          cd uptime-kuma && docker compose up -d
       - name: watchtower
         run: |
-          cd watchtower && docker-compose up -d
+          cd watchtower && docker compose up -d
