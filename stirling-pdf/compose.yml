@@ -1,6 +1,4 @@
 ---
-version: '3.3'
-
 services:
   tailscale:
     image: tailscale/tailscale:latest
