@@ -94,9 +94,6 @@ services:
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
-    networks:
-      - proxy
-      - media
     network_mode: service:tailscale
     environment:
       - CF_API_EMAIL=${CF_API_EMAIL}
