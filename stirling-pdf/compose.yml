@@ -5,7 +5,8 @@ services:
   tailscale:
     image: tailscale/tailscale:latest
     container_name: tailscale
-    hostname: tailscale-rpi4-1
+    # hostname: tailscale-rpi4-1
+    hostname: stirling-pdf
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
@@ -22,7 +23,6 @@ services:
     container_name: stirling-pdf
     restart: unless-stopped
     network_mode: service:tailscale
-    hostname: stirling-pdf
     volumes:
       - ./extraConfigs:/configs
 #      - ./customFiles:/customFiles/
