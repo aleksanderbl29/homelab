@@ -88,42 +88,20 @@ services:
       - TS_AUTH_KEY=${TS_AUTH_KEY}
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_USERSPACE=false
-  traefik-tailscale:
-    image: traefik:v3.1.2
-    container_name: traefik-tailscale
+  stirling-pdf:
+    image: frooodle/s-pdf:latest
+    container_name: stirling-pdf
     restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
     network_mode: service:tailscale
-    environment:
-      - CF_API_EMAIL=${CF_API_EMAIL}
-      # - CF_DNS_API_TOKEN=YOUR_API_TOKEN
-      - CF_API_KEY=${CF_API_KEY}
-      ## be sure to use the correct one depending on if you are using a token or key
-      # - api.insecure=true
+    hostname: stirling-pdf
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ../traefik/data/traefik.yml:/traefik.yml:ro
-      - ../traefik/data/acme.json:/acme.json:ro
-      - ../traefik/data/config.yml:/config.yml:ro
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.traefik.entrypoints=http"
-      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)"
-      # - "traefik.http.middlewares.traefik-auth.basicauth.users=${BASIC_AUTH}"
-      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
-      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
-      - "traefik.http.routers.traefik-secure.entrypoints=https"
-      - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.local.aleksanderbl.dk`)"
-      # - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
-      - "traefik.http.routers.traefik-secure.tls=true"
-      - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.traefik-secure.tls.domains[0].main=local.aleksanderbl.dk"
-      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.local.aleksanderbl.dk"
-      - "traefik.http.routers.traefik-secure.service=api@internal"
-      - "com.centurylinklabs.watchtower.monitor-only=true"
+      - ./extraConfigs:/configs
+#      - ./customFiles:/customFiles/
+#      - ./logs:/logs/
+    environment:
+      - DOCKER_ENABLE_SECURITY=false
+      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
+      - LANGS=en_GB
 
 networks:
   proxy:
