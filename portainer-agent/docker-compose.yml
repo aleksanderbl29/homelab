@@ -1,7 +1,7 @@
 ---
 services:
   portainer_agent:
-    image: portainer/agent:2.20.3
+    image: portainer/agent:2.21.0
     container_name: portainer_agent
     restart: always
     ports:
