@@ -1,7 +1,7 @@
 ---
 services:
   cf-tunnel:
-    image: erisamoe/cloudflared:2024.8.3
+    image: erisamoe/cloudflared:2024.9.1
     container_name: cloudflare-tunnel
     restart: unless-stopped
     security_opt:
