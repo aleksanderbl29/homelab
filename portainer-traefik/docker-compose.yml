@@ -1,7 +1,7 @@
 ---
 services:
   traefik:
-    image: traefik:v3.1.5
+    image: traefik:v3.1.6
     container_name: traefik
     restart: unless-stopped
     security_opt:
@@ -44,7 +44,7 @@ services:
       - "com.centurylinklabs.watchtower.monitor-only=true"
 
   portainer:
-    image: portainer/portainer-ee:2.22.0
+    image: portainer/portainer-ee:2.23.0
     command: -H unix:///var/run/docker.sock
     container_name: portainer
     restart: always
