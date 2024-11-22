@@ -1,7 +1,7 @@
 ---
 services:
   postgres:
-    image: postgres:17.1
+    image: postgres:17.2
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
