@@ -5,7 +5,7 @@ volumes:
 
 services:
   uptimekuma:
-    image: louislam/uptime-kuma:1.23.15     ## force this specific version 1.23.3
+    image: louislam/uptime-kuma:1.23.16     ## force this specific version 1.23.3
     container_name: uptimekuma
     hostname: uptimekuma
     ## Expose these ports for local access to GUI
