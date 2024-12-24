@@ -126,7 +126,7 @@ http:
     jellyfin-herning:
       loadBalancer:
         servers:
-          - url: "http://192.168.1.197:8096"
+          - url: "http://100.106.169.107:8096"
     hyperion:
       loadBalancer:
         servers:
