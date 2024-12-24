@@ -38,6 +38,15 @@ http:
         - https-redirectscheme
       tls: {}
       service: jellyfin
+    jellyfin-herning:
+      entryPoints:
+        - "https"
+      rule: "Host(`jellyfin.herning.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: jellyfin-herning
     hyperion:
       entryPoints:
         - "https"
@@ -114,6 +123,10 @@ http:
       loadBalancer:
         servers:
           - url: "http://192.168.207.207:8096"
+    jellyfin-herning:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.1.197:8096"
     hyperion:
       loadBalancer:
         servers:
