@@ -140,6 +140,8 @@ http:
         servers:
           - url: "https://192.168.99.9:8006"
         passHostHeader: true
+        tls:
+          insecureSkipVerify: true
     ha-uptime:
       loadBalancer:
         servers:
