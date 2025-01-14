@@ -138,7 +138,7 @@ http:
     proxmox:
       loadBalancer:
         servers:
-          - url: "https://192.168.207.240:8006"
+          - url: "https://192.168.99.9:8006"
         passHostHeader: true
     ha-uptime:
       loadBalancer:
