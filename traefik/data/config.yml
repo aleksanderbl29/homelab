@@ -2,6 +2,15 @@
 http:
   # region routers
   routers:
+    actualbudget:
+      entryPoints:
+        - "https"
+      rule: "Host(`actualbudget.local.aleksanderbl.dk`)"
+      middlewares:
+        - default-headers
+        - https-redirectscheme
+      tls: {}
+      service: actualbudget
     uptime:
       entryPoints:
         - "https"
@@ -107,6 +116,10 @@ http:
 # #endregion
 # #region services
   services:
+    actualbudget:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.99.32:5006"
     uptime:
       loadBalancer:
         servers:
