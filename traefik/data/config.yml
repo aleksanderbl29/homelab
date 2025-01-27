@@ -119,7 +119,7 @@ http:
     actualbudget:
       loadBalancer:
         servers:
-          - url: "http://192.168.99.32:5006"
+          - url: "http://192.168.99.38:5006"
     uptime:
       loadBalancer:
         servers:
