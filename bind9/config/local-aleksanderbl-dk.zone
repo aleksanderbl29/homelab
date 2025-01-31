@@ -12,15 +12,15 @@ $ORIGIN local.aleksanderbl.dk.
 
 							IN			NS			ns.local.aleksanderbl.dk. 		; Name server
 
-ns 						IN			A				192.168.99.2
+ns 						IN			A				192.168.99.101
 
 
 ; -- add dns records below
 
-rpi4					IN			A				192.168.99.2
+rpi4					IN			A				192.168.99.101
 ha						IN			A				192.168.207.207
 homeassistant	IN			A				192.168.207.207
 
 ssh-hyperhdr	IN			A				192.168.207.123
 
-*							IN			A				192.168.99.2 ; catch all
+*							IN			A				192.168.99.101 ; catch all

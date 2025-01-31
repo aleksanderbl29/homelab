@@ -48,7 +48,7 @@
         # container: pihole
         widget:
             type: pihole
-            url: http://192.168.99.2:908
+            url: http://192.168.99.101:908
             key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY}}"
     - Traefik:
         icon: traefik.svg
