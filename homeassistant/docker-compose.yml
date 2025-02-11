@@ -2,7 +2,7 @@
 services:
   homeassistant:
     container_name: homeassistant
-    image: linuxserver/homeassistant:2025.2.1
+    image: linuxserver/homeassistant:2025.2.2
     volumes:
       - ../../homeassistant/config:/config
       - ../../homeassistant/backups:/backup
