@@ -2,7 +2,7 @@
 services:
   mysql:
     restart: unless-stopped
-    image: mysql:9.2
+    image: mysql:9.3
     hostname: mysql
     volumes:
       - semaphore-mysql:/var/lib/mysql
