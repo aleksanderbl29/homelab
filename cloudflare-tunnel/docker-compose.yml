@@ -1,7 +1,7 @@
 ---
 services:
   cf-tunnel:
-    image: erisamoe/cloudflared:2025.4.0
+    image: erisamoe/cloudflared:2025.4.2
     container_name: cloudflare-tunnel
     restart: unless-stopped
     security_opt:
