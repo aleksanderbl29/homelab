@@ -1,7 +1,7 @@
 ---
 services:
   gatus:
-    image: twinproduction/gatus:v5.18.1
+    image: twinproduction/gatus:v5.19.0
     container_name: gatus
     restart: unless-stopped
     ports:
