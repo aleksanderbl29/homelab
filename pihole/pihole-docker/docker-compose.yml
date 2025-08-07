@@ -6,7 +6,7 @@ volumes:
 services:
   pihole:
     container_name: pihole
-    image: aleksanderbl/pihole-unbound:2025.07.1
+    image: aleksanderbl/pihole-unbound:2025.08.0
     hostname: ${HOSTNAME}
     domainname: ${DOMAIN_NAME}
     dns:
