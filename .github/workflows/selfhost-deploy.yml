@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 🚀 Run yamllint
         uses: frenck/action-yamllint@v1
         with:
@@ -32,7 +32,7 @@ jobs:
     needs: yamllint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       # - name: git pull
       #   run: |
       #     git pull origin main
