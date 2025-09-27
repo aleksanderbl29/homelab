@@ -1,7 +1,7 @@
 ---
 services:
   homer:
-    image: b4bz/homer:v25.08.1
+    image: b4bz/homer:v25.09.1
     container_name: homer
     hostname: homer
     volumes:
