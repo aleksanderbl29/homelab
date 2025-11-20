@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: 🚀 Run yamllint
         uses: frenck/action-yamllint@v1
         with:
