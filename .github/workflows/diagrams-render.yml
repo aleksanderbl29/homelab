@@ -32,7 +32,7 @@ jobs:
         run: |
           python diagrams/diagram.py
       - name: Commit diagram
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           message: "Render diagrams from Github Actions"
           add: 'diagrams/png/infra_diagram.png'
